@@ -9,8 +9,6 @@ import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
 import axios from 'axios'
 import Chart from '../node_modules/chart.js'
-import 'vue-awesome/icons'
-import Icon from 'vue-svg-icon/Icon.vue';
 import vue_scroll from 'vue_scroll'
 
 // import $ from 'jquery'
@@ -22,7 +20,6 @@ Vue.use(iview);
 Vue.use(VueEvents);
 Vue.use(VueChartkick, { Chartkick });
 // Vue.use(vue_scroll);
-Vue.component('icon', Icon);
 Vue.use(MuseUI);
 Vue.prototype.$http = axios;
 

@@ -1,11 +1,13 @@
 <template>
   <div class="outer">
     <div class="inner">
-      <span class="input input-isao search">
-        <input class="input_field input_field-isao" type="text" id="input" title="Hash"/>
-        <label class="input_label input_label-isao" for="input" data-content="Hash">
-          <span class="input_label-content input_label-content-isao">
-          </span>
+      <span class="input input-madoka">
+        <input class="input_field input_field-madoka" type="text" id="input-31" />
+        <label class="input_label input_label-madoka" for="input-31">
+          <svg class="graphic graphic-madoka" width="100%" height="100%" viewBox="0 0 404 77" preserveAspectRatio="none">
+            <path d="m0,0l404,0l0,77l-404,0l0,-77z"/>
+          </svg>
+          <span class="input_label-content input_label-content-madoka">Hash</span>
         </label>
       </span>
     </div>
@@ -68,7 +70,9 @@
 <style scoped>
   .outer{
     width: 100%;
-    padding: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 4px;
   }
   .inner{
     margin: 0 auto;

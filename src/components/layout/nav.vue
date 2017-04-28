@@ -1,10 +1,10 @@
 <template>
   <Menu mode="horizontal" theme="light" style="background-color: white; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: bold; color:#3a4a4d" min-width="800px" accordion>
     <div class="layout-logo">
-        <!--<Row>-->
-        <!--<i-col span="8"></i-col>-->
-        <!--<i-col span="16"></i-col>-->
-        <!--</Row>-->
+        <!-<Row>->
+        <!-<i-col span="8"></i-col>->
+        <!-<i-col span="16"></i-col>->
+        <!-</Row>->
         <img src="../../image/logo.png" width="45px" height="45px">
         <img src="../../image/title.png" height="45px">
       </div>
@@ -33,6 +33,10 @@
       <Menu-item name="3-3" font-size="15px">交易</Menu-item>
       <Menu-item name="3-4" font-size="15px">地址</Menu-item>
     </Submenu>
+    <div class="search">
+
+    </div>
+
   </Menu>
 </template>
 

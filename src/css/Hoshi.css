@@ -2,11 +2,11 @@
 	position: relative;
 	z-index: 1;
 	display: inline-block;
-	margin: 0.2em;
+	margin: 1em;
 	max-width: 95%;
 	width: calc(100% - 2em);
 	vertical-align: top;
-    min-height: 50px;
+  max-height: 60px;
 }
 
 .input_field {
@@ -135,33 +135,29 @@
 /* Hoshi */
 .input-hoshi {
 	overflow: hidden;
-	min-height: 60px;
 }
 
 .input_field-hoshi {
-	margin-top: 0.5em;
-	padding: 0.25em 0.15em;
+	margin-top: 1em;
+	padding: 0.85em 0.15em;
 	width: 100%;
 	background: transparent;
 	color: #595F6E;
-	font-size: 30px;
-	height: 60px;
 }
 
 .input_label-hoshi {
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	padding: 0 0.15em;
+	padding: 0 0.25em;
 	width: 100%;
-	height: calc(100% - 0.5em);
-	text-align: center;
+	height: calc(100% - 1em);
+	text-align: left;
 	pointer-events: none;
 }
 
 .input_label-content-hoshi {
 	position: absolute;
-	font-size: 30px;
 }
 
 .input_label-hoshi::before,
@@ -172,11 +168,11 @@
 	left: 0;
 	width: 100%;
 	height: calc(100% - 10px);
-	border-bottom: 1.5px solid #B9C1CA;
+	border-bottom: 1px solid #B9C1CA;
 }
 
 .input_label-hoshi::after {
-	margin-top: 3px;
+	margin-top: 2px;
 	border-bottom: 4px solid red;
 	-webkit-transform: translate3d(-100%, 0, 0);
 	transform: translate3d(-100%, 0, 0);
@@ -185,7 +181,7 @@
 }
 
 .input_label-hoshi-color-1::after {
-	border-color: #30c9e8;
+	border-color: hsl(200, 100%, 50%);
 }
 
 .input_label-hoshi-color-2::after {
@@ -915,7 +911,7 @@
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	color: #30c9e8;
+	color: #7A7593;
 	text-align: left;
 	cursor: text;
 }
@@ -925,7 +921,6 @@
 	transform-origin: 0% 50%;
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
-	font-size: 30px;
 }
 
 .graphic-madoka {
