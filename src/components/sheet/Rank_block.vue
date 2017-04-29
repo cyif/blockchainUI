@@ -22,9 +22,9 @@
             _self.isLoading = true;
             _self.$webApi.getBlockRank().then(res => {
                 let rankData = res.data.data;
-                _self.txData = rankData.max_tx.splice(0, 11);
-                _self.cddData = rankData.max_days_destroyed.splice(0, 11);
-                _self.feesData = rankData.max_fees.splice(0, 11);
+                _self.txData = rankData.max_tx.splice(0, 10);
+                _self.cddData = rankData.max_days_destroyed.splice(0, 10);
+                _self.feesData = rankData.max_fees.splice(0, 10);
                 _self.isLoading = false;
             })
         },

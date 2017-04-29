@@ -1,16 +1,17 @@
 <template>
-    <add-rank></add-rank>
+    <add-info></add-info>
 </template>
 
 <script>
-    import addRank from '../components/sheet/Rank_add.vue'
+    import addInfo from '../components/sheet/Info_address.vue'
 
     export default {
         data () {
             return {}
         },
+
         components : {
-            addRank
+            addInfo
         }
     }
 </script>

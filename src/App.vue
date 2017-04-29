@@ -13,6 +13,7 @@
       <div class="layout-copy">
         2017 &copy; Yushu Wang
       </div>
+      <Back-top></Back-top>
     </div>
   </div>
 </template>
