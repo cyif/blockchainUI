@@ -9,8 +9,8 @@
         <row class = "block">
             <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
+                       :columns="columns"
+                       :data="data"
                        :show-header="showHeader"></Table>
             </div>
         </row>
@@ -18,10 +18,11 @@
 </template>
 <script>
     export default {
+        props: ['data'],
         data () {
             return {
                 showHeader: true,
-                columns1: [
+                columns: [
                     {
                         type: 'index',
                         width: 60,
@@ -31,6 +32,7 @@
                     {
                         title: '交易',
                         key: 'tx',
+                        width: 600,
                         align: 'center',
                         className: 'demo-table-info-tx'
                     },
