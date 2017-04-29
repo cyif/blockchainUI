@@ -7,7 +7,7 @@
         </div>
         <hr/>
         <div class = "block">
-            <div class = "table">
+            <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
                        :columns="txColumns"
                        :data="txData"
@@ -15,7 +15,7 @@
             </div>
             <hr/>
             <div>
-                <table class="whoTowho"
+                <table class="whoTowho" style="box-shadow: #30c9e8"
                        :columns="addColumn"
                        :data="addData"
                        :show-header="showHeader">

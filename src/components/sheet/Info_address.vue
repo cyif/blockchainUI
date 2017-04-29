@@ -20,7 +20,7 @@
             <Row>
                 <i-col span="12">
                     <div class="first">
-                        <table class="table2"
+                        <table class="table2" style="box-shadow: #30c9e8"
                                :columns="columns2"
                                :data="data2"
                                :show-header="showHeader2">

@@ -7,7 +7,7 @@
         </div>
         <hr/>
         <div class = "block">
-            <div class = "table">
+            <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
                        :columns="blockColumns"
                        :data="blockData"
