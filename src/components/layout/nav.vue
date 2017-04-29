@@ -2,7 +2,9 @@
   <Menu mode="horizontal" theme="light" style="background-color: white; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 18px; font-weight: bold; color:#3a4a4d" min-width="800px">
     <div class="layout-logo">
       <img src="../../image/logo.png" width="45px" height="45px">
-      <img src="../../image/title.png" height="45px">
+      <router-link to="/">
+        <img src="../../image/title.png" height="45px">
+      </router-link>
     </div>
     <Submenu name="1">
       <template slot="title">
@@ -24,10 +26,18 @@
         <Icon type="ios-paper"></Icon>
         细则
       </template>
-      <Menu-item name="3-1" font-size="15px">区块链</Menu-item>
-      <Menu-item name="3-2" font-size="15px">区块</Menu-item>
-      <Menu-item name="3-3" font-size="15px">交易</Menu-item>
-      <Menu-item name="3-4" font-size="15px">地址</Menu-item>
+      <router-link to="/blockchain">
+        <Menu-item name="3-1" font-size="15px">区块链</Menu-item>
+      </router-link>
+      <router-link to="/block">
+        <Menu-item name="3-2" font-size="15px">区块</Menu-item>
+      </router-link>
+      <router-link to="/txs">
+        <Menu-item name="3-3" font-size="15px">交易</Menu-item>
+      </router-link>
+      <router-link to="/address">
+        <Menu-item name="3-4" font-size="15px">地址</Menu-item>
+      </router-link>
     </Submenu>
   </Menu>
 </template>

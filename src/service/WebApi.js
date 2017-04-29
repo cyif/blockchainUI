@@ -9,7 +9,6 @@ export const webApi = {
         return axios.get('http://btc.blockr.io/api/v1/block/info/' + blockId);
     },
     getTxInfo: function(txId) {
-
     },
     getAddreddInfo: function(addreddId) {
 

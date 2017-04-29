@@ -40,7 +40,7 @@
   .layout-content{
     min-height: 800px;
     margin: 10px;
-    overflow: scroll;
+    /*overflow: scroll;*/
     background: #fff;
     border-radius: 4px;
   }

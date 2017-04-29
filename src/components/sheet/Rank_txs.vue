@@ -1,0 +1,49 @@
+<template>
+    <div>
+        <add-rank :data="addData"></add-rank>
+        <cdd-rank :data="cddData"></cdd-rank>
+        <amount-rank :data="amountData"></amount-rank>
+        <fees-rank :data="feesData"></fees-rank>
+        <unspent-amount-rank :data="unspentAmountData"></unspent-amount-rank>
+    </div>
+</template>
+<script>
+    import addRank from './Rank_txs_addresses.vue'
+    import cddRank from './Rank_txs_cdd.vue'
+    import amountRank from './Rank_txs_amounts.vue'
+    import feesRank from './Rank_txs_fees.vue'
+    import unSpentAmountRank from './Rank_untxs_amounts.vue'
+
+    export default {
+        data () {
+            return {
+                addData: [],
+                cddData: [],
+                feesData: [],
+                amountData: [],
+                unspentAmountData: []
+            }
+        },
+        mounted () {
+            let _self = this;
+            _self.isLoading = true;
+            _self.$webApi.getBlockRank().then(res => {
+                let rankData = res.data.data;
+                _self.addData = rankData.max_addresses.splice(0, 11);
+                _self.cddData = rankData.max_days_destroyed.splice(0, 11);
+                _self.feesData = rankData.max_fees.splice(0, 11);
+                _self.amountData = rankData.max_amounts_all.splice(0, 11);
+                _self.unspentAmountData = rankData.max_amounts_unspent(0, 11);
+                _self.isLoading = false;
+            })
+        },
+        components: {
+            addRank, cddRank, amountRank, feesRank, unSpentAmountRank
+        }
+    }
+</script>
+
+
+<style scoped>
+
+</style>

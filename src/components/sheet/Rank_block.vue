@@ -1,4 +1,3 @@
-//blocks with the most transactions
 <template>
     <div>
         <tx-rank :data="txData"></tx-rank>

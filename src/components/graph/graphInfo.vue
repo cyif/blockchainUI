@@ -24,6 +24,6 @@
     border-color: #30c9e8;
     font-size: 50px;
     align-self: center;
-    overflow: scroll;
+    /*overflow: scroll;*/
   }
 </style>

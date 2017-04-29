@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import dashboard from '@/views/dashboard'
 import blockTrivia from '@/views/blockTrivia'
 import blockInfo from '@/views/blockInfo'
+import txTrivia from '@/views/txTrivia'
 
 Vue.use(Router)
 
@@ -22,6 +23,11 @@ export default new Router({
           path: '/block/info/:blockId',
           name: 'blockInfo',
           component: blockInfo
+      },
+      {
+          path: '/txs',
+          name: 'txTrivia',
+          component: txTrivia
       }
   ]
 })

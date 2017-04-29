@@ -246,12 +246,12 @@
     padding : 10px;
     height: 400px;
     min-width: 500px;
-    overflow: scroll;
+    /*overflow: scroll; */
   }
   .chart {
     width : 95%;
     height : calc(100% - 20px);
     margin : 0 auto;
-    overflow: scroll;
+    /*overflow: scroll;*/
   }
 </style>
