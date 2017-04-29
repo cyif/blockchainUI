@@ -36,7 +36,6 @@
   .layout-nav{
     width: 100%;
     margin: 0;
-    overflow: hidden;
   }
   .layout-content{
     min-height: 800px;

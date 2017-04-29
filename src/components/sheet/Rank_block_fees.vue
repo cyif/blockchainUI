@@ -48,7 +48,7 @@
                     },
                     {
                         title: '小费总计',
-                        key: 'fees',
+                        key: 'fee',
                         align: 'center',
                         className: 'demo-table-info-sum'
                     }
