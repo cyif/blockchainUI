@@ -73,6 +73,7 @@
     padding-left: 20%;
     padding-right: 20%;
     padding-top: 4px;
+    margin-top: -25px;
   }
   .inner{
     margin: 0 auto;

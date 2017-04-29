@@ -65,7 +65,7 @@
   .layout-content{
     min-height: 200px;
     margin: 15px;
-    overflow: hidden;
+    overflow: scroll;
     background: #fff;
     border-radius: 8px;
   }

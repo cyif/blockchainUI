@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import cBlockTrivia from '../components/sheet/blockTrivia';
+  import cBlockTrivia from './blockTrivia';
   import cBlockRank from '../components/sheet/blockRank';
 
   export default {

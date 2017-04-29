@@ -2,10 +2,10 @@
   <div class = 'sheet_canvas'>
     <div class = 'title'>
       <br>
-      <h1>Block Top 10</h1>
+      <p style="font-family: flamenco; font-size: 40px" >Last Bitcoin Blocks</p>
     </div>
     <row class = "block">
-      <div class = "rank">
+      <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
         <Table stripe
                :columns="columns1"
                :data="data1"
@@ -23,7 +23,8 @@
           {
             type: 'index',
             width: 60,
-            align: 'center'
+            title: 'No',
+            align: 'center',
           },
           {
             title: '块号',
@@ -165,15 +166,16 @@
   .sheet_canvas {
     margin-left: 5px;
     margin-right: 5px;
-    background: #f5f7f9;
+    background: transparent;
     border-radius: 8px;
   }
   .title{
     margin-left: 35px;
     font-size: medium;
-    font-weight: 500;
+    font-weight: 800;
     text-align: left;
     vertical-align: bottom;
+    margin-bottom: 5px;
   }
   .block {
     margin: 10px;

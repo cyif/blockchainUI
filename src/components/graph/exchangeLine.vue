@@ -20,7 +20,6 @@
   import ICol from "../../../node_modules/iview/src/components/grid/col";
   import cGraphInfo from './graphInfo.vue';
 
-
   function randomData() {
     now = new Date(+now + oneDay);
     value = value + Math.random() * 21 - 10;
@@ -40,7 +39,6 @@
     }
     return data;
   }();
-
 
   export default {
     components: {ICol, cGraphInfo},
@@ -248,12 +246,12 @@
     padding : 10px;
     height: 400px;
     min-width: 500px;
-    overflow: hidden;
+    overflow: scroll;
   }
   .chart {
     width : 95%;
     height : calc(100% - 20px);
     margin : 0 auto;
-    overflow: hidden;
+    overflow: scroll;
   }
 </style>

@@ -26,7 +26,7 @@ Vue.prototype.$http = axios;
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-const app = new Vue({
+var app = new Vue({
   router,
   render: h => h(App)
 }).$mount('#app');

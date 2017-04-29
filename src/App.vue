@@ -30,7 +30,7 @@
 
 <style scoped>
   .layout{
-    background: white;
+    background: #fff;
     width: 100%;
   }
   .layout-nav{
@@ -40,7 +40,7 @@
   .layout-content{
     min-height: 800px;
     margin: 10px;
-    overflow: hidden;
+    overflow: scroll;
     background: #fff;
     border-radius: 4px;
   }
