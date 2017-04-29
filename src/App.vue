@@ -36,6 +36,7 @@
   .layout-nav{
     width: 100%;
     margin: 0;
+    overflow: hidden;
   }
   .layout-content{
     min-height: 800px;
@@ -55,12 +56,6 @@
   }
 </style>
 <style>
-  template{
-    overflow: scroll;
-  }
-  div{
-    overflow: scroll;
-  }
   .graph_info {
     align-items: center;
     justify-content: center;
@@ -72,7 +67,6 @@
   template{
     color: #3a4a4d;
   }
-
   @font-face {
     font-family: 'dancing';
     src: url('font/dancing.woff2') format('woff2'),

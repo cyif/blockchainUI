@@ -2,7 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import VueEvents from 'vue-events'
-import App from './App'
+import App from './App.vue'
 import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 import Chartkick from 'chartkick'
@@ -26,7 +26,7 @@ Vue.prototype.$http = axios;
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-var app = new Vue({
+const app = new Vue({
   router,
   render: h => h(App)
 }).$mount('#app');
