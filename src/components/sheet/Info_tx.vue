@@ -5,14 +5,22 @@
             <br>
             <h1>Transaction</h1>
         </div>
-        <row class = "block">
+        <hr/>
+        <div class = "block">
             <div class = "table">
                 <Table stripe
                        :columns="columns"
                        :data="data"
                        :show-header="showHeader"></Table>
             </div>
-        </row>
+            <hr/>
+            <div>
+                <table class="whoTowho" :columns="columns2"
+                       :data="data2"
+                       :show-header="showHeader">
+                </table>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -72,6 +80,33 @@
                     {
                         attribute: '所属块',
                         name: 'block'
+                    }
+                ],
+
+                columns2: [
+                    {
+                        title: '地址A',
+                        key: 'address1',
+                        className: 'demo-table-info-attribute'
+                    },
+                    {
+                        title: '金额',
+                        key: 'value1',
+                        className: 'demo-table-info-key',
+                        width: 150,
+                        formatter: '-{value}'
+                    },
+                    {
+                        title: '地址B',
+                        key: 'address2',
+                        className: 'demo-table-info-attribute'
+                    },
+                    {
+                        title: '金额',
+                        key: 'value2',
+                        className: 'demo-table-info-key',
+                        width: 150,
+                        formatter: '+{value}'
                     }
                 ]
             }

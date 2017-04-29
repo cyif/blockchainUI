@@ -1,18 +1,29 @@
 // 已完成
 <template>
-    <div class = 'sheet_canvas'>
+    <div>
         <div class = 'title'>
             <br>
             <h1>Block</h1>
         </div>
-        <row class = "block">
+        <hr/>
+        <div class = "block">
             <div class = "table">
                 <Table stripe
-                       :columns="columns"
-                       :data="data"
+                       :columns="columns1"
+                       :data="data1"
                        :show-header="showHeader"></Table>
             </div>
-        </row>
+        </div>
+        <hr/>
+        <div class="transactions">
+            <div class="table" style="box-shadow: #30c9e8">
+                <table class="table2"
+                       :columns="columns2"
+                       :data="data2"
+                       :show-header="showHeader">
+                </table>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -22,7 +33,7 @@
             return {
                 blockId: {},
                 showHeader: false,
-                columns: [
+                columns1: [
                     {
                         title: '属性',
                         key: 'attribute',
@@ -36,7 +47,20 @@
                     }
                 ],
 
-                data: []
+                data1: [],
+
+                columns2:[
+                    {
+                        title: 'txHash',
+                        key: 'hash',
+                    },
+                    {
+                        title: 'coins',
+                        key: 'coins'
+                    }
+                ],
+
+                data2: []
             }
         },
         created () {
@@ -61,13 +85,6 @@
 </script>
 
 <style scoped>
-    .sheet_canvas {
-        margin-left: 5px;
-        margin-right: 5px;
-        background: #f5f7f9;
-        border-radius: 8px;
-        min-height: 350px;
-    }
     .title{
         margin-left: 35px;
         font-size: medium;
@@ -82,6 +99,28 @@
         height : 100%;
         margin : 10px;
         padding-bottom: 20px;
+    }
+    .table2{
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: rgb(211, 202, 221)
+    }
+    .table2 tr, thead{
+        border-top-width: 1px;
+        border-top-style: solid;
+        border-top-color: rgb(211, 202, 221);
+    }
+    .table2 td, th{
+        padding: 5px 10px;
+        font-size: 12px;
+        font-family: Verdana;
+        color: rgb(95, 74, 121);
+    }
+    .table2 tr:nth-child(even){
+        background: rgb(223, 216, 232);
+    }
+    .table2 tr:nth-child(odd){
+        background: white;
     }
 </style>
 
