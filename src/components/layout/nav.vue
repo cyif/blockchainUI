@@ -50,8 +50,8 @@
 
         </form>
       </div>
+      <hr style="margin-top: 1.5px; color: #3a4a4d"/>
     </i-col>
-    <hr style="margin-top: 6px; color: #3a4a4d"/>
   </Row>
 </template>
 
@@ -70,7 +70,7 @@
   Menu-item{
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     color: #3a4a4d;
-    font-size: 18px;
+    font-size: 16px;
   }
   Submenu{
     color: #3a4a4d;
@@ -102,7 +102,7 @@
 
     max-width: 100%;
 
-    padding: 10px 5px 5px 5px;
+    padding: 8px 4px 4px 4px;
 
     background: transparent;
 
