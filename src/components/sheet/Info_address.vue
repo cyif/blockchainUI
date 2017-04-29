@@ -62,6 +62,10 @@
                     }
                 ]
             }
+        },
+        mounted() {
+            var _self = this;
+
         }
     }
 </script>

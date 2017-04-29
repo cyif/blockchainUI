@@ -12,8 +12,8 @@
         <row class = "block">
             <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
+                       :columns="columns"
+                       :data="data"
                        :show-header="showHeader"></Table>
             </div>
         </row>
@@ -21,10 +21,11 @@
 </template>
 <script>
     export default {
+        props: ['data'],
         data () {
             return {
                 showHeader: true,
-                columns1: [
+                columns: [
                     {
                         type: 'index',
                         width: 60,
@@ -33,19 +34,19 @@
                     },
                     {
                         title: '区块',
-                        key: 'block',
+                        key: 'nb',
                         align: 'center',
                         className: 'demo-table-info-block'
                     },
                     {
                         title: '交易确认时间（区块生成）',
-                        key: 'time',
+                        key: 'time_utc',
                         align: 'center',
                         className: 'demo-table-info-time'
                     },
                     {
                         title: '确认交易数',
-                        key: 'txs_sum',
+                        key: 'nb_txs',
                         align: 'center',
                         className: 'demo-table-info-sum'
                     }

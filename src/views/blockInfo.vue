@@ -1,10 +1,9 @@
-// 作为view
 <template>
-    <block-rank></block-rank>
+    <block-txs-rank></block-txs-rank>
 </template>
 
 <script>
-    import blockRank from '../components/sheet/Rank_block.vue'
+    import blockTxsRank from '../components/sheet/Rank_block.vue'
 
     export default {
         data () {
@@ -12,7 +11,7 @@
         },
 
         components : {
-            blockRank
+            blockTxsRank
         }
     }
 </script>

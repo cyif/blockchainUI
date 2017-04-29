@@ -7,7 +7,8 @@ import iview from 'iview'
 import 'iview/dist/styles/iview.css'
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
-import axios from 'axios'
+import {webApi} from './service/WebApi'
+import nameMap from './service/NameMap'
 import Chart from '../node_modules/chart.js'
 import vue_scroll from 'vue_scroll'
 
@@ -21,8 +22,8 @@ Vue.use(VueEvents);
 Vue.use(VueChartkick, { Chartkick });
 // Vue.use(vue_scroll);
 Vue.use(MuseUI);
-Vue.prototype.$http = axios;
-
+Vue.prototype.$webApi = webApi;
+Vue.prototype.$nameMap = nameMap;
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */

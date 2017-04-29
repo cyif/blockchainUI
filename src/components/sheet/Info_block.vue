@@ -20,6 +20,7 @@
     export default {
         data () {
             return {
+                blockId: {},
                 showHeader: false,
                 columns1: [
                     {
@@ -82,6 +83,16 @@
                     }
                 ]
             }
+        },
+        created () {
+            this.blockId = this.$route.params.blockId;
+        },
+        mounted () {
+            var _self = this;
+            _self.$webApi.getBlockInfo(_self.blockId)
+                .then(res => {
+                    console.log(res.data);
+                })
         }
     }
 </script>
