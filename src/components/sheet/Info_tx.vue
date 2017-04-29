@@ -8,8 +8,8 @@
         <row class = "block">
             <div class = "table">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
+                       :columns="columns"
+                       :data="data"
                        :show-header="showHeader"></Table>
             </div>
         </row>
@@ -21,36 +21,36 @@
         data () {
             return {
                 showHeader: false,
-                columns1: [
+                columns: [
                     {
                         title: '属性',
                         key: 'attribute',
-                        width: 150,
+                        width: 180,
                         className: 'demo-table-info-attribute'
                     },
                     {
                         title: '值',
-                        key: 'key',
+                        key: 'value',
                         className: 'demo-table-info-key'
                     }
                 ],
 
-                data1: [
+                data: [
                     {
                         attribute: '哈希值',
-                        key: 477823
+                        name: 'hash'
                     },
                     {
                         attribute: '时间',
-                        key: '2009-1-9 10：54：25',
+                        name: 'time_utc'
                     },
-                    {
-                        attribute: '发行比特币',
-                        key: 'none',  // 根据情况判断的
-                    },
+//                    {
+//                        attribute: '发行比特币',
+//                        key: 'none',  // 根据情况判断的
+//                    },
                     {
                         attribute: 'outgoing txs总计',
-                        key:2910290192,
+                        name: '',
                         formatter: '{value} BTC'
                     },
                     {
@@ -59,15 +59,19 @@
                     },
                     {
                         attribute: '确认数',
-                        key: '12898312'
+                        name: 'confirmations'
+                    },
+                    {
+                        attribute: '小费',
+                        name: 'fee'
                     },
                     {
                         attribute: '币天',
-                        key: '2u81jshdu2h891wjlbxwue38'
+                        name: 'days_destroyed'
                     },
                     {
                         attribute: '所属块',
-                        key: '12898312'
+                        name: 'block'
                     }
                 ]
             }

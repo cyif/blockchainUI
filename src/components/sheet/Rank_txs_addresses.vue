@@ -9,8 +9,9 @@
         <row class = "block">
             <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
+                       :context="context"
+                       :columns="columns"
+                       :data="data"
                        :show-header="showHeader"></Table>
             </div>
         </row>
@@ -18,10 +19,12 @@
 </template>
 <script>
     export default {
+        props: ['data'],
         data () {
             return {
+                context : this,
                 showHeader: true,
-                columns1: [
+                columns: [
                     {
                         type: 'index',
                         width: 60,
@@ -31,16 +34,27 @@
                     {
                         title: '交易',
                         key: 'tx',
+                        width: 600,
                         align: 'center',
-                        className: 'demo-table-info-tx'
+                        className: 'demo-table-info-tx',
+                        render (row, column, index) {
+                            return `<a @click="goToTxsInfo('${row.tx}')">${row.tx}</a>`;
+                        }
                     },
                     {
                         title: '动用账户数目',
-                        key: 'sum',
+                        key: 'nb_addresses',
                         align: 'center',
                         className: 'demo-table-info-sum'
                     }
                 ]
+            }
+        },
+        methods: {
+            goToTxsInfo: function (txsId) {
+                this.$router.push({
+                    path: "/txs/info/" + txsId
+                });
             }
         }
     }

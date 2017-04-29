@@ -15,5 +15,8 @@ export const webApi = {
     },
     getBlockRank: function() {
         return axios.get('http://blockr.io/api/v1/trivia/block');
+    },
+    getTxRank: function() {
+        return axios.get('http://blockr.io/api/v1/trivia/tx');
     }
 }

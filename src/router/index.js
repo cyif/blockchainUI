@@ -3,9 +3,10 @@ import Router from 'vue-router'
 import dashboard from '@/views/dashboard'
 import blockTrivia from '@/views/blockTrivia'
 import blockInfo from '@/views/blockInfo'
-import txTrivia from '@/views/txTrivia'
+import txsTrivia from '@/views/txsTrivia'
+import txsInfo from '@/views/txsInfo'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   routes: [
@@ -26,8 +27,13 @@ export default new Router({
       },
       {
           path: '/txs',
-          name: 'txTrivia',
-          component: txTrivia
+          name: 'txsTrivia',
+          component: txsTrivia
+      },
+      {
+          path: '/txs/info/:txsId',
+          name: 'txsInfo',
+          component: txsInfo
       }
   ]
 })
