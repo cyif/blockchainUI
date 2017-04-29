@@ -1,17 +1,20 @@
 // layout
 <template>
-  <div style="background-color: white; min-height: 800px; padding: 10px">
-    <div class="layout">
-      <div class="layout-nav">
-        <c-nav></c-nav>
-      </div>
-      <div class="layout-content">
-        <div class="layout-content-main">
-          <router-view></router-view>
+  <div>
+
+    <div style="background-color: white; min-height: 800px; padding: 10px">
+      <div class="layout">
+        <div class="layout-nav">
+          <c-nav></c-nav>
         </div>
-      </div>
-      <div class="layout-copy">
-        2017 &copy; Yushu Wang
+        <div class="layout-content">
+          <div class="layout-content-main">
+            <router-view></router-view>
+          </div>
+        </div>
+        <div class="layout-copy">
+          2017 &copy; Yushu Wang
+        </div>
       </div>
     </div>
   </div>
@@ -21,9 +24,11 @@
   import Submenu from "../node_modules/iview/src/components/menu/submenu";
   import ICol from '../node_modules/iview/src/components/grid/col';
   import cNav from './components/layout/nav';
+  import cSearchTop from './components/layout/searchTop.vue';
+
   export default {
     components: {
-        Submenu, ICol, cNav
+        Submenu, ICol, cNav, cSearchTop
     }
   }
 </script>

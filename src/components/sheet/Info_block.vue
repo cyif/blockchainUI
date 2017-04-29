@@ -7,7 +7,7 @@
         </div>
         <hr/>
         <div class = "block">
-            <div class = "table">
+            <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
                        :columns="columns1"
                        :data="data1"
@@ -76,7 +76,7 @@
                         d.attribute = _self.$nameMap.getName("Block", key);
                         if (typeof(d.attribute) !== 'undefined') {
                             d.value = blockInfo[key];
-                            _self.data.push(d);
+                            _self.data1.push(d);
                         }
                     }
                 })
