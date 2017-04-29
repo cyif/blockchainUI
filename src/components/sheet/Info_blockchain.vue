@@ -2,7 +2,7 @@
     <div class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
-            <h1>Block</h1>
+            <h1>BlockChain</h1>
         </div>
         <row class = "block">
             <div class = "table">
@@ -48,14 +48,29 @@
                         key: 'Genesis',
                     },
                     {
-                        attribute: '交易次数',
-                        key:30
+                        attribute: '所有交易数总计',
+                        key:2910290192
                     },
                     {
-                        attribute: '未确认交易金额',
-                        key: '6582.45437875'
+                        attribute: '所有可用地址总计',
+                        key: '12898312'
+                    },
+                    {
+                        attribute: '第一个获得比特币的地址',
+                        key: '12898312'
+                    },
+                    {
+                        attribute: '第一笔往来交易',
+                        key: '2u81jshdu2h891wjlbxwue38'
+                    },
+                    {
+                        attribute: '流通中的比特币总数',
+                        key: '12898312'
+                    },
+                    {
+                        attribute: '当前区块比特币发行量',
+                        key: '12898312'
                     }
-
                 ]
             }
         }

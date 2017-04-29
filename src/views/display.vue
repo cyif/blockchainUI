@@ -1,4 +1,4 @@
-// 没用的
+// 改成原理版面
 <template>
   <div class="layout">
     <div class="nav">

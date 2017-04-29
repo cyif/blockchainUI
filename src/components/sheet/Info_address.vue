@@ -1,8 +1,11 @@
+// 该地址的第一笔交易数据
+// 该地址最近的一笔交易数据
+// 看补充否
 <template>
     <div class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
-            <h1>Block</h1>
+            <h1>Address</h1>
         </div>
         <row class = "block">
             <div class = "table">
@@ -37,27 +40,26 @@
                 data1: [
                     {
                         attribute: '哈希值',
-                        key: '0000000000000000014ed96dd764b2940782cb167bc5632ccd4bc5ab368c2d16'
+                        key: 477823
                     },
                     {
                         attribute: '余额',
-                        key: '23283982.2',
+                        key: '12125',
                         formatter: '{value} BTC'
                     },
                     {
                         attribute: '收入总计',
-                        key: '23283982.2',
+                        key: '1827337813',
                         formatter: '{value} BTC'
                     },
                     {
-                        attribute: '交易次数',
-                        key:30
+                        attribute: '交易笔数',
+                        key:2910290192
                     },
                     {
                         attribute: '未确认交易金额',
-                        key: '6582.45437875'
+                        key: '12898312'
                     }
-
                 ]
             }
         }

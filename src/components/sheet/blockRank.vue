@@ -1,3 +1,4 @@
+// 用于首页展示最近的比特币
 <template>
   <div class = 'sheet_canvas'>
     <div class = 'title'>
@@ -20,12 +21,6 @@
       return {
         showHeader: true,
         columns1: [
-          {
-            type: 'index',
-            width: 60,
-            title: 'No',
-            align: 'center',
-          },
           {
             title: '块号',
             key: 'height',
