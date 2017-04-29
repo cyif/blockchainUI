@@ -4,12 +4,14 @@
             <br>
             <h1>BlockChain</h1>
         </div>
+        <hr/>
         <row class = "block">
-            <div class = "table">
+            <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
                        :columns="columns1"
                        :data="data1"
-                       :show-header="showHeader"></Table>
+                       :show-header="showHeader">
+                </Table>
             </div>
         </row>
     </div>
