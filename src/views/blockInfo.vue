@@ -1,9 +1,9 @@
 <template>
-    <block-txs-rank></block-txs-rank>
+    <block-info></block-info>
 </template>
 
 <script>
-    import blockTxsRank from '../components/sheet/Rank_block.vue'
+    import blockInfo from '../components/sheet/Info_block.vue'
 
     export default {
         data () {
@@ -11,7 +11,7 @@
         },
 
         components : {
-            blockTxsRank
+            blockInfo
         }
     }
 </script>

@@ -1,10 +1,16 @@
 const nameMap = {
     "Block": {
-        "nb": "区块",
-        "time_utc": "交易确认时间（区块生成）",
-        "nb_txs": "确认交易数",
-        "fees": "小费总计",
-        "days_destroyed": "币天（指标）"
+        "nb": "块号",
+        "time_utc": "创建时间",
+        "fees": "手续费",
+        "days_destroyed": "币天",
+        "hash": "哈希值",
+        "nb_txs": "交易单数",
+        "merkleroot": "首笔交易单",
+        "vout_sum": "比特币流",
+        "difficulty": "开矿难度",
+        "size": "块大小",
+        "version": "版本号"
     },
     "Tx": {
 

@@ -15,7 +15,8 @@
                 <Table stripe
                        :columns="columns"
                        :data="data"
-                       :show-header="showHeader"></Table>
+                       :show-header="showHeader"
+                       @on-row-dblclick="goToBlockInfo"></Table>
             </div>
         </row>
     </div>
@@ -53,7 +54,14 @@
                     }
                 ]
             }
-        }
+        },
+        methods : {
+            goToBlockInfo: function(row) {
+                this.$router.push({
+                    path: '/block/info/' + row.nb
+                });
+            }
+        },
     }
 </script>
 
