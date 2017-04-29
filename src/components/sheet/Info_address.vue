@@ -21,7 +21,7 @@
                 <i-col span="12">
                     <div class="first">
                         <table class="table2" style="box-shadow: #30c9e8"
-                               :columns="colunms2"
+                               :columns="columns2"
                                :data="data2"
                                :show-header="showHeader2">
                         </table>
@@ -30,7 +30,7 @@
                 <i-col span="12">
                     <div class="last">
                         <table class="table3"
-                               :columns="colunms3"
+                               :columns="columns3"
                                :data="data3"
                                :show-header="showHeader2">
                         </table>
@@ -48,13 +48,14 @@
         components: {ICol},
         data () {
             return {
+                addressId: {},
                 showHeader: false,
                 showHeader2: true,
                 columns1: [
                     {
                         title: '属性',
                         key: 'attribute',
-                        width: 150,
+                        width: 200,
                         className: 'demo-table-info-attribute'
                     },
                     {
@@ -63,37 +64,61 @@
                         className: 'demo-table-info-key'
                     }
                 ],
-
-                data1: [
-                    {
-                        attribute: '哈希值',
-                        key: 477823
-                    },
-                    {
-                        attribute: '余额',
-                        key: '12125',
-                        formatter: '{value} BTC'
-                    },
-                    {
-                        attribute: '收入总计',
-                        key: '1827337813',
-                        formatter: '{value} BTC'
-                    },
-                    {
-                        attribute: '交易笔数',
-                        key:2910290192
-                    },
-                    {
-                        attribute: '未确认交易金额',
-                        key: '12898312'
-                    }
-                ],
+                data1: [],
+                dataNames: {
+                    addNames: [
+                        {
+                            attribute: '哈希值',
+                            name: 'address'
+                        },
+                        {
+                            attribute: '余额',
+                            name: 'balance',
+                            formatter: '{value} BTC'
+                        },
+                        {
+                            attribute: '收入总计',
+                            name: 'totalreceived',
+                            formatter: '{value} BTC'
+                        },
+                        {
+                            attribute: '交易笔数',
+                            name: 'nb_txs'
+                        },
+                        {
+                            attribute: '未确认交易金额',
+                            key: '12898312'
+                        }
+                    ],
+                    txsNames: [
+                        {
+                            attribute: '哈希值',
+                            name: 'tx'
+                        },
+                        {
+                            attribute: '总额',
+                            name: 'value',
+                        },
+                        {
+                            attribute: '确认数',
+                            name: 'confirmation',
+                        },
+                        {
+                            attribute: '交易时间',
+                            name: 'time_utc'
+                        },
+                        {
+                            attribute: '块号',
+                            name: 'block_nb'
+                        }
+                    ]
+                },
 
                 columns2:[
                     {
                         title: '属性',
                         key: 'attribute',
-                        width: 150,
+                        width: 200,
                         className: 'demo-table-info-attribute'
                     },
                     {
@@ -103,36 +128,13 @@
                     }
                 ],
 
-                data2: [
-                    {
-                        attribute: '哈希值',
-                        key: 477823
-                    },
-                    {
-                        attribute: '余额',
-                        key: '12125',
-                        formatter: '{value} BTC'
-                    },
-                    {
-                        attribute: '收入总计',
-                        key: '1827337813',
-                        formatter: '{value} BTC'
-                    },
-                    {
-                        attribute: '交易笔数',
-                        key:2910290192
-                    },
-                    {
-                        attribute: '未确认交易金额',
-                        key: '12898312'
-                    }
-                ],
+                data2: [],
 
                 columns3:[
                     {
                         title: '属性',
                         key: 'attribute',
-                        width: 150,
+                        width: 200,
                         className: 'demo-table-info-attribute'
                     },
                     {
@@ -142,35 +144,45 @@
                     }
                 ],
 
-                data3: [
-                    {
-                        attribute: '哈希值',
-                        key: 477823
-                    },
-                    {
-                        attribute: '余额',
-                        key: '12125',
-                        formatter: '{value} BTC'
-                    },
-                    {
-                        attribute: '收入总计',
-                        key: '1827337813',
-                        formatter: '{value} BTC'
-                    },
-                    {
-                        attribute: '交易笔数',
-                        key:2910290192
-                    },
-                    {
-                        attribute: '未确认交易金额',
-                        key: '12898312'
-                    }
-                ]
+                data3: []
             }
         },
-        mounted() {
+        created () {
+            this.addressId = this.$route.params.addressId;
+        },
+        mounted () {
             var _self = this;
-
+            _self.$webApi.getAddressInfo(_self.addressId)
+                .then(res => {
+                    let addressInfo = res.data.data;
+                    _self.dataNames.addNames.forEach(data => {
+                        let name = data.name;
+                        let attribute = data.attribute;
+                        let value = addressInfo[name];
+                        _self.data1.push({
+                            attribute: attribute,
+                            value: value
+                        });
+                    });
+                    _self.dataNames.txsNames.forEach(data => {
+                        let name = data.name;
+                        let attribute = data.attribute;
+                        let value = addressInfo.first_tx[name];
+                        _self.data2.push({
+                            attribute: attribute,
+                            value: value
+                        });
+                    });
+                    _self.dataNames.txsNames.forEach(data => {
+                        let name = data.name;
+                        let attribute = data.attribute;
+                        let value = addressInfo.last_tx[name];
+                        _self.data3.push({
+                            attribute: attribute,
+                            value: value
+                        })
+                    });
+                })
         }
     }
 </script>

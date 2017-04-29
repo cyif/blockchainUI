@@ -9,8 +9,8 @@
         <div class = "block">
             <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
+                       :columns="blockColumns"
+                       :data="blockData"
                        :show-header="showHeader"></Table>
             </div>
         </div>
@@ -18,8 +18,8 @@
         <div class="transactions">
             <div class="table" style="box-shadow: #30c9e8">
                 <table class="table2"
-                       :columns="columns2"
-                       :data="data2"
+                       :columns="txsColumns"
+                       :data="txsData"
                        :show-header="showHeader">
                 </table>
             </div>
@@ -31,9 +31,9 @@
     export default {
         data () {
             return {
-                blockId: {},
+                blockId: '',
                 showHeader: false,
-                columns1: [
+                blockColumns: [
                     {
                         title: '属性',
                         key: 'attribute',
@@ -47,9 +47,9 @@
                     }
                 ],
 
-                data1: [],
+                blockData: [],
 
-                columns2:[
+                txsColumns:[
                     {
                         title: 'txHash',
                         key: 'hash',
@@ -60,7 +60,7 @@
                     }
                 ],
 
-                data2: []
+                txsData: []
             }
         },
         created () {
@@ -76,10 +76,14 @@
                         d.attribute = _self.$nameMap.getName("Block", key);
                         if (typeof(d.attribute) !== 'undefined') {
                             d.value = blockInfo[key];
-                            _self.data1.push(d);
+                            _self.blockData.push(d);
                         }
                     }
-                })
+                });
+            _self.$webApi.getBlockTxs(_self.blockId)
+                .then(res => {
+
+                });
         }
     }
 </script>

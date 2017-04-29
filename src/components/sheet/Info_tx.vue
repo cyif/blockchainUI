@@ -9,14 +9,15 @@
         <div class = "block">
             <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
-                       :columns="columns"
-                       :data="data"
+                       :columns="txColumns"
+                       :data="txData"
                        :show-header="showHeader"></Table>
             </div>
             <hr/>
             <div>
-                <table class="whoTowho" style="box-shadow: #30c9e8" :columns="columns2"
-                       :data="data2"
+                <table class="whoTowho" style="box-shadow: #30c9e8"
+                       :columns="addColumn"
+                       :data="addData"
                        :show-header="showHeader">
                 </table>
             </div>
@@ -28,8 +29,9 @@
     export default {
         data () {
             return {
+                txId : '',
                 showHeader: false,
-                columns: [
+                txColumns: [
                     {
                         title: '属性',
                         key: 'attribute',
@@ -43,10 +45,10 @@
                     }
                 ],
 
-                data: [
+                txNames: [
                     {
                         attribute: '哈希值',
-                        name: 'hash'
+                        name: 'tx'
                     },
                     {
                         attribute: '时间',
@@ -58,12 +60,12 @@
 //                    },
                     {
                         attribute: 'outgoing txs总计',
-                        name: '',
+                        name: 'outgoing',
                         formatter: '{value} BTC'
                     },
                     {
                         attribute: '交易额',
-                        key: '12898312'
+                        name: 'trans_sum',
                     },
                     {
                         attribute: '确认数',
@@ -83,7 +85,8 @@
                     }
                 ],
 
-                columns2: [
+                txData: [],
+                addColumn: [
                     {
                         title: '地址A',
                         key: 'address1',
@@ -108,8 +111,28 @@
                         width: 150,
                         formatter: '+{value}'
                     }
-                ]
+                ],
+                addData: []
             }
+        },
+        created () {
+            this.txsId = this.$route.params.txsId;
+        },
+        mounted () {
+            var _self = this;
+            _self.$webApi.getTxInfo(_self.txsId)
+                .then(res => {
+                    let blockInfo = res.data.data;
+                    for (let i = 0; i < _self.txNames.length; i++) {
+                        let name = _self.txNames[i].name;
+                        let attribute = _self.txNames[i].attribute;
+                        let value = blockInfo[name];
+                        _self.txData.push({
+                            attribute: attribute,
+                            value: value
+                        })
+                    }
+                })
         }
     }
 </script>

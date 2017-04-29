@@ -16,6 +16,7 @@
           2017 &copy; Yushu Wang
         </div>
       </div>
+      <Back-top></Back-top>
     </div>
   </div>
 </template>

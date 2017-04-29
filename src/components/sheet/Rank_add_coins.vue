@@ -10,19 +10,21 @@
         <row class = "block">
             <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
-                       :show-header="showHeader"></Table>
+                       :columns="columns"
+                       :data="data"
+                       :show-header="showHeader"
+                       @on-row-dblclick="goToAddressInfo"></Table>
             </div>
         </row>
     </div>
 </template>
 <script>
     export default {
+        props: ['data'],
         data () {
             return {
                 showHeader: true,
-                columns1: [
+                columns: [
                     {
                         type: 'index',
                         width: 60,
@@ -31,25 +33,33 @@
                     },
                     {
                         title: '地址（账户）',
+                        width: 500,
                         key: 'address',
                         align: 'center',
                         className: 'demo-table-info-address'
                     },
                     {
                         title: '最近一次交易时间',
-                        key: 'time',
+                        key: 'last_tx_time_utc',
                         align: 'center',
                         className: 'demo-table-info-time'
                     },
                     {
                         title: '存款余额',
-                        key: 'amount',
+                        key: 'balance',
                         align: 'center',
                         className: 'demo-table-info-amount'
                     }
                 ]
             }
-        }
+        },
+        methods : {
+            goToAddressInfo: function(row) {
+                this.$router.push({
+                    path: '/address/info/' + row.address
+                });
+            }
+        },
     }
 </script>
 

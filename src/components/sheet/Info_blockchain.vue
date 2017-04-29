@@ -8,8 +8,8 @@
         <row class = "block">
             <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
-                       :columns="columns1"
-                       :data="data1"
+                       :columns="chainColumns"
+                       :data="chainData"
                        :show-header="showHeader">
                 </Table>
             </div>
@@ -22,59 +22,76 @@
         data () {
             return {
                 showHeader: false,
-                columns1: [
+                chainColumns: [
                     {
                         title: '属性',
                         key: 'attribute',
-                        width: 150,
+                        width: 250,
                         className: 'demo-table-info-attribute'
                     },
                     {
                         title: '值',
-                        key: 'key',
+                        key: 'value',
                         className: 'demo-table-info-key'
                     }
                 ],
 
-                data1: [
+                chainNames: [
                     {
                         attribute: '区块总数',
-                        key: 477823
+                        name: 'nb_blocks',
                     },
                     {
                         attribute: '创世时间',
-                        key: '2009-1-9 10：54：25',
+                        name: 'first_block_time_utc'
                     },
                     {
                         attribute: '创世块',
-                        key: 'Genesis',
+                        value: 'Genesis',
                     },
                     {
                         attribute: '所有交易数总计',
-                        key:2910290192
+                        name: 'nb_txs'
                     },
                     {
                         attribute: '所有可用地址总计',
-                        key: '12898312'
+                        name: 'nb_addresses'
                     },
                     {
                         attribute: '第一个获得比特币的地址',
-                        key: '12898312'
+                        name: 'first_address'
                     },
                     {
                         attribute: '第一笔往来交易',
-                        key: '2u81jshdu2h891wjlbxwue38'
+                        name: 'first_real_tx'
                     },
                     {
                         attribute: '流通中的比特币总数',
-                        key: '12898312'
+                        name: 'nb_coins'
                     },
                     {
-                        attribute: '当前区块比特币发行量',
-                        key: '12898312'
+                        attribute: '当前区块的创建费用',
+                        name: 'block_creation_fee'
                     }
-                ]
+                ],
+                chainData: []
             }
+        },
+        mounted () {
+            var _self = this;
+            _self.$webApi.getBlockChainInfo()
+                .then(res => {
+                    let chainInfo = res.data.data;
+                    for (let i = 0; i < _self.chainNames.length; i++) {
+                        let name = _self.chainNames[i].name;
+                        let attribute = _self.chainNames[i].attribute;
+                        let value = chainInfo[name] || _self.chainNames[i].value;
+                        _self.chainData.push({
+                            attribute: attribute,
+                            value: value
+                        })
+                    }
+                })
         }
     }
 </script>
