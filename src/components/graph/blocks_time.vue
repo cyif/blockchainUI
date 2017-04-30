@@ -36,8 +36,17 @@
     var lineData = [];
     var barData = [];
 
-    for(var i = 0; i < 1000; i++){
-        data.push(randomData());
+    for (var i = 0; i < 20; i++) {
+        var date = new Date(dottedBase += 1000 * 3600 * 24);
+        category.push([
+            date.getFullYear(),
+            date.getMonth() + 1,
+            date.getDate()
+        ].join('-'));
+        var b = Math.random() * 200;
+        var d = Math.random() * 200;
+        barData.push(b)
+        lineData.push(d + b);
     }
 
     function updateData(chart) {
@@ -72,9 +81,7 @@
         mounted() {
             this.myChart = echarts.init(document.getElementById("line"));
             this.myChart.setOption({
-                title: {
-                    text: 'Blocks over time'
-                },
+
                 tooltip: {
                     trigger: 'axis',
                     axisPointer: {

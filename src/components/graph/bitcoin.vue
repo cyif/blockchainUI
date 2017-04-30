@@ -1,3 +1,4 @@
+
 <template>
   <div class = "graph_canvas">
     <row class = "block">
@@ -16,130 +17,197 @@
 </template>
 
 <script>
-  import echarts from 'echarts';
-  import ICol from "../../../node_modules/iview/src/components/grid/col";
-  function makeCategoryData() {
-    var categoryData = [];
-    for (var i = 0; i < lineCount; i++) {
-      categoryData.push(i + 'a');
-    }
-    return categoryData;
-  }
+    import echarts from 'echarts';
+    import ICol from "../../../node_modules/iview/src/components/grid/col";
 
-  function makeSeriesData(year, negative) {
-    // make a fake value just for demo.
-    var r = (year - beginYear + 1) * 10;
-    var seriesData = [];
-
-    for (var i = 0; i < lineCount; i++) {
-      var sign = (negative ? -1 * ((i % 3) ? 0.9 : 1): 1 * (((i + 1) % 3) ? 0.9 : 1));
-      seriesData.push({
-        value: 0,
-        value: sign * (
-          year <= beginYear + 1
-            ? (Math.abs(i - lineCount / 2 + 0.5) < lineCount / 5 ? 5 : 0)
-            : (lineCount - Math.abs(i - lineCount / 2 + 0.5)) * r
-        ),
-        symbolOffset: (i % 2) ? ['50%', 0] : null
-      });
-    }
-    return seriesData;
-  }
-
-
-
-  // Set dynamic data.
-  var currentYear = beginYear;
-  setInterval(function () {
-    currentYear++;
-    if (currentYear > endYear) {
-      currentYear = beginYear;
-    }
-    myChart.setOption({
-      xAxis: {
-        name: currentYear
+  export default{
+      components: {ICol},
+      data(){
+          return{
+              myChart: {}
+          }
       },
-      series: [{
-        data: makeSeriesData(currentYear)
-      }, {
-        data: makeSeriesData(currentYear, true)
-      }]
-    });
-  }, 800);
 
-  var treeDataURI = 'http://pic.58pic.com/58pic/15/67/14/88c58PICNFg_1024.jpg';
+      methods:{
 
-  var beginYear = 2016;
-  var endYear = 2050;
-  var lineCount = 10;
+      },
 
+      mounted(){
+          this.myChart = echarts.init(document.getElementById("bitcoin"));
+          this.myChart.setOption({
+              backgroundColor: 'transparent',
+              title: {
+                  text: '',
+                  textStyle: {
+                      fontWeight: 'normal',
+                      fontSize: 16,
+                      color: '#F1F1F3'
+                  },
+                  left: '6%'
+              },
+              tooltip: {
+                  trigger: 'axis',
+                  axisPointer: {
+                      lineStyle: {
+                          color: '#57617B'
+                      }
+                  }
+              },
+              legend: {
+                  icon: 'rect',
+                  itemWidth: 14,
+                  itemHeight: 5,
+                  itemGap: 13,
+                  data: ['A', 'B', 'C'],
+                  right: '4%',
+                  textStyle: {
+                      fontSize: 12,
+                      color: '#000'
+                  }
+              },
+              grid: {
+                  left: '3%',
+                  right: '4%',
+                  bottom: '3%',
+                  containLabel: true
+              },
+              xAxis: [{
+                  type: 'category',
+                  boundaryGap: false,
+                  axisLine: {
+                      lineStyle: {
+                          color: '#57617B'
+                      }
+                  },
+                  data: ['13:00', '13:05', '13:10', '13:15', '13:20', '13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55']
+              }],
+              yAxis: [{
+                  type: 'value',
+                  axisTick: {
+                      show: false
+                  },
+                  axisLine: {
+                      lineStyle: {
+                          color: '#57617B'
+                      }
+                  },
+                  axisLabel: {
+                      margin: 10,
+                      textStyle: {
+                          fontSize: 14
+                      }
+                  },
+                  splitLine: {
+                      lineStyle: {
+                          color: '#57617B'
+                      }
+                  }
+              }],
+              series: [{
+                  name: 'C',
+                  type: 'line',
+                  smooth: true,
+                  symbol: 'circle',
+                  symbolSize: 5,
+                  showSymbol: false,
+                  lineStyle: {
+                      normal: {
+                          width: 1
+                      }
+                  },
+                  areaStyle: {
+                      normal: {
+                          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                              offset: 0,
+                              color: 'rgba(137, 189, 27, 0.3)'
+                          }, {
+                              offset: 0.8,
+                              color: 'rgba(137, 189, 27, 0)'
+                          }], false),
+                          shadowColor: 'rgba(0, 0, 0, 0.1)',
+                          shadowBlur: 10
+                      }
+                  },
+                  itemStyle: {
+                      normal: {
+                          color: 'rgb(137,189,27)',
+                          borderColor: 'rgba(137,189,2,0.27)',
+                          borderWidth: 12
 
-  var data = getVirtualData(2016);
+                      }
+                  },
+                  data: [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122]
+              }, {
+                  name: 'A',
+                  type: 'line',
+                  smooth: true,
+                  symbol: 'circle',
+                  symbolSize: 5,
+                  showSymbol: false,
+                  lineStyle: {
+                      normal: {
+                          width: 1
+                      }
+                  },
+                  areaStyle: {
+                      normal: {
+                          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                              offset: 0,
+                              color: 'rgba(0, 136, 212, 0.3)'
+                          }, {
+                              offset: 0.8,
+                              color: 'rgba(0, 136, 212, 0)'
+                          }], false),
+                          shadowColor: 'rgba(0, 0, 0, 0.1)',
+                          shadowBlur: 10
+                      }
+                  },
+                  itemStyle: {
+                      normal: {
+                          color: 'rgb(0,136,212)',
+                          borderColor: 'rgba(0,136,212,0.2)',
+                          borderWidth: 12
 
-  export default {
-    components: {ICol},
-    data() {
-      return {
-        myChart : {}
+                      }
+                  },
+                  data: [120, 110, 125, 145, 122, 165, 122, 220, 182, 191, 134, 150]
+              }, {
+                  name: 'B',
+                  type: 'line',
+                  smooth: true,
+                  symbol: 'circle',
+                  symbolSize: 5,
+                  showSymbol: false,
+                  lineStyle: {
+                      normal: {
+                          width: 1
+                      }
+                  },
+                  areaStyle: {
+                      normal: {
+                          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                              offset: 0,
+                              color: 'rgba(219, 50, 51, 0.3)'
+                          }, {
+                              offset: 0.8,
+                              color: 'rgba(219, 50, 51, 0)'
+                          }], false),
+                          shadowColor: 'rgba(0, 0, 0, 0.1)',
+                          shadowBlur: 10
+                      }
+                  },
+                  itemStyle: {
+                      normal: {
+
+                          color: 'rgb(219,50,51)',
+                          borderColor: 'rgba(219,50,51,0.2)',
+                          borderWidth: 12
+                      }
+                  },
+                  data: [220, 182, 125, 145, 122, 191, 134, 150, 120, 110, 165, 122]
+              }, ]
+        })
       }
-    },
-
-    methods: {
-      _init() {
-        window.addEventListener('resize', function() {
-          this.echarts.resize()
-        }.bind(this));
-      }
-
-    },
-
-    mounted() {
-      this.myChart = echarts.init(document.getElementById("bitcoin"));
-      this.myChart.setOption({
-        color: ['#e54035'],
-        xAxis: {
-          axisLine: {show: false},
-          axisLabel: {show: false},
-          axisTick: {show: false},
-          splitLine: {show: false},
-          name: beginYear,
-          nameLocation: 'middle',
-          nameGap: 40,
-          nameTextStyle: {
-            color: 'green',
-            fontSize: 30,
-            fontFamily: 'Arial'
-          },
-          min: -2800,
-          max: 2800
-        },
-        yAxis: {
-          data: makeCategoryData(),
-          show: false
-        },
-        grid: {
-          top: 'center',
-          height: 280
-        },
-        series: [{
-          name: 'all',
-          type: 'pictorialBar',
-          symbol: 'image://' + treeDataURI,
-          symbolSize: [30, 55],
-          symbolRepeat: true,
-          data: makeSeriesData(beginYear),
-          animationEasing: 'elasticOut'
-        }, {
-          name: 'all',
-          type: 'pictorialBar',
-          symbol: 'image://' + treeDataURI,
-          symbolSize: [30, 55],
-          symbolRepeat: true,
-          data: makeSeriesData(beginYear, true),
-          animationEasing: 'elasticOut'
-        }]
-      })
-    }
   }
 </script>
 
@@ -158,9 +226,11 @@
     justify-content: center;
     text-align: center;
     border-radius: 8px;
+    padding-top: 10%;
+    padding-bottom: 10%;
   }
   .graph {
-    height : 450px;
+    height : 350px;
     margin : 10px;
   }
   .chart {

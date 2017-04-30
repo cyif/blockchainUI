@@ -1,14 +1,14 @@
 <template>
     <div class="search-top-frame">
         <Row>
-            <i-col span="3">
-                <div class="logo" style="overflow: hidden; padding-left: 35px; padding-top: 25px">
+            <i-col span="2">
+                <div class="logo" style="overflow: hidden; padding-left: 10px; padding-top: 25px">
                     <router-link to="/">
                         <img src="../../image/logo.png" width="45px" height="45px">
                     </router-link>
                 </div>
             </i-col>
-            <i-col span="19">
+            <i-col span="22">
                 <form class="cf form-wrapper">
 
                     <input type="text" placeholder="Search here" required>
@@ -17,11 +17,11 @@
 
                 </form>
             </i-col>
-            <i-col span="2">
-                <div style="position: relative">
-                    <Button type="dashed" shape="circle" style="position: absolute; right: 0.5%; border: transparent; font-size: 20px; font-weight: bold">X</Button>
-                </div>
-            </i-col>
+            <!--<i-col span="2">-->
+                <!--<div style="position: relative">-->
+                    <!--<Button type="dashed" shape="circle" style="position: absolute; right: 0.5%; border: transparent; font-size: 20px; font-weight: bold">X</Button>-->
+                <!--</div>-->
+            <!--</i-col>-->
         </Row>
     </div>
 </template>
@@ -38,7 +38,7 @@
 
 <style scoped>
     .search-top-frame{
-        background-color: #f9f9f9;
+        background-color: transparent;
     }
     .cf:before,.cf:after{
         content: '';
@@ -81,7 +81,7 @@
 
         border: 0;
 
-        background: #eee;
+        background: #f9f9f9;
 
         border-radius: 3px 0 0 3px;
 

@@ -3,8 +3,10 @@
 <template>
   <div class="dashboard">
     <c-exchange-line></c-exchange-line>
-    <c-search></c-search>
+    <c-search-Top></c-search-Top>
     <c-blockRank></c-blockRank>
+    <c-blocksTime></c-blocksTime>
+    <c-bitcoin></c-bitcoin>
   </div>
 </template>
 
@@ -12,13 +14,15 @@
   import cCalendar from '../components/graph/calendar.vue'
   import cLine from '../components/graph/line.vue'
   import cExchangeLine from '../components/graph/exchangeLine.vue'
-  import cSearch from '../components/layout/search.vue'
+  import cSearchTop from '../components/layout/searchTop.vue'
   import cBlockRank from '../components/sheet/blockRank.vue'
+  import cBlocksTime from '../components/graph/blocks_time.vue'
+  import cBitcoin from '../components/graph/bitcoin.vue'
 
   export default {
     name: "dashboard",
     components: {
-      cCalendar, cLine, cExchangeLine, cSearch, cBlockRank
+      cCalendar, cLine, cExchangeLine, cSearchTop, cBlockRank, cBlocksTime, cBitcoin
     }
   }
 </script>

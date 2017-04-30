@@ -13,7 +13,8 @@
           </div>
         </div>
         <div class="layout-copy">
-          2017 &copy; Yushu Wang
+          <hr style="margin-bottom: 20px"/>
+          <span style="">2017 &copy; Yushu Wang</span>
         </div>
       </div>
       <Back-top></Back-top>
@@ -55,9 +56,12 @@
   }
   .layout-copy{
     text-align: center;
-    padding: 5px 0 5px;
+    padding: 10px 0 5px;
     color: #9ea7b4;
-    font-weight: bold;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: dancing;
+    min-height: 60px;
   }
 </style>
 <style>
@@ -71,6 +75,7 @@
   }
   template{
     color: #3a4a4d;
+    font-family: shadows, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
   }
   @font-face {
     font-family: 'dancing';

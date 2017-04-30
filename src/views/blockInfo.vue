@@ -25,5 +25,6 @@
         background: transparent;
         border-radius: 8px;
         min-height: 350px;
+        font-family: flamenco;
     }
 </style>

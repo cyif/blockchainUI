@@ -15,3 +15,9 @@
         }
     }
 </script>
+
+<style scoped>
+    .template{
+        font-family: dancing;
+    }
+</style

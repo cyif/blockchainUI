@@ -17,11 +17,11 @@
         <hr/>
         <div class="transactions">
             <div class="table" style="box-shadow: #30c9e8">
-                <table class="table2"
+                <Table stripe
                        :columns="txsColumns"
                        :data="txsData"
                        :show-header="showHeader">
-                </table>
+                </Table>
             </div>
         </div>
     </div>
@@ -90,41 +90,20 @@
 
 <style scoped>
     .title{
-        margin-left: 35px;
+        margin-left: 40px;
         font-size: medium;
         font-weight: 500;
         text-align: left;
         vertical-align: bottom;
     }
-    .block {
-        margin: 10px;
+    .block , .transactions {
+        margin: 20px;
     }
     .table {
         height : 100%;
         margin : 10px;
-        padding-bottom: 20px;
-    }
-    .table2{
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: rgb(211, 202, 221)
-    }
-    .table2 tr, thead{
-        border-top-width: 1px;
-        border-top-style: solid;
-        border-top-color: rgb(211, 202, 221);
-    }
-    .table2 td, th{
-        padding: 5px 10px;
-        font-size: 12px;
-        font-family: Verdana;
-        color: rgb(95, 74, 121);
-    }
-    .table2 tr:nth-child(even){
-        background: rgb(223, 216, 232);
-    }
-    .table2 tr:nth-child(odd){
-        background: white;
+        padding-bottsom: 20px;
+        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
 </style>
 

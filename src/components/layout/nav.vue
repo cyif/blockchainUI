@@ -81,10 +81,7 @@
   }
 </style>
 
-<style>
 
-
-</style>
 <style scoped>
   .cf:before,.cf:after{
     content: '';
