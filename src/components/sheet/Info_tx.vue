@@ -15,7 +15,15 @@
             </div>
             <hr/>
             <div>
-                <table class="whoTowho" style="box-shadow: #30c9e8"
+                <Row>
+                    <i-col span="12" id="from">
+                       <span v-for="n in 'vins'"></span>
+                    </i-col>
+                    <i-col span="12" id="to">
+                        <span v-for="n in 'vouts'"></span>
+                    </i-col>
+                </Row>
+                <table id="whoTowho" style="box-shadow: #30c9e8"
                        :columns="addColumn"
                        :data="addData"
                        :show-header="showHeader">
@@ -26,7 +34,9 @@
 </template>
 
 <script>
+    import ICol from "../../../node_modules/iview/src/components/grid/col";
     export default {
+        components: {ICol},
         data () {
             return {
                 txId : '',
@@ -132,7 +142,8 @@
                             value: value
                         })
                     }
-                })
+                });
+
         }
     }
 </script>
