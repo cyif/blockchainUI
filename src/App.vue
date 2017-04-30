@@ -8,11 +8,7 @@
         </div>
         <div class="layout-content">
           <div class="layout-breadcrumb">
-            <Breadcrumb>
-              <Breadcrumb-item href="#">首页</Breadcrumb-item>
-              <Breadcrumb-item href="#">应用中心</Breadcrumb-item>
-              <Breadcrumb-item>某应用</Breadcrumb-item>
-            </Breadcrumb>
+            <c-breadcrumb :url="url"></c-breadcrumb>
           </div>
           <div class="layout-content-main">
             <router-view></router-view>
@@ -33,11 +29,17 @@
   import ICol from '../node_modules/iview/src/components/grid/col';
   import cNav from './components/layout/nav';
   import cSearchTop from './components/layout/searchTop.vue';
+  import cBreadcrumb from './components/layout/myBreadcrumb.vue'
 
   export default {
-    components: {
-        Submenu, ICol, cNav, cSearchTop
-    }
+      computed: {
+          url: function() {
+              return this.$route.path;
+          }
+      },
+      components: {
+          Submenu, ICol, cNav, cSearchTop, cBreadcrumb
+      }
   }
 </script>
 

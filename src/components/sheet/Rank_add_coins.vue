@@ -36,7 +36,10 @@
                         width: 500,
                         key: 'address',
                         align: 'center',
-                        className: 'demo-table-info-address'
+                        className: 'demo-table-info-address',
+                        render (row, column, index) {
+                            return `<a href="#/address/info/${row.address}">${row.address}</a>`;
+                        }
                     },
                     {
                         title: '最近一次交易时间',

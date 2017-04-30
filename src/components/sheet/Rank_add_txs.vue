@@ -39,7 +39,10 @@
                         width: 600,
                         key: 'address',
                         align: 'center',
-                        className: 'demo-table-info-address'
+                        className: 'demo-table-info-address',
+                        render (row, column, index) {
+                            return `<a href="#/address/info/${row.address}">${row.address}</a>`;
+                        }
                     },
                     {
                         title: '交易笔数',

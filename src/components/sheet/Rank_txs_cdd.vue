@@ -34,7 +34,10 @@
                         width: 600,
                         key: 'tx',
                         align: 'center',
-                        className: 'demo-table-info-tx'
+                        className: 'demo-table-info-tx',
+                        render (row, column, index) {
+                            return `<a href="#/txs/info/${row.tx}">${row.tx}</a>`;
+                        }
                     },
                     {
                         title: '确认时间',

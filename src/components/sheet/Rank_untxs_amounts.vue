@@ -36,12 +36,19 @@
                         key: 'tx',
                         align: 'center',
                         className: 'demo-table-info-tx',
+                        render (row, column, index) {
+                            return `<a href="#/txs/info/${row.tx}">${row.tx}</a>`;
+                        }
                     },
                     {
                         title: '收款账户',
                         key: 'address',
                         align: 'center',
-                        className: 'demo-table-info-address'
+                        ellipsis: true,
+                        className: 'demo-table-info-address',
+                        render (row, column, index) {
+                            return `<a href="#/address/info/${row.address}">${row.address}</a>`;
+                        }
                     },
                     {
                         title: '金额',

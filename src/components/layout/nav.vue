@@ -10,15 +10,21 @@
             <Icon type="university"></Icon>
             原理
           </template>
-          <Menu-item name="1-1" font-size="15px">原理</Menu-item>
+          <router-link to="/docs">
+            <Menu-item name="1-1" font-size="15px">原理</Menu-item>
+          </router-link>
         </Submenu>
         <Submenu name="2">
           <template slot="title">
             <Icon type="ios-analytics"></Icon>
             图表
           </template>
-          <Menu-item name="2-1" font-size="15px">总览</Menu-item>
-          <Menu-item name="2-2" font-size="15px">可视化</Menu-item>
+          <router-link to="/overview">
+            <Menu-item name="2-1" font-size="15px">总览</Menu-item>
+          </router-link>
+          <router-link to="/charts">
+            <Menu-item name="2-2" font-size="15px">可视化</Menu-item>
+          </router-link>
         </Submenu>
         <Submenu name="3">
           <template slot="title">
@@ -43,11 +49,8 @@
     <i-col span="10">
       <div class="search">
         <form class="cf form-wrapper">
-
-          <input type="text" placeholder="Search here" required>
-
-          <button type="submit">查询</button>
-
+          <input type="text" placeholder="Search here" v-model="inputdata" required>
+          <button type="submit" @click="goToResult">查询</button>
         </form>
       </div>
       <hr style="margin-top: 1.5px; color: #3a4a4d"/>
@@ -58,10 +61,49 @@
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import cLogo from './logo.vue'
-  export default{
+    export default{
         components: {
             ICol,
             cLogo
+        },
+        data () {
+            return {
+                inputdata: ''
+            }
+        },
+        methods : {
+            goToResult() {
+                console.log(this.inputdata);
+                let _self = this;
+                _self.$Loading.start();
+                _self.$webApi.getSearchResult(_self.inputdata)
+                    .then(res => {
+                        let type = res.data.data.type;
+                        let id;
+                        switch (type) {
+                            case 'block':
+                                id = res.data.data.nb;
+                                break;
+                            case 'tx':
+                                id = res.data.data.tx;
+                                type = "txs";
+                                break;
+                            case 'address':
+                                id = res.data.data.address;
+                                break;
+                            default:
+                                this.$Message.error('对方不想说话，并且向你抛出了一个异常');
+                                _self.$Loading.finish();
+                                return;
+                        }
+                        _self.$router.push({
+                            path: '/' + type + '/info/' + id
+                        });
+                    })
+                    .catch(err => {
+                        _self.$Loading.error();
+                    });
+            }
         }
   }
 </script>

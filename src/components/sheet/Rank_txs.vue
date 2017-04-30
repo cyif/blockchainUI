@@ -26,16 +26,21 @@
         },
         mounted () {
             let _self = this;
-            _self.isLoading = true;
-            _self.$webApi.getTxRank().then(res => {
-                let rankData = res.data.data;
-                _self.addData = rankData.max_addresses.splice(0, 10);
-                _self.cddData = rankData.max_days_destroyed.splice(0, 10);
-                _self.feesData = rankData.max_fees.splice(0, 10);
-                _self.amountData = rankData.max_amounts_all.splice(0, 10);
-                _self.unspentAmountData = rankData.max_amounts_unspent.splice(0, 10);
-                _self.isLoading = false;
-            })
+            _self.$Loading.start();
+            _self.$webApi.getTxRank()
+                .then(res => {
+                    let rankData = res.data.data;
+                    _self.addData = rankData.max_addresses.splice(0, 10);
+                    _self.cddData = rankData.max_days_destroyed.splice(0, 10);
+                    _self.feesData = rankData.max_fees.splice(0, 10);
+                    _self.amountData = rankData.max_amounts_all.splice(0, 10);
+                    _self.unspentAmountData = rankData.max_amounts_unspent.splice(0, 10);
+                    _self.$Loading.finish();
+                })
+                .catch(err => {
+                    console.log(err);
+                    _self.$Loading.error();
+                });
         },
         components: {
             addRank, cddRank, amountRank, feesRank, unspentAmountRank

@@ -35,5 +35,9 @@ export const webApi = {
     },
     getAddressTxs: function(addressId) {
         return axios.get('http://btc.blockr.io/api/v1/address/txs/' + addressId);
+    },
+
+    getSearchResult: function(id) {
+        return axios.get('http://blockr.io/api/v1/search/main/' + id);
     }
 }

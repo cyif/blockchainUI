@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import dashboard from '@/views/dashboard'
+import docs from '@/views/docs'
 import chainTrivia from '@/views/chainTrivia'
+
+import chartGeneral from '@/views/chartGeneral'
+import chartSpecial from '@/views/chartSpecial'
 
 import blockTrivia from '@/views/blockTrivia'
 import blockInfo from '@/views/blockInfo'
@@ -20,6 +24,21 @@ export default new Router({
           path: '/',
           name: 'dashboard',
           component: dashboard
+      },
+      {
+          path: '/docs',
+          name: 'docs',
+          component: docs
+      },
+      {
+          path: '/charts',
+          name: 'charts',
+          component: chartGeneral
+      },
+      {
+          path: '/overview',
+          name: 'specialChart',
+          component: chartSpecial
       },
       {
           path: '/blockchain',

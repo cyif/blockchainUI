@@ -15,27 +15,14 @@
             </div>
             <hr/>
             <div>
-                <Row>
-                    <i-col span="12" id="from">
-                       <Table :columns="addColumnFrom"
-                              :data="addDataFrom"
-                              :show-header="showHeader"></Table>
-                    </i-col>
-                    <i-col span="12" id="to">
-                        <Table :columns="addColumnTo"
-                               :data="addDataTo"
-                               :show-header="showHeader"></Table>
-                    </i-col>
-                </Row>
-                <Row>
-                    <div align="right" style="position: relative">
-                        <div class="total" style="position: absolute; right: 5%;">
-                            <Table :columns="totalColumn"
-                                   :data="totalData"
-                                   :show-header="showHeader"></Table>
-                        </div>
-                    </div>
-                </Row>
+                <Tabs type="card">
+                    <Tab-pane label="交易流向">
+                        <trade-info :trade="tradeFlow"></trade-info>
+                    </Tab-pane>
+                    <Tab-pane label="树形图">
+                        <txs-tree :trade="tradeFlow"></txs-tree>
+                    </Tab-pane>
+                </Tabs>
             </div>
         </div>
     </div>
@@ -43,8 +30,11 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
+    import tradeInfo from './Info_trade.vue'
+    import txsTree from '../graph/txsTree.vue'
+
     export default {
-        components: {ICol},
+        components: {ICol, tradeInfo, txsTree},
         data () {
             return {
                 txId : '',
@@ -59,7 +49,14 @@
                     {
                         title: '值',
                         key: 'value',
-                        className: 'demo-table-info-key'
+                        className: 'demo-table-info-key',
+                        render (row, column, index) {
+                            if (index === 7) {
+                                return `<a href="#/block/info/${row.value}">${row.value}</a>`;
+                            } else {
+                                return row.value
+                            }
+                        }
                     }
                 ],
 
@@ -104,70 +101,34 @@
                 ],
 
                 txData: [],
-                addColumnFrom: [
-                    {
-                        title: '地址A',
-                        key: 'address1',
-                        className: 'demo-table-info-attribute'
-                    },
-                    {
-                        title: '金额',
-                        key: 'value1',
-                        className: 'demo-table-info-key',
-                        width: 150,
-                        formatter: '-{value}'
-                    }
-                ],
-                addDataFrom: [],
-                addColumnTo: [
-                    {
-                        title: '地址B',
-                        key: 'address2',
-                        className: 'demo-table-info-attribute'
-                    },
-                    {
-                        title: '金额',
-                        key: 'value2',
-                        className: 'demo-table-info-key',
-                        width: 150,
-                        formatter: '+{value}'
-                    }
-                ],
-                addDataTo: [],
-                totalColumn: [
-                    {
-                        title: '属性', // 小费 交易值 总计
-                        key: 'attribute',
-                        className: 'demo-table-info-attribute'
-                    },
-                    {
-                        title: '值',
-                        key: 'value',
-                        className: 'demo-table-info-key',
-                        width: 150,
-                        formatter: '{value}'
-                    }
-                ],
-                totalData: [],
+                tradeFlow: {
+                    vins: [],
+                    vouts: []
+                }
             }
         },
         created () {
             this.txsId = this.$route.params.txsId;
-        },
-        mounted () {
             var _self = this;
+            _self.$Loading.start();
             _self.$webApi.getTxInfo(_self.txsId)
                 .then(res => {
-                    let blockInfo = res.data.data;
+                    let txsInfo = res.data.data;
                     for (let i = 0; i < _self.txNames.length; i++) {
                         let name = _self.txNames[i].name;
                         let attribute = _self.txNames[i].attribute;
-                        let value = blockInfo[name];
+                        let value = txsInfo[name];
                         _self.txData.push({
                             attribute: attribute,
                             value: value
                         })
                     }
+                    _self.tradeFlow = txsInfo.trade;
+                    _self.$Loading.finish();
+                })
+                .catch(err => {
+                    console.log(err);
+                    _self.$Loading.error();
                 });
 
         }

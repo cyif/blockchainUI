@@ -152,6 +152,7 @@
         },
         mounted () {
             var _self = this;
+            _self.$Loading.start();
             _self.$webApi.getAddressInfo(_self.addressId)
                 .then(res => {
                     let addressInfo = res.data.data;
@@ -182,7 +183,12 @@
                             value: value
                         })
                     });
+                    _self.$Loading.finish();
                 })
+                .catch(err => {
+                    console.log(err);
+                    _self.$Loading.error();
+                });
         }
     }
 </script>

@@ -6,7 +6,7 @@ const nameMap = {
         "days_destroyed": "币天",
         "hash": "哈希值",
         "nb_txs": "交易单数",
-        "merkleroot": "首笔交易单",
+        "merkleroot": "Merkle root",
         "vout_sum": "比特币流",
         "difficulty": "开矿难度",
         "size": "块大小",

@@ -32,7 +32,16 @@
                     {
                         title: '值',
                         key: 'value',
-                        className: 'demo-table-info-key'
+                        className: 'demo-table-info-key',
+                        render (row, column, index) {
+                            if (index === 5) {
+                                return `<a href="#/address/info/${row.value}">${row.value}</a>`
+                            } else if (index === 6) {
+                                return `<a href="#/txs/info/${row.value}">${row.value}</a>`
+                            } else {
+                                return row.value;
+                            }
+                        }
                     }
                 ],
 
@@ -79,6 +88,7 @@
         },
         mounted () {
             var _self = this;
+            _self.$Loading.start();
             _self.$webApi.getBlockChainInfo()
                 .then(res => {
                     let chainInfo = res.data.data;
@@ -91,7 +101,12 @@
                             value: value
                         })
                     }
+                    _self.$Loading.finish();
                 })
+                .catch(err => {
+                    console.log(err);
+                    _self.$Loading.error();
+                });
         }
     }
 </script>

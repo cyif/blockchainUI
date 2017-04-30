@@ -1,0 +1,21 @@
+{
+  "treeData": {
+    "name": "father",
+    "children":[
+      {
+        "name": "son1",
+        "children":[
+          {"name": "grandson", "children":[]},
+          {"name": "grandson2", "children":[]}
+        ]
+      },
+      {
+        "name": "son2",
+        "children":[
+          {"name": "grandson3", "children":[]},
+          {"name": "grandson4", "children":[]}
+        ]
+      }
+    ]
+  }
+}

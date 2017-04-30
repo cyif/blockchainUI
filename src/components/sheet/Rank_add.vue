@@ -21,15 +21,22 @@
         },
         mounted () {
             let _self = this;
-            _self.$webApi.getAddressRank().then(res => {
-                let rankData = res.data.data;
-                _self.coinsData = rankData.max_balance.splice(0, 10);
-                _self.txsData = rankData.max_txs.splice(0, 10);
-                _self.coinsData.forEach(data => {
-                    data.last_tx_time_utc = data.last_tx.time_utc;
-                    data.last_tx_hash = data.last_tx.hash;
+            _self.$Loading.start();
+            _self.$webApi.getAddressRank()
+                .then(res => {
+                    let rankData = res.data.data;
+                    _self.coinsData = rankData.max_balance.splice(0, 10);
+                    _self.txsData = rankData.max_txs.splice(0, 10);
+                    _self.coinsData.forEach(data => {
+                        data.last_tx_time_utc = data.last_tx.time_utc;
+                        data.last_tx_hash = data.last_tx.hash;
+                    })
+                    _self.$Loading.finish();
                 })
-            })
+                .catch(err => {
+                    console.log(err);
+                    _self.$Loading.error();
+                });
         },
     }
 </script>
