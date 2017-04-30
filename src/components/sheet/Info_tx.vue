@@ -17,17 +17,16 @@
             <div>
                 <Row>
                     <i-col span="12" id="from">
-                       <span v-for="n in 'vins'"></span>
+                       <Table :columns="addColumnFrom"
+                              :data="addDataFrom"
+                              :show-header="showHeader"></Table>
                     </i-col>
                     <i-col span="12" id="to">
-                        <span v-for="n in 'vouts'"></span>
+                        <Table :columns="addColumnTo"
+                               :data="addDataTo"
+                               :show-header="showHeader"></Table>
                     </i-col>
                 </Row>
-                <table id="whoTowho" style="box-shadow: #30c9e8"
-                       :columns="addColumn"
-                       :data="addData"
-                       :show-header="showHeader">
-                </table>
             </div>
         </div>
     </div>
@@ -96,7 +95,7 @@
                 ],
 
                 txData: [],
-                addColumn: [
+                addColumnFrom: [
                     {
                         title: '地址A',
                         key: 'address1',
@@ -108,7 +107,10 @@
                         className: 'demo-table-info-key',
                         width: 150,
                         formatter: '-{value}'
-                    },
+                    }
+                ],
+                addDataFrom: [],
+                addColumnTo: [
                     {
                         title: '地址B',
                         key: 'address2',
@@ -122,7 +124,7 @@
                         formatter: '+{value}'
                     }
                 ],
-                addData: []
+                addDataTo: [],
             }
         },
         created () {
