@@ -27,6 +27,15 @@
                                :show-header="showHeader"></Table>
                     </i-col>
                 </Row>
+                <Row>
+                    <div align="right" style="position: relative">
+                        <div class="total" style="position: absolute; right: 5%;">
+                            <Table :columns="totalColumn"
+                                   :data="totalData"
+                                   :show-header="showHeader"></Table>
+                        </div>
+                    </div>
+                </Row>
             </div>
         </div>
     </div>
@@ -125,6 +134,21 @@
                     }
                 ],
                 addDataTo: [],
+                totalColumn: [
+                    {
+                        title: '属性', // 小费 交易值 总计
+                        key: 'attribute',
+                        className: 'demo-table-info-attribute'
+                    },
+                    {
+                        title: '值',
+                        key: 'value',
+                        className: 'demo-table-info-key',
+                        width: 150,
+                        formatter: '{value}'
+                    }
+                ],
+                totalData: [],
             }
         },
         created () {
