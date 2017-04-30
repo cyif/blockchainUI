@@ -1,7 +1,7 @@
 <template>
   <Row>
     <i-col span="14">
-      <Menu mode="horizontal" theme="light" style="background-color: white; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: bold; color:#3a4a4d" min-width="800px">
+      <Menu mode="horizontal" theme="light" style="background-color: white; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: bold; color:#3a4a4d" width="auto">
         <div class="layout-logo">
           <c-logo></c-logo>
         </div>

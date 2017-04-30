@@ -1,13 +1,19 @@
 // layout
 <template>
   <div>
-
     <div style="background-color: white; min-height: 800px; padding: 10px">
       <div class="layout">
         <div class="layout-nav">
           <c-nav></c-nav>
         </div>
         <div class="layout-content">
+          <div class="layout-breadcrumb">
+            <Breadcrumb>
+              <Breadcrumb-item href="#">首页</Breadcrumb-item>
+              <Breadcrumb-item href="#">应用中心</Breadcrumb-item>
+              <Breadcrumb-item>某应用</Breadcrumb-item>
+            </Breadcrumb>
+          </div>
           <div class="layout-content-main">
             <router-view></router-view>
           </div>
@@ -43,6 +49,9 @@
   .layout-nav{
     width: 100%;
     margin: 0;
+  }
+  .layout-breadcrumb{
+    padding: 10px 15px 0;
   }
   .layout-content{
     min-height: 800px;
