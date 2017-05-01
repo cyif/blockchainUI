@@ -1,13 +1,12 @@
 <template>
     <div class="generalCharts">
         <c-blocksTime v-if="blocksNb.length > 0" :data="blocksNb"></c-blocksTime>
-        <c-bitcoin></c-bitcoin>
+        <c-exchange-line></c-exchange-line>
     </div>
 </template>
 
 <script>
     import cBlocksTime from '../components/graph/blocks_time.vue'
-    import cBitcoin from '../components/graph/bitcoin.vue'
 
     export default {
         data () {
@@ -19,7 +18,7 @@
             }
         },
         components: {
-            cBlocksTime, cBitcoin
+            cBlocksTime,
         },
         mounted() {
             let _self = this;

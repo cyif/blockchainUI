@@ -15,7 +15,6 @@
 <script>
     import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import cGraphInfo from './graphInfo.vue';
 
     function randomData() {
         now = new Date(+now + oneDay);
@@ -41,7 +40,7 @@
 
 
     export default {
-        components: {ICol, cGraphInfo},
+        components: {ICol,},
         data() {
             return {
                 myChart: {}

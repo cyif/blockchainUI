@@ -42,7 +42,7 @@
                         key: 'amount',
                         className: 'demo-table-info-key',
                         width: 150,
-                        formatter: '-{value}'
+                        formatter: '-{value}BTC'
                     }
                 ],
                 addColumnTo: [
@@ -56,7 +56,7 @@
                         key: 'amount',
                         className: 'demo-table-info-key',
                         width: 150,
-                        formatter: '+{value}'
+                        formatter: '+{value}BTC'
                     }
                 ],
                 totalColumn: [
