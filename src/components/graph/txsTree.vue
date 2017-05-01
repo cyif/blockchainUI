@@ -41,11 +41,18 @@
                 let children = [];
                 console.log(this.trade.vouts);
                 for (let i = 0; i < this.trade.vouts.length; i++) {
+                    if (i >= 20) {
+                        children.push({
+                            text: '...',
+                            is_spent: false
+                        });
+                        break;
+                    }
                     let out = this.trade.vouts[i];
                     children.push({
                         text: out.address,
                         amount: out.amount,
-                        is_spent: out.is_spent,
+                        is_spent: out.is_spent === 49,
                         children: []
                     })
                 }
@@ -78,8 +85,12 @@
                 this.do('show')
             },
             onClick (evt) {
-                this.currentNode = evt.element;
+//                this.currentNode = evt.element;
 //                this.onEvent('onClick', evt)
+                console.log(evt);
+                this.$route.push({
+                    path: '/address/info/' + evt.element.text
+                });
             },
             onExpand (evt) {
                 this.onEvent('onExpand', evt)

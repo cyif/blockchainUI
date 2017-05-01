@@ -20,13 +20,9 @@
                 <Panel v-for="txInfo in txsData" :key="txInfo.tx">
                     <router-link :to="'/txs/info/'+ txInfo.tx">{{ txInfo.tx }}</router-link>
                     <div slot="content">
-                        <!--<div class="table" style="box-shadow: #30c9e8">-->
-                            <Table stripe
-                                   :columns="txsColumns"
-                                   :data="txInfo.trade.vouts"
-                                   :show-header="showTxHeader">
-                            </Table>
-                        <!--</div>-->
+                        <div class="tradeInfo" style="box-shadow: #30c9e8">
+                            <trade-info :trade="txInfo.trade"></trade-info>
+                        </div>
                     </div>
                 </Panel>
             </Collapse>
@@ -35,7 +31,11 @@
 </template>
 
 <script>
+    import tradeInfo from './Info_trade.vue'
     export default {
+        components: {
+            tradeInfo
+        },
         data () {
             return {
                 blockId: '',
@@ -51,7 +51,7 @@
                     {
                         title: '值',
                         key: 'value',
-                        className: 'demo-table-info-key'
+                        className: 'demo-table-info-key',
                     }
                 ],
 
@@ -125,7 +125,7 @@
     .block , .transactions {
         margin: 20px;
     }
-    .table {
+    .table, .tradeInfo {
         height : 100%;
         margin : 10px;
         padding-bottsom: 20px;

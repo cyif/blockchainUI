@@ -37,7 +37,10 @@
                         title: '区块',
                         key: 'nb',
                         align: 'center',
-                        className: 'demo-table-info-block'
+                        className: 'demo-table-info-block',
+                        render (row, column, index) {
+                            return `<a href="#/block/info/${row.nb}">${row.nb}</a>`
+                        }
                     },
                     {
                         title: '交易确认时间（区块生成）',

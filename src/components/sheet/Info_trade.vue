@@ -103,3 +103,9 @@
         }
     }
 </script>
+
+<style scoped>
+    p {
+        font-size: 15px;
+    }
+</style>
