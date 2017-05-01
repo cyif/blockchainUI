@@ -3,14 +3,9 @@
 <template>
     <div class = "graph_canvas">
         <row class = "block">
-            <i-col span = "16">
+            <i-col span = "24">
                 <div class = "graph">
                     <div id = "relationship" class = "chart"></div>
-                </div>
-            </i-col>
-            <i-col span = "8">
-                <div class = graph_info>
-                    <c-graphInfo style="display:table-cell; vertical-align: middle"></c-graphInfo>
                 </div>
             </i-col>
         </row>
@@ -74,6 +69,8 @@
                         return params.value[2] + ' commits in ' + hours[params.value[1]] + ' of ' + days[params.value[0]];
                     }
                 },
+                center: ['50%','50%'],
+                radius: ['0','50%'],
                 angleAxis: {
                     type: 'category',
                     data: hours,

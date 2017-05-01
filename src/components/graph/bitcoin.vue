@@ -42,178 +42,97 @@
       mounted(){
           this.myChart = echarts.init(document.getElementById("bitcoin"));
           this.myChart.setOption({
-              backgroundColor: 'transparent',
+              backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                  offset: 0,
+                  color: '#f7f8fa'
+              }, {
+                  offset: 1,
+                  color: '#cdd0d5'
+              }]),
               title: {
-                  text: '',
-                  textStyle: {
-                      fontWeight: 'normal',
-                      fontSize: 16,
-                      color: '#F1F1F3'
-                  },
-                  left: '6%'
-              },
-              tooltip: {
-                  trigger: 'axis',
-                  axisPointer: {
-                      lineStyle: {
-                          color: '#57617B'
-                      }
-                  }
+                  text: '30天中比特币兑换率和比特币数目的增长率比对'
               },
               legend: {
-                  icon: 'rect',
-                  itemWidth: 14,
-                  itemHeight: 5,
-                  itemGap: 13,
-                  data: ['A', 'B', 'C'],
-                  right: '4%',
-                  textStyle: {
-                      fontSize: 12,
-                      color: '#000'
-                  }
+                  right: 10,
+                  data: ['1990', '2015']
               },
-              grid: {
-                  left: '3%',
-                  right: '4%',
-                  bottom: '3%',
-                  containLabel: true
-              },
-              xAxis: [{
-                  type: 'category',
-                  boundaryGap: false,
-                  axisLine: {
-                      lineStyle: {
-                          color: '#57617B'
-                      }
-                  },
-                  data: this.times
-              }],
-              yAxis: [{
-                  type: 'value',
-                  axisTick: {
-                      show: false
-                  },
-                  axisLine: {
-                      lineStyle: {
-                          color: '#57617B'
-                      }
-                  },
-                  axisLabel: {
-                      margin: 10,
-                      textStyle: {
-                          fontSize: 14
-                      }
-                  },
+              xAxis: {
                   splitLine: {
                       lineStyle: {
-                          color: '#57617B'
+                          type: 'dashed'
                       }
                   }
-              }],
+              },
+              yAxis: {
+                  splitLine: {
+                      lineStyle: {
+                          type: 'dashed'
+                      }
+                  },
+                  scale: true
+              },
               series: [{
-                  name: 'C',
-                  type: 'line',
-                  smooth: true,
-                  symbol: 'circle',
-                  symbolSize: 5,
-                  showSymbol: false,
-                  lineStyle: {
-                      normal: {
-                          width: 1
-                      }
+                  name: '1990',
+                  data: data[0],
+                  type: 'scatter',
+                  symbolSize: function (data) {
+                      return Math.sqrt(data[2]) / 5e2;
                   },
-                  areaStyle: {
-                      normal: {
-                          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                              offset: 0,
-                              color: 'rgba(137, 189, 27, 0.3)'
-                          }, {
-                              offset: 0.8,
-                              color: 'rgba(137, 189, 27, 0)'
-                          }], false),
-                          shadowColor: 'rgba(0, 0, 0, 0.1)',
-                          shadowBlur: 10
+                  label: {
+                      emphasis: {
+                          show: true,
+                          formatter: function (param) {
+                              return param.data[3];
+                          },
+                          position: 'top'
                       }
                   },
                   itemStyle: {
                       normal: {
-                          color: 'rgb(137,189,27)',
-                          borderColor: 'rgba(137,189,2,0.27)',
-                          borderWidth: 12
-
+                          shadowBlur: 10,
+                          shadowColor: 'rgba(120, 36, 50, 0.5)',
+                          shadowOffsetY: 5,
+                          color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                              offset: 0,
+                              color: 'rgb(251, 118, 123)'
+                          }, {
+                              offset: 1,
+                              color: 'rgb(204, 46, 72)'
+                          }])
                       }
-                  },
-                  data: this.data1
+                  }
               }, {
-                  name: 'A',
-                  type: 'line',
-                  smooth: true,
-                  symbol: 'circle',
-                  symbolSize: 5,
-                  showSymbol: false,
-                  lineStyle: {
-                      normal: {
-                          width: 1
-                      }
+                  name: '2015',
+                  data: data[1],
+                  type: 'scatter',
+                  symbolSize: function (data) {
+                      return Math.sqrt(data[2]) / 5e2;
                   },
-                  areaStyle: {
-                      normal: {
-                          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                              offset: 0,
-                              color: 'rgba(0, 136, 212, 0.3)'
-                          }, {
-                              offset: 0.8,
-                              color: 'rgba(0, 136, 212, 0)'
-                          }], false),
-                          shadowColor: 'rgba(0, 0, 0, 0.1)',
-                          shadowBlur: 10
+                  label: {
+                      emphasis: {
+                          show: true,
+                          formatter: function (param) {
+                              return param.data[3];
+                          },
+                          position: 'top'
                       }
                   },
                   itemStyle: {
                       normal: {
-                          color: 'rgb(0,136,212)',
-                          borderColor: 'rgba(0,136,212,0.2)',
-                          borderWidth: 12
-
-                      }
-                  },
-                  data: this.data2
-              }, {
-                  name: 'B',
-                  type: 'line',
-                  smooth: true,
-                  symbol: 'circle',
-                  symbolSize: 5,
-                  showSymbol: false,
-                  lineStyle: {
-                      normal: {
-                          width: 1
-                      }
-                  },
-                  areaStyle: {
-                      normal: {
-                          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                          shadowBlur: 10,
+                          shadowColor: 'rgba(25, 100, 150, 0.5)',
+                          shadowOffsetY: 5,
+                          color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
                               offset: 0,
-                              color: 'rgba(219, 50, 51, 0.3)'
+                              color: 'rgb(129, 227, 238)'
                           }, {
-                              offset: 0.8,
-                              color: 'rgba(219, 50, 51, 0)'
-                          }], false),
-                          shadowColor: 'rgba(0, 0, 0, 0.1)',
-                          shadowBlur: 10
+                              offset: 1,
+                              color: 'rgb(25, 183, 207)'
+                          }])
                       }
-                  },
-                  itemStyle: {
-                      normal: {
-
-                          color: 'rgb(219,50,51)',
-                          borderColor: 'rgba(219,50,51,0.2)',
-                          borderWidth: 12
-                      }
-                  },
-                  data: this.data3
-              }, ]
-        })
+                  }
+              }]
+          })
       }
   }
 </script>
