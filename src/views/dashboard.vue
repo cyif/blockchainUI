@@ -5,8 +5,6 @@
     <c-exchange-line></c-exchange-line>
     <c-search-Top></c-search-Top>
     <c-blockRank></c-blockRank>
-    <c-blocksTime></c-blocksTime>
-    <c-bitcoin></c-bitcoin>
   </div>
 </template>
 
@@ -16,13 +14,11 @@
   import cExchangeLine from '../components/graph/exchangeLine.vue'
   import cSearchTop from '../components/layout/searchTop.vue'
   import cBlockRank from '../components/sheet/blockRank.vue'
-  import cBlocksTime from '../components/graph/blocks_time.vue'
-  import cBitcoin from '../components/graph/bitcoin.vue'
 
   export default {
     name: "dashboard",
     components: {
-      cCalendar, cLine, cExchangeLine, cSearchTop, cBlockRank, cBlocksTime, cBitcoin
+      cCalendar, cLine, cExchangeLine, cSearchTop, cBlockRank
     }
   }
 </script>

@@ -6,6 +6,12 @@ import axios from 'axios'
 
 export const webApi = {
 
+    getChartData: function(period) {
+        return axios.get('http://blockr.io/api/v1/graph/main?period=' + period);
+    },
+    getLatestBlock: function () {
+        return axios.get('http://blockr.io/api/v1/block/list/latest15');
+    },
     getBlockChainInfo: function() {
         return axios.get('http://blockr.io/api/v1/trivia/blockchain');
     },

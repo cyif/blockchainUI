@@ -138,7 +138,7 @@
     }
     .graph {
         padding : 10px;
-        height: 400px;
+        height: 800px;
         min-width: 500px;
         /*overflow: scroll; */
     }

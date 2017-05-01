@@ -9,6 +9,7 @@
             <i-col span = "8">
                 <div class = graph_info>
                     <p> "信息" </p>
+                    <p> {{data}}</p>
                 </div>
             </i-col>
         </row>
@@ -19,56 +20,28 @@
     import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
 
-    function randomData() {
-        now = new Date(+now + oneDay);
-        value = value + Math.random() * 21 - 10;
-        return {
-            name: now.toString(),
-            value: [
-                [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-                Math.round(value)
-            ]
-        }
-    }
-
-    var category = [];
-    var dottedBase = +new Date();
-    var lineData = [];
-    var barData = [];
-
-    for (var i = 0; i < 20; i++) {
-        var date = new Date(dottedBase += 1000 * 3600 * 24);
-        category.push([
-            date.getFullYear(),
-            date.getMonth() + 1,
-            date.getDate()
-        ].join('-'));
-        var b = Math.random() * 200;
-        var d = Math.random() * 200;
-        barData.push(b)
-        lineData.push(d + b);
-    }
-
-    function updateData(chart) {
-        for (let i = 0; i < 5; i++) {
-            data.shift();
-            data.push(randomData());
-        }
-        chart.setOption({
-            series: [{
-                data: data
-            }]
-        })
-    }
-
     export default {
+        props: ['data'],
         components: {ICol},
         data() {
             return {
-                myChart : {}
+                myChart : {},
+                category: [],
+                dottedBase : +new Date(),
             }
         },
-
+        created() {
+            this.dottedBase = new Date();
+            for (let i = 0; i <= 30; i++) {
+                let date = new Date(this.dottedBase);
+                this.category.unshift([
+                    date.getFullYear(),
+                    date.getMonth() + 1,
+                    date.getDate()
+                ].join('-'));
+                this.dottedBase -= 1000 * 3600 * 24
+            }
+        },
         methods: {
             _init() {
                 window.addEventListener('resize', function() {
@@ -93,13 +66,13 @@
                     }
                 },
                 legend: {
-                    data: ['line', 'bar'],
+                    data: ['区块数'],
                     textStyle: {
                         color: '#333'
                     }
                 },
                 xAxis: {
-                    data: category,
+                    data: this.category,
                     axisLine: {
                         lineStyle: {
                             color: '#333'
@@ -115,15 +88,7 @@
                     }
                 },
                 series: [{
-                    name: 'line',
-                    type: 'line',
-                    smooth: true,
-                    showAllSymbol: true,
-                    symbol: 'emptyCircle',
-                    symbolSize: 15,
-                    data: lineData
-                }, {
-                    name: 'bar',
+                    name: '区块数',
                     type: 'bar',
                     barWidth: 10,
                     itemStyle: {
@@ -138,40 +103,7 @@
                             )
                         }
                     },
-                    data: barData
-                }, {
-                    name: 'line',
-                    type: 'bar',
-                    barGap: '-100%',
-                    barWidth: 10,
-                    itemStyle: {
-                        normal: {
-                            color: new echarts.graphic.LinearGradient(
-                                0, 0, 0, 1,
-                                [
-                                    {offset: 0, color: 'rgba(20,200,212,0.5)'},
-                                    {offset: 0.2, color: 'rgba(20,200,212,0.2)'},
-                                    {offset: 1, color: 'rgba(20,200,212,0)'}
-                                ]
-                            )
-                        }
-                    },
-                    z: -12,
-                    data: lineData
-                }, {
-                    name: 'dotted',
-                    type: 'pictorialBar',
-                    symbol: 'rect',
-                    itemStyle: {
-                        normal: {
-                            color: '#0f375f'
-                        }
-                    },
-                    symbolRepeat: true,
-                    symbolSize: [12, 4],
-                    symbolMargin: 1,
-                    z: -10,
-                    data: lineData
+                    data: this.data
                 }]
             })
         }

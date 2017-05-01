@@ -8,8 +8,8 @@
     <row class = "block">
       <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
         <Table stripe
-               :columns="columns1"
-               :data="data1"
+               :columns="columns"
+               :data="data"
                :show-header="showHeader"></Table>
       </div>
     </row>
@@ -19,139 +19,62 @@
   export default {
     data () {
       return {
-        showHeader: true,
-        columns1: [
-          {
-            title: '块号',
-            key: 'height',
-            width: 150,
-            align: 'center',
-            className: 'demo-table-info-height'
-          },
-          {
-            title: '创建时间',
-            key: 'time',
-            align: 'center',
-            className: 'demo-table-info-time'
-          },
-          {
-            title: '交易单数',
-            key: 'transactions',
-            align: 'center',
-            className: 'demo-table-info-transactions'
-          },
-          {
-            title: '手续费',
-            key: 'fee',
-            align: 'center',
-            className: 'demo-table-info-fee'
-          },
-          {
-            title: '块大小(KB)',
-            key: 'size',
-            align: 'center',
-            className: 'demo-table-info-size'
-          },
-          {
-            title: '币天',
-            key: 'days',
-            align: 'center',
-            className: 'demo-table-info-days'
-          }
-        ],
-        data1: [
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          },
-          {
-            height: '435687',
-            time: '20170319',
-            transactions: '2809',
-            fee: '1.5634342',
-            size: '121.231',
-            align: 'center',
-            days: '212012.13'
-          }
-        ]
+          showHeader: true,
+          columns: [
+            {
+              title: '块号',
+              key: 'nb',
+              width: 150,
+              align: 'center',
+              className: 'demo-table-info-height'
+            },
+            {
+              title: '创建时间',
+              key: 'time_utc',
+              align: 'center',
+              className: 'demo-table-info-time'
+            },
+            {
+              title: '交易单数',
+              key: 'nb_txs',
+              align: 'center',
+              className: 'demo-table-info-transactions'
+            },
+            {
+              title: '手续费',
+              key: 'fee',
+              align: 'center',
+              className: 'demo-table-info-fee'
+            },
+            {
+              title: '块大小(KB)',
+              key: 'size',
+              align: 'center',
+              className: 'demo-table-info-size'
+            },
+            {
+              title: '币天',
+              key: 'days_destroyed',
+              align: 'center',
+              className: 'demo-table-info-days'
+            }
+          ],
+          data: []
       }
+    },
+    mounted () {
+        let _self = this;
+        _self.$Loading.start();
+        _self.$webApi.getLatestBlock()
+            .then(res => {
+                let rankData = res.data.data;
+                _self.data = rankData;
+                _self.$Loading.finish();
+            })
+            .catch(err => {
+                console.log(err);
+                _self.$Loading.error();
+            });
     }
   }
 </script>
