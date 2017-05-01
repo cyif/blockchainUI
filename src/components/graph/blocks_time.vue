@@ -27,19 +27,18 @@
             return {
                 myChart : {},
                 category: [],
-                dottedBase : +new Date(),
             }
         },
         created() {
-            this.dottedBase = new Date();
+            let dottedBase = new Date();
             for (let i = 0; i <= 30; i++) {
-                let date = new Date(this.dottedBase);
+                let date = new Date(dottedBase);
                 this.category.unshift([
                     date.getFullYear(),
                     date.getMonth() + 1,
                     date.getDate()
                 ].join('-'));
-                this.dottedBase -= 1000 * 3600 * 24
+                dottedBase -= 1000 * 3600 * 24
             }
         },
         methods: {

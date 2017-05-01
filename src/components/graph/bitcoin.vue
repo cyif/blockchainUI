@@ -25,7 +25,7 @@
       data(){
           return{
               myChart: {},
-              times: [],
+              category: [],
               data1: [],
               data2: []
           }
@@ -34,103 +34,107 @@
 
       },
       created() {
-          this.times = ['13:00', '13:05', '13:10', '13:15', '13:20', '13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55']
-          this.data1 = [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122];
-          this.data2 = [120, 110, 125, 145, 122, 165, 122, 220, 182, 191, 134, 150];
-          this.data3 = [220, 182, 125, 145, 122, 191, 134, 150, 120, 110, 165, 122];
+          this.data1 = [220, 182, 191, 134, 150,
+              120, 110, 125, 145, 122,
+              165, 122];
+          this.data2 = [120, 110, 125, 145, 122,
+              165, 122, 220, 182, 191,
+              134, 150];
+          let dottedBase = new Date();
+          for (let i = 0; i <= 11; i++) {
+              let date = new Date(dottedBase);
+              this.category.unshift([
+                  date.getFullYear(),
+                  date.getMonth() + 1,
+                  date.getDate()
+              ].join('-'));
+              dottedBase -= 1000 * 3600 * 24
+          }
       },
       mounted(){
           this.myChart = echarts.init(document.getElementById("bitcoin"));
           this.myChart.setOption({
-              backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
-                  offset: 0,
-                  color: '#f7f8fa'
-              }, {
-                  offset: 1,
-                  color: '#cdd0d5'
-              }]),
-              title: {
-                  text: '30天中比特币兑换率和比特币数目的增长率比对'
+
+              tooltip: {
+                  trigger: 'axis',
+                  axisPointer: {
+                      type: 'shadow',
+                      label: {
+                          show: true,
+                          backgroundColor: '#fff'
+                      }
+                  }
               },
               legend: {
-                  right: 10,
-                  data: ['1990', '2015']
+                  data: ['比特币兑换率', '比特币增长率'],
+                  textStyle: {
+                      color: '#333'
+                  }
               },
               xAxis: {
-                  splitLine: {
+                  data: this.category,
+                  axisLine: {
                       lineStyle: {
-                          type: 'dashed'
+                          color: '#333'
                       }
                   }
               },
-              yAxis: {
-                  splitLine: {
+              yAxis: [{
+                  name: '兑换率',
+                  type: 'value',
+                  position: 'left',
+                  splitLine: {show: false},
+                  axisLine: {
                       lineStyle: {
-                          type: 'dashed'
+                          color: '#333'
                       }
-                  },
-                  scale: true
-              },
+                  }
+              },{
+                  name: '增长率',
+                  position: 'right',
+                  type: 'value',
+                  splitLine: {show: false},
+                  axisLine: {
+                      lineStyle: {
+                          color: '#333'
+                      }
+                  }
+              }],
               series: [{
-                  name: '1990',
-                  data: data[0],
-                  type: 'scatter',
-                  symbolSize: function (data) {
-                      return Math.sqrt(data[2]) / 5e2;
-                  },
-                  label: {
-                      emphasis: {
-                          show: true,
-                          formatter: function (param) {
-                              return param.data[3];
-                          },
-                          position: 'top'
-                      }
-                  },
+                  name: '比特币兑换率',
+                  type: 'bar',
+                  barWidth: 10,
                   itemStyle: {
                       normal: {
-                          shadowBlur: 10,
-                          shadowColor: 'rgba(120, 36, 50, 0.5)',
-                          shadowOffsetY: 5,
-                          color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
-                              offset: 0,
-                              color: 'rgb(251, 118, 123)'
-                          }, {
-                              offset: 1,
-                              color: 'rgb(204, 46, 72)'
-                          }])
-                      }
-                  }
-              }, {
-                  name: '2015',
-                  data: data[1],
-                  type: 'scatter',
-                  symbolSize: function (data) {
-                      return Math.sqrt(data[2]) / 5e2;
-                  },
-                  label: {
-                      emphasis: {
-                          show: true,
-                          formatter: function (param) {
-                              return param.data[3];
-                          },
-                          position: 'top'
+                          barBorderRadius: 5,
+                          color: new echarts.graphic.LinearGradient(
+                              0, 0, 0, 1,
+                              [
+                                  {offset: 0, color: '#14c8d4'},
+                                  {offset: 1, color: '#43eec6'}
+                              ]
+                          )
                       }
                   },
+                  data: this.data1
+              },{
+                  name: '比特币增长率',
+                  type: 'bar',
+                  barWidth: 10,
                   itemStyle: {
                       normal: {
-                          shadowBlur: 10,
-                          shadowColor: 'rgba(25, 100, 150, 0.5)',
-                          shadowOffsetY: 5,
-                          color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
-                              offset: 0,
-                              color: 'rgb(129, 227, 238)'
-                          }, {
-                              offset: 1,
-                              color: 'rgb(25, 183, 207)'
-                          }])
+                          barBorderRadius: 5,
+                          color: new echarts.graphic.LinearGradient(
+                              0, 0, 0, 1,
+                              [
+                                  {offset: 0, color: '#d49b23'},
+                                  {offset: 1, color: '#eeda1e'}
+                              ]
+                          )
                       }
-                  }
+                  },
+                  yAxisIndex: 1,
+                  data: this.data2
               }]
           })
       }
