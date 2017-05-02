@@ -4,6 +4,7 @@
         <block-difficult></block-difficult>
         <orphaned-blocks></orphaned-blocks>
         <hr>
+        <txs-num></txs-num>
         <confirmed-txs></confirmed-txs>
         <confirmation class="v_jump"></confirmation>
         <cost-txs></cost-txs>
@@ -19,6 +20,7 @@
     import blockSize from '../components/graph/blockSize.vue'
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue'
 
+    import txsNum from '../components/graph/txsNum.vue'
     import confirmation from '../components/graph/confirmationTime.vue'
     import confirmedTxs from '../components/graph/confirmedTxs.vue'
     import costTxs from '../components/graph/cost_txs.vue'
@@ -38,7 +40,7 @@
         components: {
             cBlocksTime, cExchangeLine,
             blockDifficult, blockSize, orphanedBlocks,
-            confirmation, confirmedTxs, costTxs, costTxsVolume
+            confirmation, confirmedTxs, costTxs, costTxsVolume, txsNum
         },
         methods: {
             jump (index) {
