@@ -5,7 +5,7 @@ import docs from '@/views/docs'
 import chainTrivia from '@/views/chainTrivia'
 
 import chartGeneral from '@/views/chartGeneral'
-import chartSpecial from '@/views/chartSpecial'
+import overview from '@/views/overview'
 
 import blockTrivia from '@/views/blockTrivia'
 import blockInfo from '@/views/blockInfo'
@@ -37,8 +37,8 @@ export default new Router({
       },
       {
           path: '/overview',
-          name: 'specialChart',
-          component: chartSpecial
+          name: 'overview',
+          component: overview
       },
       {
           path: '/blockchain',
