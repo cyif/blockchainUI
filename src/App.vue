@@ -73,6 +73,7 @@
     font-weight: 300;
     font-family: dancing;
     min-height: 60px;
+    background: #E5EDF5;
   }
 </style>
 <style>

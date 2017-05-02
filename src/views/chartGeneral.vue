@@ -13,6 +13,11 @@
                     <block-size></block-size>
                     <block-difficult></block-difficult>
                     <orphaned-blocks></orphaned-blocks>
+                    <hr>
+                    <confirmed-txs></confirmed-txs>
+                    <confirmation class="v_jump"></confirmation>
+                    <cost-txs></cost-txs>
+                    <cost-txs-volume></cost-txs-volume>
                 </div>
             </i-col>
         </Row>
@@ -28,6 +33,12 @@
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue'
     import slideNav from '../components/layout/slideNav.vue'
 
+    import confirmation from '../components/graph/confirmationTime.vue'
+    import confirmedTxs from '../components/graph/confirmedTxs.vue'
+    import costTxs from '../components/graph/cost_txs.vue'
+    import costTxsVolume from '../components/graph/cost_txsVolume.vue'
+
+    import $ from 'jquery'
 
     export default {
         data () {
@@ -41,7 +52,16 @@
         },
         components: {
             cBlocksTime, cExchangeLine,
-            blockDifficult, blockSize, orphanedBlocks, slideNav
+            blockDifficult, blockSize, orphanedBlocks, slideNav,
+            confirmation, confirmedTxs, costTxs, costTxsVolume
+        },
+        methods: {
+            jump (index) {
+                let jump = document.querySelectorAll('.v_jump');
+                // 获取需要滚动的距离
+                let total = jump[index].offsetTop;
+                $('html body').animate({scrollTop: total}, 500);
+            }
         }
     }
 </script>
