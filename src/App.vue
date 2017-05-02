@@ -4,16 +4,10 @@
     <div style="background-color: white; min-height: 800px; padding: 10px">
       <div class="layout">
         <div class="layout-nav">
-          <Row>
-            <i-col span="2">
-
-            </i-col>
-            <i-col span=""
-          </Row>
           <c-nav></c-nav>
         </div>
         <div class="layout-content">
-          <div class="layout-breadcrumb">
+          <div class="layout-breadcrumb" style="margin-left: 40px">
             <c-breadcrumb :url="url"></c-breadcrumb>
           </div>
           <div class="layout-content-main">
@@ -21,7 +15,6 @@
           </div>
         </div>
         <div class="layout-copy">
-          <hr style="margin-bottom: 20px"/>
           <span style="">2017 &copy; Yushu Wang</span>
         </div>
       </div>

@@ -4,7 +4,7 @@ import Vue from 'vue'
 import VueEvents from 'vue-events'
 import App from './App.vue'
 import iview from 'iview'
-import 'iview/dist/styles/iview.css'
+import './theme/my-theme/dist/iview.css';
 import Chartkick from 'chartkick'
 import VueChartkick from 'vue-chartkick'
 import {webApi} from './service/WebApi'
