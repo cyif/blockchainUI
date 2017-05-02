@@ -5,7 +5,7 @@
         <orphaned-blocks></orphaned-blocks>
         <hr>
         <confirmed-txs></confirmed-txs>
-        <confirmation></confirmation>
+        <confirmation class="v_jump"></confirmation>
         <cost-txs></cost-txs>
         <cost-txs-volume></cost-txs-volume>
     </div>
@@ -24,6 +24,7 @@
     import costTxs from '../components/graph/cost_txs.vue'
     import costTxsVolume from '../components/graph/cost_txsVolume.vue'
 
+    import $ from 'jquery'
 
     export default {
         data () {
@@ -38,6 +39,14 @@
             cBlocksTime, cExchangeLine,
             blockDifficult, blockSize, orphanedBlocks,
             confirmation, confirmedTxs, costTxs, costTxsVolume
+        },
+        methods: {
+            jump (index) {
+                let jump = document.querySelectorAll('.v_jump');
+                // 获取需要滚动的距离
+                let total = jump[index].offsetTop;
+                $('html body').animate({scrollTop: total}, 500);
+            }
         }
     }
 </script>
