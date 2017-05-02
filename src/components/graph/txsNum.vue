@@ -45,13 +45,6 @@
                     offset: 1,
                     color: 'transparent'
                 }]),
-                visualMap: {
-                    show: false,
-                    type: 'continuous',
-                    seriesIndex: 0,
-                    min: 0,
-                    max: 400
-                },
                 tooltip: {
                     trigger: 'axis'
                 },
@@ -67,6 +60,14 @@
                     axisTick: {
                         show: false
                     },
+                    axisLabel: {
+                        formatter: function (value, index) {
+                            // 格式化成月/日，只在第一个刻度显示年份
+                            var date = new Date(value);
+                            var texts = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+                            return texts.join('/');
+                        }
+                    }
                 },
                 yAxis: [{
                     name: '数目',
@@ -116,12 +117,14 @@
                     type: 'line',
                     smooth:true,
                     symbol: 'none',
+                    yAxisIndex: 0
                 },{
                     name: '记忆池所占大小',
                     data: values2,
                     type: 'line',
                     smooth:true,
                     symbol: 'none',
+                    yAxisIndex: 1
                 }]
             });
         }

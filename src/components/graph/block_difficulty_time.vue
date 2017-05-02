@@ -69,6 +69,14 @@
                     axisTick: {
                         show: false
                     },
+                    axisLabel: {
+                        formatter: function (value, index) {
+                            // 格式化成月/日，只在第一个刻度显示年份
+                            var date = new Date(value);
+                            var texts = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+                            return texts.join('/');
+                        }
+                    }
                 },
                 yAxis: {
                     name: '难度',

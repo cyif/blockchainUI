@@ -18,8 +18,10 @@
 
 
     var values = data.values;
-    
-
+    var max = values[0][1];
+    for (let i = 0; i < values.length; i++) {
+        max = Math.max(max, values[i][1]);
+    }
 
     export default {
         components: {ICol},
@@ -50,7 +52,7 @@
                     type: 'continuous',
                     seriesIndex: 0,
                     min: 0,
-                    max: 400
+                    max: max
                 },
                 tooltip: {
                     trigger: 'axis'
@@ -67,6 +69,14 @@
                     axisTick: {
                         show: false
                     },
+                    axisLabel: {
+                        formatter: function (value, index) {
+                            // 格式化成月/日，只在第一个刻度显示年份
+                            var date = new Date(value);
+                            var texts = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+                            return texts.join('/');
+                        }
+                    }
                 },
                 yAxis: {
                     name: '数量',

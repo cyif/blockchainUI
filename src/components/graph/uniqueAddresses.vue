@@ -1,27 +1,24 @@
 <template>
-  <div class = "graph_canvas">
-    <row class = "block">
-      <i-col span = "24">
-        <div class = "graph" id="graph">
-          <div id = "exchangeLine" class = "chart"></div>
-        </div>
-      </i-col>
-    </row>
-  </div>
+    <div class = "graph_canvas">
+        <row class = "block">
+            <i-col span = "24">
+                <div class = "graph" id="graph">
+                    <div id = "uniqueAdd" class = "chart"></div>
+                </div>
+            </i-col>
+        </row>
+    </div>
 </template>
 
 <script>
     import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import $ from 'jquery';
-    import data from '../../data/exchangeLine.json'
+    import data from '../../data/uniqueAdd.json'
 
 
     var values = data.values;
-    var max = values[0][1];
-    for (let i = 0; i < values.length; i++) {
-        max = Math.max(max, values[i][1]);
-    }
+
 
     export default {
         components: {ICol},
@@ -38,7 +35,7 @@
             },
         },
         mounted(){
-            let myChart = this.$echarts.init(document.getElementById('exchangeLine'));
+            let myChart = this.$echarts.init(document.getElementById('uniqueAdd'));
             myChart.setOption({
                 backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                     offset: 0,
@@ -52,7 +49,7 @@
                     type: 'continuous',
                     seriesIndex: 0,
                     min: 0,
-                    max: max
+                    max: 400
                 },
                 tooltip: {
                     trigger: 'axis'
@@ -79,7 +76,7 @@
                     }
                 },
                 yAxis: {
-                    name: '美元',
+                    name: '数目',
                     splitLine: {
                         lineStyle: {
                             type: 'dashed'
@@ -108,7 +105,7 @@
                     }
                 }],
                 series: [{
-                    name: '平均市场价格（美元）',
+                    name: '每天进行交易的地址数',
                     data: values,
                     type: 'line',
                     smooth:true,
@@ -120,30 +117,30 @@
 </script>
 
 <style scoped>
-  .block {
-    margin: 10px;
-  }
-  .graph_canvas {
-    margin-left: 5px;
-    margin-right: 5px;
-    background: #f5f7f9;
-    border-radius: 8px;
-  }
-  .graph_info {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 8px;
-    padding-top: 10%;
-    padding-bottom: 10%;
-  }
-  .graph {
-    height : 350px;
-    margin : 10px;
-  }
-  .chart {
-    width : 100%;
-    height : calc(100% - 20px);
-    margin : 10px;
-  }
+    .block {
+        margin: 10px;
+    }
+    .graph_canvas {
+        margin-left: 5px;
+        margin-right: 5px;
+        background: #f5f7f9;
+        border-radius: 8px;
+    }
+    .graph_info {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px;
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    .graph {
+        height : 350px;
+        margin : 10px;
+    }
+    .chart {
+        width : 100%;
+        height : calc(100% - 20px);
+        margin : 10px;
+    }
 </style>
