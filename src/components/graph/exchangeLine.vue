@@ -1,11 +1,32 @@
 <template>
   <div class = "graph_canvas">
     <row class = "block">
-      <i-col span = "24">
+      <i-col span = "18">
         <div class = "graph" id="graph">
           <div id = "exchangeLine" class = "chart"></div>
         </div>
       </i-col>
+      <i-col span="6">
+        <div class="graph_info" style="min-height:400px; padding-top: 80px;
+padding-bottom: 50px;">
+          <span>
+            <img src="../../image/exchange.png" width="80px" height="80px">
+          </span>
+          <br><br>
+          <span style="font-size: 20px; font-weight: bold">比特币指数</span>
+          <br><br>
+          <span :USD="USD" style="font-size: 30px; font-weight: bold;">${{USD}}</span>
+        </div>
+      </i-col>
+    </row>
+    <row>
+      <Collapse v-model="value1">
+        <Panel name="1" style="font-size: 14px">
+          比特币市场价格随时间变化
+          <p slot="content" style="font-size: 16px;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;迄今为止，第一次泡沫是2011年4月到6月之间，比特币的价格从0.75美元飙升至30美元，随后暴跌至2美元。之后又一次历史性新高出现在2013年12月份，涨幅近850%，半个月的时间便折损一半，之后稳定在200多。于2015年10月开始新一轮的增长，目前处于相对高点，涨幅已达200%以上。类似目前的房地产市场，人们看涨比特币的价格走势，并买入比特币，导致比特币的价格上升，并持续这样的循环，直到泡沫破灭，价格暴跌。</p>
+        </Panel>
+      </Collapse>
     </row>
   </div>
 </template>
@@ -25,6 +46,8 @@
         data() {
             return {
                 myChart: {},
+                value1: '1',
+                USD: data.values[data.values.length-1][1]
             }
         },
         methods: {
