@@ -32,7 +32,7 @@
   }
 
   var data = [];
-  var now = +new Date(2000, 8, 29);
+  var now = +new Date(2009, 1, 1);
   var oneDay = 24 * 3600 * 1000;
   var value = Math.random() * 1000;
   for(var i = 0; i < 1000; i++){
