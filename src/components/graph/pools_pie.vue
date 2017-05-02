@@ -5,7 +5,7 @@
         <row class = "block">
             <i-col span = "24">
                 <div class = "graph" id="graph">
-                    <div id = "market" class = "chart"></div>
+                    <div id = "pools_pie" class = "chart"></div>
                 </div>
             </i-col>
         </row>
@@ -31,7 +31,7 @@
             },
         },
         mounted(){
-            let myChart = this.$echarts.init(document.getElementById('market'));
+            let myChart = this.$echarts.init(document.getElementById('pools_pie'));
             myChart.setOption({
                 title: {
                     text: '几个较大矿池之间的哈希率分布估计',

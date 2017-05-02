@@ -4,6 +4,12 @@
     <div style="background-color: white; min-height: 800px; padding: 10px">
       <div class="layout">
         <div class="layout-nav">
+          <Row>
+            <i-col span="2">
+
+            </i-col>
+            <i-col span=""
+          </Row>
           <c-nav></c-nav>
         </div>
         <div class="layout-content">
@@ -73,6 +79,7 @@
     font-weight: 300;
     font-family: dancing;
     min-height: 60px;
+    background: #E5EDF5;
   }
 </style>
 <style>

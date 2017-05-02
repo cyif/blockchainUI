@@ -1,5 +1,5 @@
 <template>
-  <Row>
+  <Row class="nav">
     <i-col span="14">
       <Menu mode="horizontal" theme="light" style="background-color: white; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: bold; color:#3a4a4d" width="auto">
         <div class="layout-logo">
@@ -113,9 +113,11 @@
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     color: #3a4a4d;
     font-size: 16px;
+    background-color: #E5EDF5;
   }
   Submenu{
     color: #3a4a4d;
+    background-color: #E5EDF5;
   }
   .search{
     max-height: 60px;
@@ -165,10 +167,10 @@
 
     border: 0;
 
-    background: #DDE2E2;
+    background: #f9f7f6;
 
     border-radius: 3px 0 0 3px;
-    border: #1784cd;
+    border: #E5EDF5;
 
   }
 
@@ -236,7 +238,7 @@
 
     text-transform: uppercase;
 
-    background: #1784cd;
+    background: #2DB7F5;
 
     border-radius: 0 3px 3px 0;
 
@@ -253,7 +255,7 @@
 
   .form-wrapper button:focus{
 
-    background: #1784cd;
+    background: #2DB7F5;
 
     outline: 0;
 
@@ -269,7 +271,7 @@
 
     border-style: solid solid solid none;
 
-    border-color: transparent #1784cd transparent;
+    border-color: transparent #E5EDF5 transparent;
 
     top: 12px;
 
@@ -279,7 +281,7 @@
 
   .form-wrapper button:hover:before{
 
-    border-right-color: #1784cd;
+    border-right-color: #2DB7F5;
 
   }
 
@@ -287,7 +289,7 @@
 
   .form-wrapper button:active:before{
 
-    border-right-color: #1784cd;
+    border-right-color: #2DB7F5;
 
   }
 
