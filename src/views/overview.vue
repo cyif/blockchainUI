@@ -1,6 +1,6 @@
 <template>
-    <!--<relationship></relationship>-->
     <div>
+        <pools-pie></pools-pie>
     </div>
 </template>
 
@@ -16,7 +16,7 @@
 //    import hashRate from '../components/graph/HashRate.vue'
 //    import marketCap from '../components/graph/marketCap.vue'
 //    import minersRevenue from '../components/graph/minersRevenue.vue'
-//    import poolsPie from '../components/graph/pools_pie.vue'
+    import poolsPie from '../components/graph/pools_pie.vue'
 //    import txsBlock from '../components/graph/txs_Block.vue'
 //    import txsNum from '../components/graph/txsNum.vue'
 //    import uniqueAdd from '../components/graph/uniqueAddresses .vue'
@@ -27,7 +27,7 @@
 //            bitcoins, exchangeLine, exchangeVolume,
 //            confirmation, confirmedTxs, costTxs, costTxsVolumn,
 //            hashRate, minersRevenue,
-//            poolsPis,
+            poolsPie,
 //            txsBlock, txsNum,
 //            uniqueAdd,
 //            totalFee

@@ -10,12 +10,14 @@
             </i-col>
             <i-col span="22">
                 <div>
-                    <block-size></block-size>
+                    <bitcoins class="v_jump"></bitcoins>
+                    <c-exchange-line></c-exchange-line>
+                    <block-size class="v_jump"></block-size>
                     <block-difficult></block-difficult>
                     <orphaned-blocks></orphaned-blocks>
                     <hr>
-                    <confirmed-txs></confirmed-txs>
-                    <confirmation class="v_jump"></confirmation>
+                    <confirmed-txs class="v_jump"></confirmed-txs>
+                    <confirmation></confirmation>
                     <cost-txs></cost-txs>
                     <cost-txs-volume></cost-txs-volume>
                 </div>
@@ -28,11 +30,14 @@
     import cBlocksTime from '../components/graph/blocks_time.vue'
     import cExchangeLine from '../components/graph/exchangeLine.vue'
 
+    import bitcoins from '../components/graph/bitcoins.vue'
+
     import blockDifficult from '../components/graph/block_difficulty_time.vue'
     import blockSize from '../components/graph/blockSize.vue'
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue'
     import slideNav from '../components/layout/slideNav.vue'
 
+    import txsNum from '../components/graph/txsNum.vue'
     import confirmation from '../components/graph/confirmationTime.vue'
     import confirmedTxs from '../components/graph/confirmedTxs.vue'
     import costTxs from '../components/graph/cost_txs.vue'
@@ -51,17 +56,9 @@
             }
         },
         components: {
-            cBlocksTime, cExchangeLine,
+            bitcoins, cExchangeLine,
             blockDifficult, blockSize, orphanedBlocks, slideNav,
             confirmation, confirmedTxs, costTxs, costTxsVolume
-        },
-        methods: {
-            jump (index) {
-                let jump = document.querySelectorAll('.v_jump');
-                // 获取需要滚动的距离
-                let total = jump[index].offsetTop;
-                $('html body').animate({scrollTop: total}, 500);
-            }
         }
     }
 </script>
