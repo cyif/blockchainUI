@@ -3,6 +3,11 @@
         <block-size></block-size>
         <block-difficult></block-difficult>
         <orphaned-blocks></orphaned-blocks>
+        <hr>
+        <confirmed-txs></confirmed-txs>
+        <confirmation></confirmation>
+        <cost-txs></cost-txs>
+        <cost-txs-volume></cost-txs-volume>
     </div>
 </template>
 
@@ -13,6 +18,11 @@
     import blockDifficult from '../components/graph/block_difficulty_time.vue'
     import blockSize from '../components/graph/blockSize.vue'
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue'
+
+    import confirmation from '../components/graph/confirmationTime.vue'
+    import confirmedTxs from '../components/graph/confirmedTxs.vue'
+    import costTxs from '../components/graph/cost_txs.vue'
+    import costTxsVolume from '../components/graph/cost_txsVolume.vue'
 
 
     export default {
@@ -27,6 +37,7 @@
         components: {
             cBlocksTime, cExchangeLine,
             blockDifficult, blockSize, orphanedBlocks,
+            confirmation, confirmedTxs, costTxs, costTxsVolume
         }
     }
 </script>
