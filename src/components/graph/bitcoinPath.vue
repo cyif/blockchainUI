@@ -1,5 +1,1 @@
-<template>
-</template>
-
-<script>
-</script>
+// 是d3Tree的那个图

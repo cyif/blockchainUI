@@ -3,7 +3,7 @@
         <row class = "block">
             <i-col span = "16">
                 <div class = "graph">
-                    <div id = "line" class = "chart"></div>
+                    <div id = "diff_interval" class = "chart"></div>
                 </div>
             </i-col>
             <i-col span = "8">
@@ -25,8 +25,9 @@
         components: {ICol},
         data() {
             return {
-                myChart : {},
+                myChart: {},
                 category: [],
+                dottedBase: +new Date()
             }
         },
         created() {
@@ -43,68 +44,10 @@
         },
         methods: {
             _init() {
-                window.addEventListener('resize', function() {
+                window.addEventListener('resize', function () {
                     this.echarts.resize()
                 }.bind(this));
             }
-
-        },
-
-        mounted() {
-            this.myChart = echarts.init(document.getElementById("line"));
-            this.myChart.setOption({
-
-                tooltip: {
-                    trigger: 'axis',
-                    axisPointer: {
-                        type: 'shadow',
-                        label: {
-                            show: true,
-                            backgroundColor: '#fff'
-                        }
-                    }
-                },
-                legend: {
-                    data: ['区块数'],
-                    textStyle: {
-                        color: '#333'
-                    }
-                },
-                xAxis: {
-                    data: this.category,
-                    axisLine: {
-                        lineStyle: {
-                            color: '#333'
-                        }
-                    }
-                },
-                yAxis: {
-                    splitLine: {show: false},
-                    axisLine: {
-                        lineStyle: {
-                            color: '#333'
-                        }
-                    }
-                },
-                series: [{
-                    name: '区块数',
-                    type: 'bar',
-                    barWidth: 10,
-                    itemStyle: {
-                        normal: {
-                            barBorderRadius: 5,
-                            color: new echarts.graphic.LinearGradient(
-                                0, 0, 0, 1,
-                                [
-                                    {offset: 0, color: '#14c8d4'},
-                                    {offset: 1, color: '#43eec6'}
-                                ]
-                            )
-                        }
-                    },
-                    data: this.data
-                }]
-            })
         }
     }
 </script>
