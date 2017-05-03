@@ -7,6 +7,15 @@
                 </div>
             </i-col>
         </row>
+        <row class = "block">
+            <Collapse v-model="value1">
+                <Panel name="1" style="font-size: 14px">
+                    比特币数目随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里需要说明的是，在10分钟左右的时间里，会有一个区块正在处理上一个10分钟所缓存的交易数据，并有另外的矿工继续开采下一个区块。也就是说，交易并不是实时就会被处理的，都要等到一个新的区块建立才得以确认。为了保证自己的交易优先被处理，提供相应的小费给相应的矿工是有必要的，如果你的交易也许此次未被处理，仍在记忆池中，很大可能是因为提供小费过少或为0，导致优先级降低。</p>
+                </Panel>
+            </Collapse>
+        </row>
     </div>
 </template>
 
@@ -26,6 +35,7 @@
         data() {
             return {
                 myChart: {},
+                value1: '1'
             }
         },
         methods: {
@@ -124,7 +134,7 @@
     .graph_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: #fff;
         border-radius: 8px;
     }
     .graph_info {

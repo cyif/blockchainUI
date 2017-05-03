@@ -7,6 +7,15 @@
                 </div>
             </i-col>
         </row>
+        <row class = "block">
+            <Collapse v-model="value1">
+                <Panel name="1" style="font-size: 14px">
+                    哈希率随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所谓的哈希率是用来衡量比特币网络的处理能力的（进行高强度的数学运算），网络哈希率若达到10TH/s，就意味着这个网络每秒能处理10亿次计算。可能是计算机设备的更新迭代算力增强，可能是加入比特币网络中的计算机增多，或是二者兼有。</p>
+                </Panel>
+            </Collapse>
+        </row>
     </div>
 </template>
 
@@ -28,6 +37,7 @@
         data() {
             return {
                 myChart: {},
+                value1: '1'
             }
         },
         methods: {
@@ -126,7 +136,7 @@
     .graph_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: #fff;
         border-radius: 8px;
     }
     .graph_info {

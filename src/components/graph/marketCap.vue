@@ -7,6 +7,15 @@
                 </div>
             </i-col>
         </row>
+        <row class = "block">
+            <Collapse v-model="value1">
+                <Panel name="1" style="font-size: 14px">
+                    市场中比特币价值（美元）随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                </Panel>
+            </Collapse>
+        </row>
     </div>
 </template>
 
@@ -25,6 +34,7 @@
         data() {
             return {
                 myChart: {},
+                value1: '1'
             }
         },
         methods: {
