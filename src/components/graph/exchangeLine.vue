@@ -149,7 +149,7 @@ padding-bottom: 50px;">
   .graph_canvas {
     margin-left: 5px;
     margin-right: 5px;
-    background: #f5f7f9;
+    background: #fff;
     border-radius: 8px;
   }
   .graph_info {
