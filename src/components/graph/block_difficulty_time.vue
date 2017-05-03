@@ -45,7 +45,7 @@
     }
 
     export default {
-        components: {ICol, cBlocksTime},
+        components: {ICol},
         data() {
             return {
                 myChart: {},

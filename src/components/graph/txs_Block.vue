@@ -8,7 +8,7 @@
             </i-col>
         </row>
         <row class = "block">
-            <Collapse v-model="value1">
+            <Collapse>
                 <Panel name="1" style="font-size: 14px">
                     每个区块平均处理交易数随时间变化
                     <p slot="content" style="font-size: 16px;">
