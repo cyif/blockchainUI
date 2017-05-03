@@ -26,6 +26,7 @@
         data() {
             return {
                 myChart: {},
+                value1: '1'
             }
         },
         methods: {

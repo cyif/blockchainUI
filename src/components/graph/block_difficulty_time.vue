@@ -1,15 +1,15 @@
 <template>
     <div class = "graph_canvas">
         <row class = "block">
-            <i-col span = "16">
+            <i-col span = "24">
                 <div class = "graph">
                     <div id = "blockDiff" class = "chart"></div>
                 </div>
             </i-col>
-            <i-col span="8">
-                <div>
-                    <c-blocks-time></c-blocks-time>
-                </div>
+        </row>
+        <row>
+            <i-col span="24">
+                <c-blocks-time></c-blocks-time>
             </i-col>
         </row>
         <row class = "block">
@@ -18,6 +18,12 @@
                     平均区块开采难度随时间变化
                     <p slot="content" style="font-size: 16px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;矿工挖矿开采一个新的区块需要进行大量的数学运算，去逐一试出一个可以使得区块Hash值低于某一个阈值的nonce随机数，当这个阈值设定越低，其难度系数也就相应越高。该数字自动调节，以保证全网平均10分钟能找一个新的有效区块来处理这段时间内的交易。难度的大幅提升，意味着投入到区块开采的算力大幅增加，而为了稳定10分钟一个新区块，需要给定一个较低的阈值。从图中可以看到中后期，难度总体呈阶梯式上升，而目前的难度系数已经高达千亿的数量级。</p>
+                </Panel>
+                <Panel name="2" style="font-size: 14px">
+                    块平均创建时间随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        虽然说目前的时间维持在</p>
                 </Panel>
             </Collapse>
         </row>

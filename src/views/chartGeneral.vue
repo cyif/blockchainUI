@@ -10,39 +10,38 @@
             </i-col>
             <i-col span="22">
                 <div>
-                    <c-blocks-time></c-blocks-time>
-                    <bitcoins class="v_jump"></bitcoins>
-                    <c-exchange-line></c-exchange-line>
-                    <exchange-volume></exchange-volume>
-                    <market-cap></market-cap>
-
-                    <block-size class="v_jump"></block-size>
+                    <bitcoins class="v_jump"></bitcoins>  //1-1
+                    <c-exchange-line></c-exchange-line>   //1-2
+                    <market-cap></market-cap>   //1-3
+                    <exchange-volume></exchange-volume> //1-4
                     <br>
                     <br>
                     <hr>
                     <br>
                     <br>
-                    <block-difficult></block-difficult>
-                    <orphaned-blocks></orphaned-blocks>
-                    <block-gap></block-gap>
+                    <block-size class="v_jump"></block-size>  //2-1
+                    <orphaned-blocks></orphaned-blocks> //2-2
+                    <txs-block></txs-block> //2-3
+                    <confirmation></confirmation> //2-4
                     <br>
                     <br>
                     <hr>
                     <br>
                     <br>
-                    <confirmed-txs class="v_jump"></confirmed-txs>
-                    <confirmation></confirmation>
-                    <cost-txs></cost-txs>
-
-                    <hash-rate class="v_jump"></hash-rate>
-                    <block-difficult></block-difficult>
-                    <miners-revenue></miners-revenue>
-                    <fee-total></fee-total>
-
-                    <unique-add class="v_jump"></unique-add>
-                    <cost-txs-volume></cost-txs-volume>
-                    <confirmed-txs></confirmed-txs>
-                    <txs-num></txs-num>
+                    <hash-rate class="v_jump"></hash-rate> //3-1
+                    <block-difficult></block-difficult>  //3-2 3-3
+                    <miners-revenue></miners-revenue>  //3-4
+                    <fee-total></fee-total>  <!--//3-5 3-6-->
+                    <cost-txs-volume></cost-txs-volume>  //3-7
+                    <cost-txs></cost-txs>  //3-8
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                    <br>
+                    <unique-add class="v_jump"></unique-add> //4-1
+                    <confirmed-txs></confirmed-txs> // 4-2 每天得到确认的交易数
+                    <txs-num></txs-num>  // 4-3记忆池所有交易数 记忆池大小一起
                 </div>
             </i-col>
         </Row>

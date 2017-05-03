@@ -131,14 +131,6 @@
         background: #f5f7f9;
         border-radius: 8px;
     }
-    .graph_info {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 8px;
-        padding-top: 10%;
-        padding-bottom: 10%;
-    }
     .graph {
         height : 350px;
         margin : 10px;
