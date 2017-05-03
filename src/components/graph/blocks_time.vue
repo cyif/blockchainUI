@@ -110,7 +110,7 @@
                     }
                 }],
                 series: [{
-                    name: '块占用空间大小（KB)',
+                    name: '产生块的个数',
                     data: values,
                     type: 'line',
                     smooth:true,
