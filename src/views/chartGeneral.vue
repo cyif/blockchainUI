@@ -24,6 +24,7 @@
                     <br>
                     <block-difficult></block-difficult>
                     <orphaned-blocks></orphaned-blocks>
+                    <block-gap></block-gap>
                     <br>
                     <br>
                     <hr>
@@ -60,6 +61,7 @@
 
     import blockDifficult from '../components/graph/block_difficulty_time.vue'
     import blockSize from '../components/graph/blockSize.vue'
+    import blockGap from '../components/graph/blockTimeGap.vue'
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue'
     import slideNav from '../components/layout/slideNav.vue'
 
@@ -89,7 +91,7 @@
             slideNav,
             cBlocksTime,
             bitcoins, cExchangeLine, exchangeVolume, marketCap,
-            blockSize, orphanedBlocks, confirmation, costTxs, txsBlock,
+            blockSize, orphanedBlocks, confirmation, costTxs, txsBlock, blockGap,
             hashRate, blockDifficult, minersRevenue, feeTotal,
             uniqueAdd, confirmedTxs, costTxsVolume, txsNum
         }

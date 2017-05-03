@@ -3,7 +3,7 @@
         <row class = "block">
             <i-col span = "24">
                 <div class = "graph" id="graph">
-                    <div id = "marketCap" class = "chart"></div>
+                    <div id = "blockTimeGap" class = "chart"></div>
                 </div>
             </i-col>
         </row>
@@ -14,12 +14,14 @@
     import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import $ from 'jquery';
-    import data from '../../data/marketCap.json'
+    import data from '../../data/blockGap.json'
 
     var values = [];
-    for (let i = 0; i < data.values.length; i++) {
-        let o = data.values[i];
-        values.push([o.x * 1000, o.y]);
+    let d1 = new Date(Date.parse(data.values[0].time_utc)).getTime();
+    for (let i = 1; i < data.values.length; i++) {
+        let d2 = new Date(Date.parse(data.values[i].time_utc)).getTime();
+        values.push([data.values[i].time_utc, Math.abs(d1 - d2) / (1000*60)]);
+        d1 = d2;
     }
     var max = values[0][1];
     for (let i = 0; i < values.length; i++) {
@@ -41,7 +43,7 @@
             },
         },
         mounted(){
-            let myChart = this.$echarts.init(document.getElementById('marketCap'));
+            let myChart = this.$echarts.init(document.getElementById('blockTimeGap'));
             myChart.setOption({
                 backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                     offset: 0,
@@ -61,6 +63,7 @@
                     trigger: 'axis'
                 },
                 xAxis: {
+                    name: "块号",
                     type: 'time',
                     splitLine: {
                         lineStyle: {
@@ -71,18 +74,10 @@
                     },
                     axisTick: {
                         show: false
-                    },
-                    axisLabel: {
-                        formatter: function (value, index) {
-                            // 格式化成月/日，只在第一个刻度显示年份
-                            var date = new Date(value);
-                            var texts = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
-                            return texts.join('/');
-                        }
                     }
                 },
                 yAxis: {
-                    name: '美元',
+                    name: '间隔时间（分钟）',
                     splitLine: {
                         lineStyle: {
                             type: 'dashed'
@@ -111,7 +106,7 @@
                     }
                 }],
                 series: [{
-                    name: '市值（美元）',
+                    name: '块的创建间隔时间',
                     data: values,
                     type: 'line',
                     smooth: true,
