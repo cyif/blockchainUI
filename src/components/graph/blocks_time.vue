@@ -29,7 +29,7 @@
         components: {ICol},
         data() {
             return {
-                myChart: {},
+                myChart: {}
             }
         },
         methods: {
