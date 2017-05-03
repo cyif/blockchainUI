@@ -1,11 +1,25 @@
 <template>
     <div class = "graph_canvas">
         <row class = "block">
-            <i-col span = "24">
-                <div class = "graph" id="graph">
+            <i-col span = "16">
+                <div class = "graph">
                     <div id = "blockDiff" class = "chart"></div>
                 </div>
             </i-col>
+            <i-col span="8">
+                <div>
+                    <c-blocks-time></c-blocks-time>
+                </div>
+            </i-col>
+        </row>
+        <row class = "block">
+            <Collapse v-model="value1">
+                <Panel name="1" style="font-size: 14px">
+                    平均区块开采难度随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;矿工挖矿开采一个新的区块需要进行大量的数学运算，去逐一试出一个可以使得区块Hash值低于某一个阈值的nonce随机数，当这个阈值设定越低，其难度系数也就相应越高。该数字自动调节，以保证全网平均10分钟能找一个新的有效区块来处理这段时间内的交易。难度的大幅提升，意味着投入到区块开采的算力大幅增加，而为了稳定10分钟一个新区块，需要给定一个较低的阈值。从图中可以看到中后期，难度总体呈阶梯式上升，而目前的难度系数已经高达千亿的数量级。</p>
+                </Panel>
+            </Collapse>
         </row>
     </div>
 </template>
@@ -15,6 +29,7 @@
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import $ from 'jquery';
     import data from '../../data/blockDiff.json'
+    import cBlocksTime from '../../components/graph/blocks_time.vue'
 
     var values = data.values;
 
@@ -24,10 +39,11 @@
     }
 
     export default {
-        components: {ICol},
+        components: {ICol, cBlocksTime},
         data() {
             return {
                 myChart: {},
+                value1: '1'
             }
         },
         methods: {
@@ -116,18 +132,10 @@
         margin: 10px;
     }
     .graph_canvas {
-        margin-left: 5px;
-        margin-right: 5px;
-        background: #f5f7f9;
+        margin:5px;
+        background: #fff;
         border-radius: 8px;
-    }
-    .graph_info {
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 8px;
-        padding-top: 10%;
-        padding-bottom: 10%;
+        min-height: 500px
     }
     .graph {
         height : 350px;

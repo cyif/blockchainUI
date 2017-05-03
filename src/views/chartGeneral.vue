@@ -13,9 +13,18 @@
                     <bitcoins class="v_jump"></bitcoins>
                     <c-exchange-line></c-exchange-line>
                     <block-size class="v_jump"></block-size>
+                    <br>
+                    <br>
+                    <hr>
+                    <br>
+                    <br>
                     <block-difficult></block-difficult>
                     <orphaned-blocks></orphaned-blocks>
+                    <br>
+                    <br>
                     <hr>
+                    <br>
+                    <br>
                     <confirmed-txs class="v_jump"></confirmed-txs>
                     <confirmation></confirmation>
                     <cost-txs></cost-txs>

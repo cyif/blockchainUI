@@ -7,6 +7,15 @@
                 </div>
             </i-col>
         </row>
+        <row class = "block">
+            <Collapse v-model="value1">
+                <Panel name="1" style="font-size: 14px">
+                    获得确认的交易数随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一次明显的高峰出现于2012.6.14,</p>
+                </Panel>
+            </Collapse>
+        </row>
     </div>
 </template>
 
@@ -25,6 +34,7 @@
         data() {
             return {
                 myChart: {},
+                value1: '1'
             }
         },
         methods: {
@@ -68,7 +78,7 @@
                     },
                 },
                 yAxis: {
-                    name: '美元',
+                    name: '数目',
                     splitLine: {
                         lineStyle: {
                             type: 'dashed'
@@ -115,7 +125,7 @@
     .graph_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: #fff;
         border-radius: 8px;
     }
     .graph_info {

@@ -1,15 +1,9 @@
 <template>
     <div class = "graph_canvas">
         <row class = "block">
-            <i-col span = "16">
+            <i-col span = "24">
                 <div class = "graph">
                     <div id = "diff_interval" class = "chart"></div>
-                </div>
-            </i-col>
-            <i-col span = "8">
-                <div class = graph_info>
-                    <p> "信息" </p>
-                    <p> {{data}}</p>
                 </div>
             </i-col>
         </row>
@@ -21,7 +15,6 @@
     import ICol from "../../../node_modules/iview/src/components/grid/col";
 
     export default {
-        props: ['data'],
         components: {ICol},
         data() {
             return {
