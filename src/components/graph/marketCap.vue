@@ -25,12 +25,12 @@
     import $ from 'jquery';
     import data from '../../data/marketCap.json'
 
-    var values = [];
+    let values = [];
     for (let i = 0; i < data.values.length; i++) {
         let o = data.values[i];
         values.push([o.x * 1000, o.y]);
     }
-    var max = values[0][1];
+    let max = values[0][1];
     for (let i = 0; i < values.length; i++) {
         max = Math.max(max, values[i][1]);
     }
@@ -84,7 +84,6 @@
                     },
                     axisLabel: {
                         formatter: function (value, index) {
-                            // 格式化成月/日，只在第一个刻度显示年份
                             var date = new Date(value);
                             var texts = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
                             return texts.join('/');
