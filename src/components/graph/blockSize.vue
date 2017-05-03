@@ -8,7 +8,7 @@
             </i-col>
         </row>
         <row>
-            <Collapse v-model="value1">
+            <Collapse>
                 <Panel name="1" style="font-size: 14px">
                     平均区块大小随时间变化
                     <p slot="content" style="font-size: 16px;">
@@ -79,6 +79,14 @@
                     axisTick: {
                         show: false
                     },
+                    axisLabel: {
+                        formatter: function (value, index) {
+                            // 格式化成月/日，只在第一个刻度显示年份
+                            var date = new Date(value);
+                            var texts = [date.getFullYear(), date.getMonth() + 1, date.getDate()];
+                            return texts.join('/');
+                        }
+                    }
                 },
                 yAxis: {
                     name: '大小（KB）',

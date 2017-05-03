@@ -12,6 +12,9 @@
                 <div>
                     <bitcoins class="v_jump"></bitcoins>
                     <c-exchange-line></c-exchange-line>
+                    <exchange-volume></exchange-volume>
+                    <market-cap></market-cap>
+
                     <block-size class="v_jump"></block-size>
                     <br>
                     <br>
@@ -28,7 +31,16 @@
                     <confirmed-txs class="v_jump"></confirmed-txs>
                     <confirmation></confirmation>
                     <cost-txs></cost-txs>
+
+                    <hash-rate class="v_jump"></hash-rate>
+                    <block-difficult></block-difficult>
+                    <miners-revenue></miners-revenue>
+                    <fee-total></fee-total>
+
+                    <unique-add class="v_jump"></unique-add>
                     <cost-txs-volume></cost-txs-volume>
+                    <confirmed-txs></confirmed-txs>
+                    <txs-num></txs-num>
                 </div>
             </i-col>
         </Row>
@@ -36,10 +48,14 @@
 </template>
 
 <script>
+    import $ from 'jquery'
+
     import cBlocksTime from '../components/graph/blocks_time.vue'
     import cExchangeLine from '../components/graph/exchangeLine.vue'
+    import exchangeVolume from '../components/graph/exchangeVolume.vue'
 
     import bitcoins from '../components/graph/bitcoins.vue'
+    import marketCap from '../components/graph/marketCap.vue'
 
     import blockDifficult from '../components/graph/block_difficulty_time.vue'
     import blockSize from '../components/graph/blockSize.vue'
@@ -47,12 +63,16 @@
     import slideNav from '../components/layout/slideNav.vue'
 
     import txsNum from '../components/graph/txsNum.vue'
+    import txsBlock from '../components/graph/txs_Block.vue'
     import confirmation from '../components/graph/confirmationTime.vue'
     import confirmedTxs from '../components/graph/confirmedTxs.vue'
     import costTxs from '../components/graph/cost_txs.vue'
     import costTxsVolume from '../components/graph/cost_txsVolume.vue'
+    import feeTotal from '../components/graph/feeTotal.vue'
 
-    import $ from 'jquery'
+    import hashRate from '../components/graph/HashRate.vue'
+    import minersRevenue from '../components/graph/minersRevenue.vue'
+    import uniqueAdd from '../components/graph/uniqueAddresses.vue'
 
     export default {
         data () {
@@ -65,9 +85,11 @@
             }
         },
         components: {
-            bitcoins, cExchangeLine,
-            blockDifficult, blockSize, orphanedBlocks, slideNav,
-            confirmation, confirmedTxs, costTxs, costTxsVolume
+            slideNav,
+            bitcoins, cExchangeLine, exchangeVolume, marketCap,
+            blockSize, orphanedBlocks, confirmation, costTxs, txsBlock,
+            hashRate, blockDifficult, minersRevenue, feeTotal,
+            uniqueAdd, confirmedTxs, costTxsVolume, txsNum
         }
     }
 </script>
