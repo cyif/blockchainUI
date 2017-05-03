@@ -89,6 +89,9 @@
                     axisTick: {
                         show: false
                     },
+                    axisLabel: {
+
+                    }
                 },
                 dataZoom: [{
                     type: 'inside',

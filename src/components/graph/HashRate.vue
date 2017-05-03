@@ -3,7 +3,7 @@
         <row class = "block">
             <i-col span = "24">
                 <div class = "graph" id="graph">
-                    <div id = "market" class = "chart"></div>
+                    <div id = "hashRate" class = "chart"></div>
                 </div>
             </i-col>
         </row>
@@ -38,7 +38,7 @@
             },
         },
         mounted(){
-            let myChart = this.$echarts.init(document.getElementById('market'));
+            let myChart = this.$echarts.init(document.getElementById('hashRate'));
             myChart.setOption({
                 backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                     offset: 0,

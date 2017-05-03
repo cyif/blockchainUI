@@ -10,6 +10,7 @@
             </i-col>
             <i-col span="22">
                 <div>
+                    <c-blocks-time></c-blocks-time>
                     <bitcoins class="v_jump"></bitcoins>
                     <c-exchange-line></c-exchange-line>
                     <exchange-volume></exchange-volume>
@@ -75,6 +76,7 @@
         },
         components: {
             slideNav,
+            cBlocksTime,
             bitcoins, cExchangeLine, exchangeVolume, marketCap,
             blockSize, orphanedBlocks, confirmation, costTxs, txsBlock,
             hashRate, blockDifficult, minersRevenue, feeTotal,
