@@ -20,6 +20,7 @@
                     <br>
                     <br>
                     <block-size class="v_jump"></block-size>  //2-1
+                    <c-blocks-time></c-blocks-time> //2-2
                     <orphaned-blocks></orphaned-blocks> //2-2
                     <txs-block></txs-block> //2-3
                     <confirmation></confirmation> //2-4

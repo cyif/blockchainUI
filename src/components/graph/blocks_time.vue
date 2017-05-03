@@ -81,7 +81,7 @@
                     }
                 },
                 yAxis: {
-                    name: '大小（KB）',
+                    name: '数目',
                     splitLine: {
                         lineStyle: {
                             type: 'dashed'

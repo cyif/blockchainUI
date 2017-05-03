@@ -9,7 +9,7 @@
         </row>
         <row>
             <i-col span="24">
-                <c-blocks-time></c-blocks-time>
+
             </i-col>
         </row>
         <row class = "block">
@@ -35,7 +35,7 @@
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import $ from 'jquery';
     import data from '../../data/blockDiff.json'
-    import cBlocksTime from '../../components/graph/blocks_time.vue'
+
 
     var values = data.values;
 
