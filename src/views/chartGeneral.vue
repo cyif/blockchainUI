@@ -10,6 +10,12 @@
             </i-col>
             <i-col span="22">
                 <div>
+                    <br>
+                    <br>
+                    <hr>
+                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
+                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">货币信息</span>
+                    </div>
                     <bitcoins class="v_jump"></bitcoins>  //1-1
                     <c-exchange-line></c-exchange-line>   //1-2
                     <market-cap></market-cap>   //1-3
@@ -17,8 +23,9 @@
                     <br>
                     <br>
                     <hr>
-                    <br>
-                    <br>
+                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
+                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">区块信息</span>
+                    </div>
                     <block-size class="v_jump"></block-size>  //2-1
                     <c-blocks-time></c-blocks-time> //2-2
                     <orphaned-blocks></orphaned-blocks> //2-2
@@ -27,8 +34,9 @@
                     <br>
                     <br>
                     <hr>
-                    <br>
-                    <br>
+                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
+                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">采矿信息</span>
+                    </div>
                     <hash-rate class="v_jump"></hash-rate> //3-1
                     <block-difficult></block-difficult>  //3-2 3-3
                     <miners-revenue></miners-revenue>  //3-4
@@ -38,8 +46,9 @@
                     <br>
                     <br>
                     <hr>
-                    <br>
-                    <br>
+                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
+                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">比特币网络信息</span>
+                    </div>
                     <unique-add class="v_jump"></unique-add> //4-1
                     <confirmed-txs></confirmed-txs> // 4-2 每天得到确认的交易数
                     <txs-num></txs-num>  // 4-3记忆池所有交易数 记忆池大小一起

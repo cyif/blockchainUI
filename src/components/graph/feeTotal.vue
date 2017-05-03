@@ -7,6 +7,16 @@
                 </div>
             </i-col>
         </row>
+        <row class = "block">
+            <Collapse v-model="value1">
+                <Panel name="1" style="font-size: 14px">
+                    仅小费收入随时间变化
+                    <p slot="content" style="font-size: 16px;">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </p>
+                </Panel>
+            </Collapse>
+        </row>
     </div>
 </template>
 
@@ -16,9 +26,8 @@
     import $ from 'jquery';
     import data from '../../data/feeTotal.json'
 
-
-    var values1 = data.values1;
-    var values2 = data.values2;
+    let values1 = data.values1;
+    let values2 = data.values2;
     export default {
         components: {ICol},
         data() {

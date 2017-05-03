@@ -29,7 +29,8 @@
         components: {ICol},
         data() {
             return {
-                myChart: {}
+                myChart: {},
+                value1: '1'
             }
         },
         methods: {
@@ -128,7 +129,7 @@
     .graph_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: #fff;
         border-radius: 8px;
     }
     .graph {
