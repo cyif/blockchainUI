@@ -3,11 +3,11 @@
     <div class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
-            <p style="font-family: flamenco; font-size: 40px" >Transactions with most addresses</p>
-            <p style="font-family: 'Hiragino Sans GB', 'Microsoft YaHei'; font-size: 20px" >交易动用账户数排名</p>
+            <h1 style="font-family: istokbold; font-weight: bold">Transactions with most addresses</h1>
+            <h2>交易动用账户数排名</h2>
         </div>
         <row class = "block">
-            <div class = "rank" style="font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif">
+            <div class = "rank">
                 <Table stripe
                        :context="context"
                        :columns="columns"
@@ -17,6 +17,7 @@
         </row>
     </div>
 </template>
+
 <script>
     export default {
         props: ['data'],
@@ -60,13 +61,13 @@
     }
 </script>
 
-
 <style scoped>
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
         background: transparent;
         border-radius: 8px;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }
     .title{
         margin-left: 35px;
@@ -83,20 +84,5 @@
         height : 100%;
         margin : 10px;
         padding-bottom: 20px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    }
-</style>
-<style>
-    .ivu-table .demo-table-info-column1 {
-        font-weight: bold;
-        font-size: 15px;
-    }
-
-    .ivu-table .demo-table-info-column2 {
-        font-size: 15px;
-    }
-
-    .ivu-table td,th{
-        font-size: 15px;
     }
 </style>

@@ -20,7 +20,7 @@
     .layout-logo{
         width: 280px;
         height: 50px;
-        background: white;
+        background: transparent;
         border-radius: 8px;
         float: left;
         position: relative;

@@ -1,13 +1,13 @@
 // layout
 <template>
   <div>
-    <div style="background-color: white; min-height: 800px; padding: 10px">
+    <div style="background-color: #e1e0dd; min-height: 800px; padding: 10px">
       <div class="layout">
         <div class="layout-nav">
           <c-nav></c-nav>
         </div>
         <div class="layout-content">
-          <div class="layout-breadcrumb" style="margin-left: 40px">
+          <div class="layout-breadcrumb" style="margin-left: 40px; font-size: 18px">
             <c-breadcrumb :url="url"></c-breadcrumb>
           </div>
           <div class="layout-content-main">
@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="layout-copy">
-          <span style="">2017 &copy; Yushu Wang</span>
+          <span>2017 &copy; Yushu Wang</span>
         </div>
       </div>
       <Back-top></Back-top>
@@ -44,7 +44,7 @@
 
 <style scoped>
   .layout{
-    background: #fff;
+    background: #e1e0dd;
     width: 100%;
   }
   .layout-nav{
@@ -58,7 +58,7 @@
     min-height: 800px;
     margin: 10px;
     /*overflow: scroll;*/
-    background: #fff;
+    background: #e1e0dd;
     border-radius: 4px;
   }
   .layout-content-main{
@@ -66,27 +66,30 @@
   }
   .layout-copy{
     text-align: center;
-    padding: 10px 0 5px;
+    padding-top:17px;
     color: #9ea7b4;
     font-size: 20px;
-    font-weight: 300;
-    font-family: dancing;
+    font-weight: 800;
+    font-family: flamenco;
     min-height: 60px;
-    background: #E5EDF5;
+    background: #ebf7ff;
+    top:30%;
   }
 </style>
 <style>
-  .graph_info {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    border-radius: 8px;
-    padding-top: 10%;
-    padding-bottom: 10%;
+  .ivu-table td .demo-table-info-attribute {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .ivu-table td.demo-table-info-key {
+    font-size: 15px;
+  }
+  .ivu-table td,th{
+    font-size: 15px;
   }
   template{
     color: #3a4a4d;
-    font-family: shadows, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
   }
   @font-face {
     font-family: 'dancing';
@@ -94,7 +97,6 @@
     url('font/dancing.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
   }
 
   @font-face {
@@ -103,7 +105,6 @@
     url('font/shadows.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
   }
 
   @font-face {
@@ -112,7 +113,49 @@
     url('font/flamenco.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+  }
 
+  @font-face {
+    font-family: 'istokweb';
+    src: url('font/istokweb.woff2') format('woff2'),
+    url('font/istokweb.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'istokbold';
+    src: url('font/istokbold.woff2') format('woff2'),
+    url('font/istokbold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'kreon';
+    src: url('font/kreon.woff2') format('woff2'),
+    url('font/kreon.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'sacra';
+    src: url('font/sacra.woff2') format('woff2'),
+    url('font/sacra.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'walter';
+    src: url('font/walter.woff2') format('woff2'),
+    url('font/walter.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'codrop';
+    src: url('font/codrop.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
   }
 
 </style>

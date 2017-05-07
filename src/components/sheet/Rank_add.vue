@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sheet_canvas">
         <coins-rank :data="coinsData"></coins-rank>
         <txs-rank :data="txsData"></txs-rank>
     </div>
@@ -47,22 +47,5 @@
         margin-right: 5px;
         background: transparent;
         border-radius: 8px;
-    }
-    .title{
-        margin-left: 35px;
-        font-size: medium;
-        font-weight: 800;
-        text-align: left;
-        vertical-align: bottom;
-        margin-bottom: 5px;
-    }
-    .block {
-        margin: 10px;
-    }
-    .rank {
-        height : 100%;
-        margin : 10px;
-        padding-bottom: 20px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     }
 </style>

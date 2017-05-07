@@ -8,7 +8,7 @@ const nameMap = {
         "nb_txs": "交易单数",
         "merkleroot": "Merkle root",
         "vout_sum": "比特币流",
-        "difficulty": "开矿难度",
+        "difficulty": "开采难度",
         "size": "块大小",
         "version": "版本号"
     },

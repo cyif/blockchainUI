@@ -1,11 +1,14 @@
 // 已完成
 <template>
-    <div>
+    <div class="sheet_canvas">
         <div class = 'title'>
             <br>
-            <h1>Block</h1>
+            <h1 style="font-family: istokbold; font-weight: bold">Block</h1>
+            <h2>区块</h2>
         </div>
+        <br>
         <hr/>
+        <br>
         <div class = "block">
             <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
@@ -15,6 +18,7 @@
             </div>
         </div>
         <hr/>
+        <br>
         <div class="transactions">
             <Collapse>
                 <Panel v-for="txInfo in txsData" :key="txInfo.tx">
@@ -115,6 +119,13 @@
 </script>
 
 <style scoped>
+    .sheet_canvas {
+        margin-left: 5px;
+        margin-right: 5px;
+        background: transparent;
+        border-radius: 8px;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
+    }
     .title{
         margin-left: 40px;
         font-size: medium;
@@ -129,12 +140,10 @@
         height : 100%;
         margin : 10px;
         padding-bottsom: 20px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    }
+        }
     .transactions {
         font-size: 15px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    }
+        }
 </style>
 
 <style>

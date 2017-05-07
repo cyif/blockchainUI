@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <Row>
+    <div class="sheet_canvas">
+        <Row class="whoTowho">
             <i-col span="12" id="from">
                 <Table :columns="addColumnFrom"
                        :data="addFrom"
@@ -105,6 +105,13 @@
 </script>
 
 <style scoped>
+    .sheet_canvas {
+        margin-left: 5px;
+        margin-right: 5px;
+        background: transparent;
+        border-radius: 8px;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
+    }
     p {
         font-size: 15px;
     }

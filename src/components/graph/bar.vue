@@ -28,7 +28,7 @@
     methods: {
       _init() {
         window.addEventListener('resize', function() {
-          this.echarts.resize()
+          this.drawChart()
         }.bind(this));
       }
     },

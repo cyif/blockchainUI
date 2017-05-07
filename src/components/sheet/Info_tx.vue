@@ -3,18 +3,22 @@
     <div class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
-            <h1>Transaction</h1>
+            <h1 style="font-family: istokbold; font-weight: bold">Transaction</h1>
+            <h2>交易</h2>
         </div>
+        <br>
         <hr/>
+        <br>
         <div class = "block">
-            <div class = "table" style="box-shadow: #30c9e8">
+            <div class = "table">
                 <Table stripe
                        :columns="txColumns"
                        :data="txData"
                        :show-header="showHeader"></Table>
             </div>
             <hr/>
-            <div>
+            <br>
+            <div class="subTable">
                 <Tabs type="card">
                     <Tab-pane label="交易流向">
                         <trade-info :trade="tradeFlow"></trade-info>
@@ -139,16 +143,17 @@
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: transparent;
         border-radius: 8px;
-        min-height: 350px;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }
-    .title{
+    .title {
         margin-left: 35px;
         font-size: medium;
-        font-weight: 500;
+        font-weight: 800;
         text-align: left;
         vertical-align: bottom;
+        margin-bottom: 5px;
     }
     .block {
         margin: 10px;
@@ -157,16 +162,9 @@
         height : 100%;
         margin : 10px;
         padding-bottom: 20px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-    }
-</style>
 
-<style>
-    .ivu-table td.demo-table-info-attribute {
-        font-weight: bold;
-        font-size: 15px;
     }
-    .ivu-table td.demo-table-info-key {
-        font-size: 15px;
+    .subTable {
+        margin: 20px;
     }
 </style>

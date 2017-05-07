@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="sheet_canvas">
         <add-rank :data="addData"></add-rank>
         <cdd-rank :data="cddData"></cdd-rank>
         <amount-rank :data="amountData"></amount-rank>
@@ -7,6 +7,7 @@
         <unspent-amount-rank :data="unspentAmountData"></unspent-amount-rank>
     </div>
 </template>
+
 <script>
     import addRank from './Rank_txs_addresses.vue'
     import cddRank from './Rank_txs_cdd.vue'
@@ -54,22 +55,6 @@
         margin-right: 5px;
         background: transparent;
         border-radius: 8px;
-    }
-    .title{
-        margin-left: 35px;
-        font-size: medium;
-        font-weight: 800;
-        text-align: left;
-        vertical-align: bottom;
-        margin-bottom: 5px;
-    }
-    .block {
-        margin: 10px;
-    }
-    .rank {
-        height : 100%;
-        margin : 10px;
-        padding-bottom: 20px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }
 </style>

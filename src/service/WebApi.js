@@ -45,5 +45,10 @@ export const webApi = {
 
     getSearchResult: function(id) {
         return axios.get('http://blockr.io/api/v1/search/main/' + id);
-    }
+    },
+
+    getCostTxsVolume: function () {
+        return axios.get('https://api.blockchain.info/charts/cost-per-transaction-percent?format=json&timespan=2years');
+    },
+
 }

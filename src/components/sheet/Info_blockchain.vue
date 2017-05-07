@@ -2,9 +2,12 @@
     <div class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
-            <h1>BlockChain</h1>
+            <h1 style="font-family: istokbold; font-weight: bold">BlockChain</h1>
+            <h2>区块链</h2>
         </div>
+        <br>
         <hr/>
+        <br>
         <row class = "block">
             <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
@@ -115,16 +118,17 @@
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: transparent;
         border-radius: 8px;
-        min-height: 350px;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }
     .title{
         margin-left: 35px;
         font-size: medium;
-        font-weight: 500;
+        font-weight: 800;
         text-align: left;
         vertical-align: bottom;
+        margin-bottom: 5px;
     }
     .block {
         margin: 10px;
@@ -133,7 +137,7 @@
         height : 100%;
         margin : 10px;
         padding-bottom: 20px;
-        font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+
     }
 </style>
 

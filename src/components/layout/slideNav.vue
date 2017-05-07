@@ -39,7 +39,7 @@
 
 <style scoped>
     .slide{
-        color: #3a4a4d;
-        font-weight: bold
+        color: #f1f2f0;
+        font-weight: 500;
     }
 </style>

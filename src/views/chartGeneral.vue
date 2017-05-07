@@ -9,49 +9,58 @@
                 </div>
             </i-col>
             <i-col span="22">
-                <div>
-                    <br>
-                    <br>
-                    <hr>
-                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
-                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">货币信息</span>
+                <div class="layout">
+                    <div class="block">
+                        <Card class = "span">
+                            <span class="text">货币信息</span>
+                        </Card>
+                        <bitcoins class="v_jump"></bitcoins>
+                        <c-exchange-line></c-exchange-line>
+                        <market-cap></market-cap>
+                        <exchange-volume></exchange-volume>
+                        <cdd-time></cdd-time>
+                        <br>
+                        <br>
                     </div>
-                    <bitcoins class="v_jump"></bitcoins>  //1-1
-                    <c-exchange-line></c-exchange-line>   //1-2
-                    <market-cap></market-cap>   //1-3
-                    <exchange-volume></exchange-volume> //1-4
-                    <br>
-                    <br>
-                    <hr>
-                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
-                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">区块信息</span>
+                    <div class="block">
+                        
+                        <Card class="span" >
+                            <span class="text">区块信息</span>
+                        </Card>
+                        <block-size class="v_jump"></block-size>
+                        <c-blocks-time></c-blocks-time>
+                        <orphaned-blocks></orphaned-blocks>
+                        <txs-block></txs-block>
+                        <txs-time></txs-time>
+                        <confirmation></confirmation>
+                        <br>
+                        <br>
                     </div>
-                    <block-size class="v_jump"></block-size>  //2-1
-                    <c-blocks-time></c-blocks-time> //2-2
-                    <orphaned-blocks></orphaned-blocks> //2-2
-                    <txs-block></txs-block> //2-3
-                    <confirmation></confirmation> //2-4
-                    <br>
-                    <br>
-                    <hr>
-                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
-                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">采矿信息</span>
+                    <div class="block">
+                        <Card class="span" >
+                            <span class="text">采矿信息</span>
+                        </Card>
+                        <hash-rate class="v_jump"></hash-rate>
+                        <block-difficult></block-difficult>
+                        <block-time-gap></block-time-gap>
+                        <miners-revenue></miners-revenue>
+                        <fee-total></fee-total>
+                        <cost-txs-volume></cost-txs-volume>
+                        <cost-txs></cost-txs>
+                        <br>
+                        <br>
                     </div>
-                    <hash-rate class="v_jump"></hash-rate> //3-1
-                    <block-difficult></block-difficult>  //3-2 3-3
-                    <miners-revenue></miners-revenue>  //3-4
-                    <fee-total></fee-total>  <!--//3-5 3-6-->
-                    <cost-txs-volume></cost-txs-volume>  //3-7
-                    <cost-txs></cost-txs>  //3-8
-                    <br>
-                    <br>
-                    <hr>
-                    <div style="width: 100%; background-color: #E5EDF5; padding-top: 15px; padding-bottom: 15px" >
-                        <span style="font-size: 20px; margin-left: 45%; font-weight: bold">比特币网络信息</span>
+                    <div class="block">
+                        <Card class="span" >
+                            <span class="text">比特币网络信息</span>
+                        </Card>
+                        <unique-add class="v_jump"></unique-add>
+                        <txs-address></txs-address>
+                        <confirmed-txs></confirmed-txs>
+                        <txs-num></txs-num>
+                        <br>
+                        <br>
                     </div>
-                    <unique-add class="v_jump"></unique-add> //4-1
-                    <confirmed-txs></confirmed-txs> // 4-2 每天得到确认的交易数
-                    <txs-num></txs-num>  // 4-3记忆池所有交易数 记忆池大小一起
                 </div>
             </i-col>
         </Row>
@@ -69,11 +78,12 @@
     import marketCap from '../components/graph/marketCap.vue'
 
     import blockDifficult from '../components/graph/block_difficulty_time.vue'
+    import blockTimeGap from '../components/graph/blockTimeGap.vue'
     import blockSize from '../components/graph/blockSize.vue'
-    import blockGap from '../components/graph/blockTimeGap.vue'
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue'
     import slideNav from '../components/layout/slideNav.vue'
 
+    import txsTime from '../components/graph/txs_time.vue'
     import txsNum from '../components/graph/txsNum.vue'
     import txsBlock from '../components/graph/txs_Block.vue'
     import confirmation from '../components/graph/confirmationTime.vue'
@@ -85,14 +95,12 @@
     import hashRate from '../components/graph/HashRate.vue'
     import minersRevenue from '../components/graph/minersRevenue.vue'
     import uniqueAdd from '../components/graph/uniqueAddresses.vue'
+    import cddTime from '../components/graph/cdd_AcgSum_time.vue'
+    import txsAddress from '../components/graph/txs_address.vue'
 
     export default {
         data () {
             return {
-                addresses_over_time: [],
-                blocks_over_time: [],
-                txs_per_address: [],
-                blocksNb: [],
                 height: 400
             }
         },
@@ -100,9 +108,9 @@
             slideNav,
             cBlocksTime,
             bitcoins, cExchangeLine, exchangeVolume, marketCap,
-            blockSize, orphanedBlocks, confirmation, costTxs, txsBlock, blockGap,
+            blockSize, orphanedBlocks, confirmation, costTxs, txsBlock, blockTimeGap,
             hashRate, blockDifficult, minersRevenue, feeTotal,
-            uniqueAdd, confirmedTxs, costTxsVolume, txsNum
+            uniqueAdd, confirmedTxs, costTxsVolume, txsNum, txsTime, cddTime, txsAddress
         }
     }
 </script>
@@ -110,5 +118,18 @@
 <style scoped>
     .generalCharts{
         min-height: 400px;
+    }
+
+    .span{
+        width: 100%;
+        background-color: #37bbe4;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .text{
+        font-size: 20px;
+        margin-left: 45%; 
+        font-weight: 500;
+        color: #f1f2f0;
     }
 </style>

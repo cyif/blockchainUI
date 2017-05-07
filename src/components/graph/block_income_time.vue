@@ -1,6 +1,6 @@
 
 <template>
-    <div class = "graph_canvas">
+    <Card class = "graph_canvas">
         <row class = "block">
             <i-col span = "16">
                 <div class = "graph">
@@ -13,7 +13,7 @@
                 </div>
             </i-col>
         </row>
-    </div>
+    </Card>
 </template>
 
 <script>

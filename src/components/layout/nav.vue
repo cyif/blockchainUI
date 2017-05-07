@@ -1,7 +1,7 @@
 <template>
   <Row class="nav">
     <i-col span="14">
-      <Menu mode="horizontal" theme="light" style="background-color: white; font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; font-size: 16px; font-weight: bold; color:#3a4a4d" width="auto">
+      <Menu mode="horizontal" theme="light" style="background-color: transparent; font-size: 16px; font-weight: bold; color:#3a4a4d" width="auto">
         <div class="layout-logo">
           <c-logo></c-logo>
         </div>
@@ -49,7 +49,7 @@
     <i-col span="10">
       <div class="search">
         <form class="cf form-wrapper">
-          <input type="text" placeholder="Search here" v-model="inputdata" required>
+          <input type="text" placeholder="输入块号、地址、相关Hash值..." v-model="inputdata" required>
           <button type="submit" @click="goToResult">查询</button>
         </form>
       </div>
@@ -110,10 +110,11 @@
 
 <style scoped>
   Menu-item{
-    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     color: #3a4a4d;
     font-size: 16px;
-    background-color: #E5EDF5;
+    font-weight: 500;
+    background-color: transparent;
   }
   Submenu{
     color: #3a4a4d;
@@ -163,14 +164,16 @@
 
     float: left;
 
-    font: bold 25px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
+
+    font-size: 25px;
 
     border: 0;
 
-    background: #f9f7f6;
+    background: #f1f2f0;
 
     border-radius: 3px 0 0 3px;
-    border: #E5EDF5;
+    border: #f1f2f0;
 
   }
 
@@ -178,37 +181,38 @@
 
     outline: 0;
 
-    background: #fff;
+    background: #f1f2f0;
 
   }
 
   .form-wrapper input::-webkit-input-placeholder {
 
-    color: #999;
+    color: #35342f;
 
     font-weight: normal;
 
-    font-style: italic;
+    font-size: 18px;
+
 
   }
 
   .form-wrapper input:-moz-placeholder {
 
-    color: #999;
+    color: ;
 
     font-weight: normal;
 
-    font-style: italic;
+    font-size: 18px;
 
   }
 
   .form-wrapper input:-ms-input-placeholder {
 
-    color: #999;
+    color: #35342f;
 
     font-weight: normal;
 
-    font-style: italic;
+    font-size: 18px;
 
   }
 
@@ -232,13 +236,17 @@
 
     width: 10%;
 
-    font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+    font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
+
+    font-size: 18px;
+
+    font-weight: 500;
 
     color: #fff;
 
     text-transform: uppercase;
 
-    background: #2DB7F5;
+    background: #37bbe4;
 
     border-radius: 0 3px 3px 0;
 
@@ -255,7 +263,7 @@
 
   .form-wrapper button:focus{
 
-    background: #2DB7F5;
+    background: #37bbe4;
 
     outline: 0;
 
@@ -271,7 +279,7 @@
 
     border-style: solid solid solid none;
 
-    border-color: transparent #E5EDF5 transparent;
+    border-color: transparent #37bbe4 transparent;
 
     top: 12px;
 
@@ -281,7 +289,7 @@
 
   .form-wrapper button:hover:before{
 
-    border-right-color: #2DB7F5;
+    border-right-color: #37bbe4;
 
   }
 
@@ -289,7 +297,7 @@
 
   .form-wrapper button:active:before{
 
-    border-right-color: #2DB7F5;
+    border-right-color: #37bbe4;
 
   }
 

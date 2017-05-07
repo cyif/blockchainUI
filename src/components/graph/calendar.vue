@@ -1,5 +1,5 @@
 <template>
-  <div class = "graph_canvas">
+  <Card class = "graph_canvas">
     <row class = "block">
       <i-col span = "16">
         <div class = "graph">
@@ -12,7 +12,7 @@
         </div>
       </i-col>
     </row>
-  </div>
+  </Card>
 </template>
 
 <script>
@@ -47,7 +47,7 @@
     methods: {
       _init() {
         window.addEventListener('resize', function() {
-          this.echarts.resize()
+          this.drawChart()
         }.bind(this));
       }
 
@@ -224,7 +224,7 @@
   .graph_canvas {
     margin-left: 5px;
     margin-right: 5px;
-    background: #f5f7f9;
+    background: #f1f2f0;
     border-radius: 8px;
   }
   .graph_info {

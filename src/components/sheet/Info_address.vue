@@ -2,12 +2,14 @@
 // 该地址最近的一笔交易数据
 // 看补充否
 <template>
-    <div>
+    <div class="sheet_canvas">
         <div class = 'title'>
             <br>
-            <h1>Address</h1>
+            <h1 style="font-family: istokbold; font-weight: bold">Address</h1>
         </div>
+        <br>
         <hr/>
+        <br>
         <div class = "block">
             <div class = "table" style="box-shadow: #30c9e8">
                 <Table stripe
@@ -197,9 +199,10 @@
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: #f5f7f9;
+        background: fff;
         border-radius: 8px;
         min-height: 350px;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }
     .title{
         margin-left: 35px;

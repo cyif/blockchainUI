@@ -1,5 +1,5 @@
 <template>
-    <div id="d3tree" class="container-fluid">
+    <Card id="d3tree" class="container-fluid">
         <div class="col-md-9 panel panel-default">
             <d3tree class="tree"
                     :data="treeData"
@@ -13,7 +13,7 @@
                     @expand="onExpand"
                     @retract="onRetract"></d3tree>
         </div>
-    </div>
+    </Card>
 </template>
 
 <script>
@@ -112,7 +112,7 @@
 
 <style>
     #d3tree {
-        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
@@ -120,7 +120,7 @@
         margin-top: 20px;
     }
     .tree {
-        height: 500px;
-        width: 100%;
+        min-height: 500px;
+        width: 90%;
     }
 </style>
