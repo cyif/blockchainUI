@@ -2,7 +2,7 @@
 // 该地址最近的一笔交易数据
 // 看补充否
 <template>
-    <div class="sheet_canvas">
+    <Card :bordered="false" class="sheet_canvas">
         <div class = 'title'>
             <br>
             <h1 style="font-family: istokbold; font-weight: bold">Address</h1>
@@ -41,7 +41,7 @@
             </Row>
         </div>
 
-    </div>
+    </Card>
 </template>
 
 <script>
@@ -199,7 +199,7 @@
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: fff;
+        background: #f1f2f0;
         border-radius: 8px;
         min-height: 350px;
         font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;

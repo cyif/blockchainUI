@@ -1,6 +1,6 @@
 
 <template>
-    <div class = 'sheet_canvas'>
+    <Card :bordered="false"  class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
             <h1 style="font-family: istokbold; font-weight: bold">Transactions with most addresses</h1>
@@ -15,7 +15,7 @@
                        :show-header="showHeader"></Table>
             </div>
         </row>
-    </div>
+    </Card>
 </template>
 
 <script>
@@ -63,9 +63,8 @@
 
 <style scoped>
     .sheet_canvas {
-        margin-left: 5px;
-        margin-right: 5px;
-        background: transparent;
+        margin: 10px;
+        background: #f1f2f0;
         border-radius: 8px;
         font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }

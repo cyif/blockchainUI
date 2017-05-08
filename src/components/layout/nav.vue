@@ -53,7 +53,7 @@
           <button type="submit" @click="goToResult">查询</button>
         </form>
       </div>
-      <hr style="margin-top: 1.5px; color: #3a4a4d"/>
+      <hr color="#35342f" style="margin-top: 0.4em; height: 0.01em;" />
     </i-col>
   </Row>
 </template>
@@ -144,7 +144,7 @@
 
     max-width: 100%;
 
-    padding: 8px 4px 4px 4px;
+    padding: 4px 4px 4px 4px;
 
     background: transparent;
 
@@ -160,7 +160,7 @@
 
     height: 45px;
 
-    padding: 3px 3px;
+    padding: 4px 4px 6px 4px;
 
     float: left;
 
@@ -198,7 +198,7 @@
 
   .form-wrapper input:-moz-placeholder {
 
-    color: ;
+    color: #35342f;
 
     font-weight: normal;
 
@@ -242,11 +242,11 @@
 
     font-weight: 500;
 
-    color: #fff;
+    color: #35342f;
 
     text-transform: uppercase;
 
-    background: #37bbe4;
+    background: #b3e5fc;
 
     border-radius: 0 3px 3px 0;
 
@@ -255,7 +255,7 @@
 
   .form-wrapper button:hover{
 
-    background: #1784cd;
+    background: #81d4fa;
 
   }
 
@@ -263,7 +263,7 @@
 
   .form-wrapper button:focus{
 
-    background: #37bbe4;
+    background: #81d4fa;
 
     outline: 0;
 
@@ -279,7 +279,7 @@
 
     border-style: solid solid solid none;
 
-    border-color: transparent #37bbe4 transparent;
+    border-color: transparent #b3e5fc transparent;
 
     top: 12px;
 
@@ -287,9 +287,10 @@
 
   }
 
+
   .form-wrapper button:hover:before{
 
-    border-right-color: #37bbe4;
+    border-right-color: #81d4fa;
 
   }
 
@@ -297,7 +298,7 @@
 
   .form-wrapper button:active:before{
 
-    border-right-color: #37bbe4;
+    border-right-color: #81d4fa;
 
   }
 

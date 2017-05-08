@@ -1,14 +1,15 @@
 @breadcrumb-prefix-cls: ~"@{css-prefix}breadcrumb";
 
 .@{breadcrumb-prefix-cls} {
-    color: #999;
+    color: #35342f;
     font-size: @font-size-base;
+    font-weight: 500;
 
     a {
         color: @text-color;
         transition: color @transition-time @ease-in-out;
         &:hover {
-            color: tint(@primary-color, 20%);
+            color: #35342f;
         }
     }
 
@@ -23,7 +24,7 @@
 
     &-item-separator {
         margin: 0 8px;
-        color: @border-color-base;
+        color: #35342f;
     }
 
     &-item-link {

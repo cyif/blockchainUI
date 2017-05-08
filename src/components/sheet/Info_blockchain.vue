@@ -1,7 +1,6 @@
 <template>
-    <div class = 'sheet_canvas'>
+    <Card :bordered="false" class = 'sheet_canvas'>
         <div class = 'title'>
-            <br>
             <h1 style="font-family: istokbold; font-weight: bold">BlockChain</h1>
             <h2>区块链</h2>
         </div>
@@ -9,7 +8,7 @@
         <hr/>
         <br>
         <row class = "block">
-            <div class = "table" style="box-shadow: #30c9e8">
+            <div class = "table">
                 <Table stripe
                        :columns="chainColumns"
                        :data="chainData"
@@ -17,7 +16,7 @@
                 </Table>
             </div>
         </row>
-    </div>
+    </Card>
 </template>
 
 <script>
@@ -118,7 +117,7 @@
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: transparent;
+        background: #f1f2f0;
         border-radius: 8px;
         font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
     }
@@ -129,6 +128,7 @@
         text-align: left;
         vertical-align: bottom;
         margin-bottom: 5px;
+        margin-top: 5px;
     }
     .block {
         margin: 10px;
@@ -136,7 +136,7 @@
     .table {
         height : 100%;
         margin : 10px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
 
     }
 </style>

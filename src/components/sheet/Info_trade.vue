@@ -1,5 +1,5 @@
 <template>
-    <div class="sheet_canvas">
+    <Card :bordered="false" class="sheet_canvas">
         <Row class="whoTowho">
             <i-col span="12" id="from">
                 <Table :columns="addColumnFrom"
@@ -21,7 +21,7 @@
                 </div>
             </div>
         </Row>
-    </div>
+    </Card>
 </template>
 
 <script>

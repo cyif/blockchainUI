@@ -46,10 +46,11 @@
   .layout{
     background: #e1e0dd;
     width: 100%;
+    color: #35342f;
   }
   .layout-nav{
     width: 100%;
-    margin: 0;
+    margin-bottom: 10px;
   }
   .layout-breadcrumb{
     padding: 10px 15px 0;
@@ -67,12 +68,12 @@
   .layout-copy{
     text-align: center;
     padding-top:17px;
-    color: #9ea7b4;
-    font-size: 20px;
+    color: #37bbe4;
+    font-size: 25px;
     font-weight: 800;
     font-family: flamenco;
     min-height: 60px;
-    background: #ebf7ff;
+    background: transparent;
     top:30%;
   }
 </style>

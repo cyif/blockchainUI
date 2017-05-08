@@ -20,8 +20,8 @@
                 content: '';
                 display: block;
                 width: 100%;
-                height: 1px;
-                background: @border-color-base;
+                height: 2px;
+                background: #0b3536;
                 position: absolute;
                 bottom: 0;
                 left: 0;
@@ -46,7 +46,7 @@
     }
 
     &-light{
-        background: #fff;
+        background: #f1f2f0;
     }
     &-dark{
         background: @title-color;
@@ -66,17 +66,17 @@
         transition: all @transition-time @ease-in-out;
     }
     &-item > i{
-        margin-right: 6px;
+        margin-right: 4px;
     }
     &-submenu-title > i, &-submenu-title span > i{
-        margin-right: 8px;
+        margin-right: 6px;
     }
 
     &-horizontal &-item,
     &-horizontal &-submenu
     {
         float: left;
-        padding: 0 20px;
+        padding: 0 15px;
         position: relative;
         cursor: pointer;
         z-index: 3;
@@ -86,23 +86,24 @@
     &-light&-horizontal &-item, &-light&-horizontal &-submenu{
         height: inherit;
         line-height: inherit;
-        border-bottom: 2px solid transparent;
+        border-bottom: 2px solid
+        transparent;
         color: @text-color;
         &-active, &:hover{
-            color: @primary-color;
-            border-bottom: 2px solid @primary-color;
+            color: @selected-color;
+            border-bottom: 2px solid #b3e5fc;
         }
     }
 
     &-dark&-horizontal &-item, &-dark&-horizontal &-submenu{
         color: @subsidiary-color;
         &-active, &:hover{
-            color: #fff;
+            color: #f1f2f0;
         }
     }
 
     &-primary&-horizontal &-item, &-primary&-horizontal &-submenu{
-        color: #fff;
+        color: #f1f2f0;
         &-active, &:hover{
             background: @link-active-color;
         }

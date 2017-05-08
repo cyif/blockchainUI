@@ -45,7 +45,7 @@
     .sheet_canvas {
         margin-left: 5px;
         margin-right: 5px;
-        background: transparent;
+        background: #f1f2f0;
         border-radius: 8px;
     }
 </style>
