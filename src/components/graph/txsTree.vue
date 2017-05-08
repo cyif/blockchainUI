@@ -1,109 +1,132 @@
 <template>
     <Card id="d3tree" class="container-fluid">
-        <div class="col-md-9 panel panel-default">
-            <d3tree class="tree"
-                    :data="treeData"
-                    :marginX="Marginx"
-                    :marginY="Marginy"
-                    :zoomable="zoomable"
-                    :node-text="nodeText"
-                    :type="type"
-                    :duration="duration"
-                    @clicked="onClick"
-                    @expand="onExpand"
-                    @retract="onRetract"></d3tree>
+        <div class = "graph" id="graph">
+            <div id = "txsTree" class = "chart"></div>
         </div>
     </Card>
 </template>
 
 <script>
-    import {D3tree} from '../graph/d3tree'
+    import echarts from 'echarts';
+    import ICol from "../../../node_modules/iview/src/components/grid/col";
 
     export default {
         props: ['trade'],
         data () {
             return {
-                type: 'cluster',
-                layoutType: 'euclidean',
-                duration: 750,
-                Marginx: 100,
-                Marginy: 100,
-                nodeText: 'text',
-                currentNode: null,
-                zoomable: true,
+                nodes: [],
+                links: []
             }
         },
-        components: {
-            D3tree
-        },
-        computed: {
-            treeData : function() {
-                let children = [];
-                for (let i = 0; i < this.trade.vouts.length; i++) {
-                    if (i >= 20) {
-                        children.push({
-                            text: '...',
-                            is_spent: false
-                        });
-                        break;
-                    }
-                    let out = this.trade.vouts[i];
-                    children.push({
-                        text: out.address,
-                        amount: out.amount,
-                        is_spent: out.is_spent === 49,
-                        children: []
-                    })
-                }
-                return {
-                    text : '交易',
-                    children: children
-                }
-            }
+        mounted(){
+            this._init();
+            this.getChartData();
+            this.drawChart();
         },
         methods: {
-            do (action) {
-                if (this.currentNode) {
-                    this.isLoading = true
-                    this.$refs['tree'][action](this.currentNode).then(() => { this.isLoading = false })
-                }
+            _init() {
+                window.addEventListener('resize', function () {
+                    this.drawChart()
+                }.bind(this));
             },
-            getId (node) {
-                return node.id
-            },
-            expandAll () {
-                this.do('expandAll')
-            },
-            collapseAll () {
-                this.do('collapseAll')
-            },
-            showOnly () {
-                this.do('showOnly')
-            },
-            show () {
-                this.do('show')
-            },
-            onClick (evt) {
-//                this.currentNode = evt.element;
-//                this.onEvent('onClick', evt)
-                console.log(evt);
-                this.$route.push({
-                    path: '/address/info/' + evt.element.text
+            drawChart() {
+                let myChart = this.$echarts.init(document.getElementById('txsTree'));
+                myChart.setOption({
+                    title: {
+                        text: 'Graph 简单示例'
+                    },
+                    tooltip: {},
+                    animationDurationUpdate: 1500,
+                    animationEasingUpdate: 'quinticInOut',
+                    series : [
+                        {
+                            type: 'graph',
+                            layout: 'none',
+                            symbolSize: 50,
+                            roam: true,
+                            label: {
+                                normal: {
+                                    show: true
+                                }
+                            },
+                            edgeSymbol: ['circle', 'arrow'],
+                            edgeSymbolSize: [4, 10],
+                            edgeLabel: {
+                                normal: {
+                                    textStyle: {
+                                        fontSize: 20
+                                    }
+                                }
+                            },
+                            data: this.nodes,
+                            links: this.links,
+                            lineStyle: {
+                                normal: {
+                                    opacity: 0.9,
+                                    width: 2,
+                                    curveness: 0
+                                }
+                            }
+                        }
+                    ]
                 });
             },
-            onExpand (evt) {
-                this.onEvent('onExpand', evt)
-            },
-            onRetract (evt) {
-                this.onEvent('onRetract', evt)
-            },
-            onEvent (eventName, data) {
-//                this.events.push({eventName, data: data.data});
-                console.log({eventName, data: data})
-            },
-            resetZoom () {
-                this.isLoading = true;
-                this.$refs['tree'].resetZoom().then(() => { this.isLoading = false })
+            getChartData() {
+                this.nodes.push({
+                    name: "交易",
+                    x: 550,
+                    y: 300
+                });
+                console.log(this.trade);
+                let k = 1;
+                for (let i = 0; i < this.trade.vins.length; i++) {
+                    let vin = this.trade.vins[i];
+                    this.nodes.push({
+                        name: vin.address,
+                        x: 300,
+                        y: 300 + i * 30 * k
+                    });
+                    k *= -1;
+                    this.links.push({
+                        source: vin.address,
+                        target: "交易",
+                        value: Math.abs(vin.amount),
+                        lineStyle: {
+                            normal: { curveness: 0.2 }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{c}'
+                            }
+                        }
+                    });
+                }
+                for (let i = 0; i < this.trade.vouts.length; i++) {
+                    let vout = this.trade.vouts[i];
+                    this.nodes.push({
+                        name: vout.address,
+                        x: 800,
+                        y: 300 + i * 50 * k
+                    });
+                    k *= -1;
+
+                    this.links.push({
+                        source: "交易",
+                        target: vout.address,
+                        value: Math.abs(vout.amount),
+                        lineStyle: {
+                            normal: { curveness: 0.2 }
+                        },
+                        label: {
+                            normal: {
+                                show: true,
+                                formatter: '{c}'
+                            }
+                        }
+                    });
+                }
+                console.log(this.nodes);
             }
         }
     }
@@ -118,7 +141,7 @@
         color: #2c3e50;
         margin-top: 20px;
     }
-    .tree {
+    .chart {
         min-height: 500px;
         width: 90%;
     }
