@@ -2,6 +2,7 @@
 
 <template>
   <div class="dashboard">
+    <relation></relation>
     <c-exchange-line></c-exchange-line>
     <c-search-Top></c-search-Top>
     <c-blockRank></c-blockRank>
@@ -19,10 +20,12 @@
   import cRelationship from '../components/graph/relationship.vue'
   import cDiffInternal from '../components/graph/block_difficulty_time.vue'
   import cBitcoins from '../components/graph/bitcoins.vue'
+  import relation from '../components/graph/adddressRelationship.vue'
   export default {
     name: "dashboard",
     components: {
       cCalendar, cLine, cExchangeLine, cSearchTop, cBlockRank, cBlocksTime, cRelationship, cDiffInternal, cBitcoins
+      ,relation
     }
   }
 </script>
