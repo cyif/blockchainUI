@@ -50,7 +50,7 @@
       <div class="search">
         <form class="cf form-wrapper">
           <input type="text" placeholder="输入块号、地址、相关Hash值..." v-model="inputdata" required>
-          <button type="submit" @click="goToResult">查询</button>
+          <button type="submit" @click="goToResult"><img src="../../image/search.png" width="30" height="30" style="margin-top: 5px"></button>
         </form>
       </div>
       <hr color="#35342f" style="margin-top: 0.4em; height: 0.01em;" />
@@ -92,7 +92,7 @@
                                 id = res.data.data.address;
                                 break;
                             default:
-                                this.$Message.error('对方不想说话，并且向你抛出了一个异常');
+                                this.$Message.error('没查询到结果返回，请检查您的输入是否正确');
                                 _self.$Loading.finish();
                                 return;
                         }
@@ -125,7 +125,6 @@
     max-width: 600px;
   }
 </style>
-
 
 <style scoped>
   .cf:before,.cf:after{
@@ -187,7 +186,7 @@
 
   .form-wrapper input::-webkit-input-placeholder {
 
-    color: #35342f;
+    color: #999;
 
     font-weight: normal;
 
@@ -198,7 +197,7 @@
 
   .form-wrapper input:-moz-placeholder {
 
-    color: #35342f;
+    color: #999;
 
     font-weight: normal;
 
@@ -208,7 +207,7 @@
 
   .form-wrapper input:-ms-input-placeholder {
 
-    color: #35342f;
+    color: #999;
 
     font-weight: normal;
 
@@ -242,11 +241,11 @@
 
     font-weight: 500;
 
-    color: #35342f;
+    color: #fff;
 
     text-transform: uppercase;
 
-    background: #b3e5fc;
+    background: #1784cd;
 
     border-radius: 0 3px 3px 0;
 
@@ -255,7 +254,7 @@
 
   .form-wrapper button:hover{
 
-    background: #81d4fa;
+    background: #1784cd;
 
   }
 
@@ -263,7 +262,7 @@
 
   .form-wrapper button:focus{
 
-    background: #81d4fa;
+    background: #1784cd;
 
     outline: 0;
 
@@ -279,7 +278,7 @@
 
     border-style: solid solid solid none;
 
-    border-color: transparent #b3e5fc transparent;
+    border-color: transparent #1784cd transparent;
 
     top: 12px;
 
@@ -290,7 +289,7 @@
 
   .form-wrapper button:hover:before{
 
-    border-right-color: #81d4fa;
+    border-right-color: #1784cd;
 
   }
 
@@ -298,7 +297,7 @@
 
   .form-wrapper button:active:before{
 
-    border-right-color: #81d4fa;
+    border-right-color: #1784cd;
 
   }
 

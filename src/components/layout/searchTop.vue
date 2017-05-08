@@ -1,19 +1,11 @@
 <template>
     <div class="search-top-frame">
         <Row>
-            <i-col span="2">
-                <div class="logo" style="overflow: hidden; padding-left: 10px; padding-top: 25px">
-                    <router-link to="/">
-                        <img src="../../image/logo.png" width="45px" height="45px">
-                    </router-link>
-                </div>
-            </i-col>
-            <i-col span="22">
+            <i-col span="24">
                 <form class="cf form-wrapper">
 
-                    <input type="text" placeholder="Search here" required>
-
-                    <button type="submit">查询</button>
+                    <input type="text" placeholder="输入块号、地址、相关Hash值..." v-model="inputdata" required>
+                    <button type="submit" @click="goToResult"><img src="../../image/search.png" width="30" height="30" style="margin-top: 5px"></button>
 
                 </form>
             </i-col>
@@ -32,6 +24,45 @@
     export default{
         components:{
             ICol,
+        },
+        data(){
+            return {
+                inputdata: ''
+            }
+        },
+        methods : {
+            goToResult() {
+                console.log(this.inputdata);
+                let _self = this;
+                _self.$Loading.start();
+                _self.$webApi.getSearchResult(_self.inputdata)
+                    .then(res => {
+                        let type = res.data.data.type;
+                        let id;
+                        switch (type) {
+                            case 'block':
+                                id = res.data.data.nb;
+                                break;
+                            case 'tx':
+                                id = res.data.data.tx;
+                                type = "txs";
+                                break;
+                            case 'address':
+                                id = res.data.data.address;
+                                break;
+                            default:
+                                this.$Message.error('没查询到结果返回，请检查您的输入是否正确');
+                                _self.$Loading.finish();
+                                return;
+                        }
+                        _self.$router.push({
+                            path: '/' + type + '/info/' + id
+                        });
+                    })
+                    .catch(err => {
+                        _self.$Loading.error();
+                    });
+            }
         }
     }
 </script>
@@ -39,6 +70,7 @@
 <style scoped>
     .search-top-frame{
         background-color: transparent;
+        margin-bottom: 10px;
     }
     .cf:before,.cf:after{
         content: '';
@@ -53,7 +85,7 @@
 
     .form-wrapper {
 
-        max-width: 600px;
+        max-width: 800px;
 
         padding: 15px;
 
@@ -76,12 +108,12 @@
         padding: 10px 5px;
 
         float: left;
-
-        font: bold 25px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
+        font-size: 25px;
 
         border: 0;
 
-        background: #f9f9f9;
+        background: #f1f2f0;
 
         border-radius: 3px 0 0 3px;
 
@@ -91,7 +123,7 @@
 
         outline: 0;
 
-        background: #fff;
+        background: #f1f2f0;
 
     }
 
@@ -101,7 +133,7 @@
 
         font-weight: normal;
 
-        font-style: italic;
+        font-size: 22px;
 
     }
 
@@ -111,7 +143,7 @@
 
         font-weight: normal;
 
-        font-style: italic;
+        font-size: 22px;
 
     }
 
@@ -121,7 +153,7 @@
 
         font-weight: normal;
 
-        font-style: italic;
+        font-size: 22px;
 
     }
 
@@ -145,7 +177,10 @@
 
         width: 10%;
 
-        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
+        font-size: 18px;
+
+        font-weight: 500;
 
         color: #fff;
 

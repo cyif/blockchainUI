@@ -68,7 +68,7 @@
   .layout-copy{
     text-align: center;
     padding-top:17px;
-    color: #37bbe4;
+    color: #424242;
     font-size: 25px;
     font-weight: 800;
     font-family: flamenco;
