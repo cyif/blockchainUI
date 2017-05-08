@@ -145,7 +145,6 @@
                             max = Math.max(max, _self.nbAddresses[i][1]);
                         }
                         _self.$Loading.finish();
-                        console.log(_self.nbAddresses);
                         _self.drawChart();
                     })
                     .catch(err => {

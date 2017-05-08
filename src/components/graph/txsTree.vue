@@ -39,7 +39,6 @@
         computed: {
             treeData : function() {
                 let children = [];
-                console.log(this.trade.vouts);
                 for (let i = 0; i < this.trade.vouts.length; i++) {
                     if (i >= 20) {
                         children.push({

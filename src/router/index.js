@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import dashboard from '@/views/dashboard'
-import docs from '@/views/docs'
+import timeLine from '@/views/timeLine'
 import chainTrivia from '@/views/chainTrivia'
 
 import chartGeneral from '@/views/chartGeneral'
@@ -26,9 +26,9 @@ export default new Router({
           component: dashboard
       },
       {
-          path: '/docs',
-          name: 'docs',
-          component: docs
+          path: '/timeLine',
+          name: 'timeLine',
+          component: timeLine
       },
       {
           path: '/charts',

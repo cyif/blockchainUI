@@ -3,9 +3,9 @@
         <row class = "block">
             <i-col span = "24">
                 <Button-group class="button">
-                    <Button type="subsidiary" @click = "changePeriod(0)" style="font-weight: bold; color: #3a4a4d;">所有时间</Button>
-                    <Button type="subsidiary" @click = "changePeriod(180) " style="font-weight: bold; color: #3a4a4d">近180天</Button>
-                    <Button type="subsidiary" @click = "changePeriod(30)" style="font-weight: bold; color: #3a4a4d">近30天</Button>
+                    <Button @click = "changePeriod(0)" style="font-weight: bold; color: #3a4a4d;">所有时间</Button>
+                    <Button @click = "changePeriod(180) " style="font-weight: bold; color: #3a4a4d">近180天</Button>
+                    <Button @click = "changePeriod(30)" style="font-weight: bold; color: #3a4a4d">近30天</Button>
                 </Button-group>
                 <div class = "graph" id="graph">
                     <div id = "blockTimeGap" class = "chart"></div>
@@ -145,7 +145,6 @@
                 _self.$webApi.getChartData(_self.period)
                     .then(res => {
                         let data = res.data.data;
-                        console.log(data);
                         _self.btimeGap = [];
                         for (let i = 0; i < data.blocks_over_time.length; i ++) {
                             let o = data.blocks_over_time[i];

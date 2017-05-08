@@ -204,8 +204,14 @@
 </template>
 
 <script>
-    export default {
+    import data from '../data/timeLine.json'
 
+    export default {
+        data () {
+            return {
+                items: data.values
+            }
+        }
     }
 </script>
 

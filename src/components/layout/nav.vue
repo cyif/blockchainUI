@@ -10,8 +10,11 @@
             <Icon type="university"></Icon>
             原理
           </template>
-          <router-link to="/docs">
-            <Menu-item name="1-1" font-size="15px">原理</Menu-item>
+          <router-link to="/timeLine">
+            <Menu-item name="1-1" font-size="15px">时间轴</Menu-item>
+          </router-link>
+          <router-link to="/overview">
+            <Menu-item name="1-2" font-size="15px">名词</Menu-item>
           </router-link>
         </Submenu>
         <Submenu name="2">
@@ -19,11 +22,8 @@
             <Icon type="ios-analytics"></Icon>
             图表
           </template>
-          <router-link to="/overview">
-            <Menu-item name="2-1" font-size="15px">总览</Menu-item>
-          </router-link>
           <router-link to="/charts">
-            <Menu-item name="2-2" font-size="15px">可视化</Menu-item>
+            <Menu-item name="2-1" font-size="15px">可视化</Menu-item>
           </router-link>
         </Submenu>
         <Submenu name="3">
@@ -73,7 +73,6 @@
         },
         methods : {
             goToResult() {
-                console.log(this.inputdata);
                 let _self = this;
                 _self.$Loading.start();
                 _self.$webApi.getSearchResult(_self.inputdata)

@@ -32,7 +32,6 @@
         },
         methods : {
             goToResult() {
-                console.log(this.inputdata);
                 let _self = this;
                 _self.$Loading.start();
                 _self.$webApi.getSearchResult(_self.inputdata)

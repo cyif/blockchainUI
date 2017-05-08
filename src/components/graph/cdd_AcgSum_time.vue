@@ -2,9 +2,9 @@
     <Card class = "graph_canvas">
         <row class = "block">
             <Button-group class="button">
-                <Button type="subsidiary" @click = "changePeriod(0)" style="font-weight: bold; color: #3a4a4d;">所有时间</Button>
-                <Button type="subsidiary" @click = "changePeriod(180) " style="font-weight: bold; color: #3a4a4d">近180天</Button>
-                <Button type="subsidiary" @click = "changePeriod(30)" style="font-weight: bold; color: #3a4a4d">近30天</Button>
+                <Button @click = "changePeriod(0)" style="font-weight: bold; color: #3a4a4d;">所有时间</Button>
+                <Button @click = "changePeriod(180) " style="font-weight: bold; color: #3a4a4d">近180天</Button>
+                <Button @click = "changePeriod(30)" style="font-weight: bold; color: #3a4a4d">近30天</Button>
             </Button-group>
             <i-col span = "24">
                 <div class = "graph">
@@ -198,7 +198,6 @@
                 _self.$webApi.getChartData(_self.period)
                     .then(res => {
                         let data = res.data.data;
-                        console.log(data);
                         _self.cdd = [];
                         _self.cddSum = [];
                         for (let i = 0; i < data.blocks_over_time.length - 1; i ++) {

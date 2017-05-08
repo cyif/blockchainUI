@@ -34,18 +34,15 @@
     let data2 = [];
     let i = 14;
     let tx = tradeInfo.txs[i];
-    console.log(tx);
     let date = new Date();
     for (let j = 0; j < tx.trade.vins.length; j++) {
         let vin = tx.trade.vins[j];
         data1.push([new Date(date -= 1000 * 3600 * 24), 2 + j * 2, Math.abs(vin.amount)]);
     }
-    console.log(data1);
     for (let j = 0; j < tx.trade.vouts.length; j++) {
         let vout = tx.trade.vouts[j];
         data2.push([new Date(date -= 1000 * 3600 * 24), 4 - j * 1.7, Math.abs(vout.amount)]);
     }
-    console.log(data2);
     export default {
         components: {ICol,},
         data() {

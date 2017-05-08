@@ -16,7 +16,7 @@
                         home: '首页'
                     },
                     second: {
-                        docs: '原理',
+                        timeLine: '时间轴',
                         charts: '可视化',
                         overview: '总览',
                         blockchain: '区块链',
