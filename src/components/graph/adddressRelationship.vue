@@ -24,6 +24,7 @@
         }
     }
     let categories = [];
+    let colors = ['red', 'yellow', 'blue'];
     export default {
         components: {
             ICol
@@ -88,7 +89,11 @@
                     });
                     this.graph.nodes.push({
                         name: o.name,
-                        itemStyle: null,
+                        itemStyle: {
+                            normal: {
+                                color: colors[i % 3]
+                            }
+                        },
                         value: mapValue(o.value),
                         symbolSize: mapValue(o.value) * 20,
                         label: {
