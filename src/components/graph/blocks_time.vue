@@ -17,8 +17,7 @@
                 <Panel name="1" style="font-size: 14px">
                     新增块数量随时间变化
                     <p slot="content" style="font-size: 16px;">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        每月生成块的数目或多或少是恒定的，无论是从短期而言，还是长期，这也证明了随着时间的变化，其块间隔时间应维持恒定，保证每短时间生成的块数。</p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;每月生成块的数目或多或少是恒定的，无论是从短期而言，还是长期，这也证明了随着时间的变化，其块间隔时间应维持恒定，保证每短时间生成的块数。</p>
                 </Panel>
             </collapse>
         </row>

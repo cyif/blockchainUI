@@ -12,7 +12,7 @@
                 <Panel name="1" style="font-size: 14px">
                     市场中比特币价值（美元）随时间变化
                     <p slot="content" style="font-size: 16px;">
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整体走势同市场价格一致</p>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;整体走势同市场价格一致</p>
                 </Panel>
             </Collapse>
         </row>

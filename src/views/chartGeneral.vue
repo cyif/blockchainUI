@@ -122,7 +122,7 @@
 
     .span{
         width: 100%;
-        background-color: #37bbe4;
+        background-color: #1784cd;
         padding-top: 5px;
         padding-bottom: 5px;
     }

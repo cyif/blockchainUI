@@ -8,13 +8,13 @@
         <Submenu name="1">
           <template slot="title">
             <Icon type="university"></Icon>
-            原理
+
           </template>
           <router-link to="/timeLine">
-            <Menu-item name="1-1" font-size="15px">时间轴</Menu-item>
+            <Menu-item name="1-1" font-size="15px">发展简史</Menu-item>
           </router-link>
           <router-link to="/overview">
-            <Menu-item name="1-2" font-size="15px">名词</Menu-item>
+            <Menu-item name="1-2" font-size="15px">名词对照</Menu-item>
           </router-link>
         </Submenu>
         <Submenu name="2">
