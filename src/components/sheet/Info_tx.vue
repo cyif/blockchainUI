@@ -21,10 +21,10 @@
             <Card class="subTable">
                 <Tabs type="card">
                     <Tab-pane label="交易流向">
-                        <trade-info :trade="tradeFlow"></trade-info>
+                        <trade-info :trade="tradeFlow" v-if="showTrade"></trade-info>
                     </Tab-pane>
-                    <Tab-pane label="树形图">
-                        <txs-tree :trade="tradeFlow"></txs-tree>
+                    <Tab-pane label="流向图">
+                        <txs-tree :trade="tradeFlow" v-if="showTrade"></txs-tree>
                     </Tab-pane>
                 </Tabs>
             </Card>
@@ -43,6 +43,7 @@
             return {
                 txId : '',
                 showHeader: false,
+                showTrade: false,
                 txColumns: [
                     {
                         title: '属性',
@@ -129,6 +130,7 @@
                     }
                     _self.tradeFlow = txsInfo.trade;
                     _self.$Loading.finish();
+                    _self.showTrade = true;
                 })
                 .catch(err => {
                     console.log(err);

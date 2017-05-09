@@ -33,7 +33,7 @@
                 let myChart = this.$echarts.init(document.getElementById('txsTree'));
                 myChart.setOption({
                     title: {
-                        text: 'Graph 简单示例'
+                        text: '交易流向图'
                     },
                     tooltip: {},
                     animationDurationUpdate: 1500,
@@ -42,7 +42,7 @@
                         {
                             type: 'graph',
                             layout: 'none',
-                            symbolSize: 50,
+                            symbolSize: 30,
                             roam: true,
                             label: {
                                 normal: {
@@ -74,7 +74,7 @@
             getChartData() {
                 this.nodes.push({
                     name: "交易",
-                    x: 550,
+                    x: 600,
                     y: 300
                 });
                 console.log(this.trade);
@@ -83,8 +83,8 @@
                     let vin = this.trade.vins[i];
                     this.nodes.push({
                         name: vin.address,
-                        x: 300,
-                        y: 300 + i * 30 * k
+                        x: 0,
+                        y: 300 + i * 50 * k
                     });
                     k *= -1;
                     this.links.push({
@@ -106,7 +106,7 @@
                     let vout = this.trade.vouts[i];
                     this.nodes.push({
                         name: vout.address,
-                        x: 800,
+                        x: 1600,
                         y: 300 + i * 50 * k
                     });
                     k *= -1;

@@ -22,20 +22,22 @@
             <Row>
                 <i-col span="12">
                     <div class="first">
-                        <table class="table2" style="box-shadow: #30c9e8"
+                        <Table class="table2" style="box-shadow: #30c9e8"
                                :columns="columns2"
                                :data="data2"
-                               :show-header="showHeader2">
-                        </table>
+                               :show-header="showHeader2"
+                               v-if="showTxs">
+                        </Table>
                     </div>
                 </i-col>
                 <i-col span="12">
                     <div class="last">
-                        <table class="table3"
+                        <Table class="table3" style="box-shadow: #30c9e8"
                                :columns="columns3"
                                :data="data3"
-                               :show-header="showHeader2">
-                        </table>
+                               :show-header="showHeader2"
+                               v-if="showTxs">
+                        </Table>
                     </div>
                 </i-col>
             </Row>
@@ -53,6 +55,7 @@
                 addressId: {},
                 showHeader: false,
                 showHeader2: true,
+                showTxs: false,
                 columns1: [
                     {
                         title: '属性',
@@ -86,11 +89,12 @@
                         {
                             attribute: '交易笔数',
                             name: 'nb_txs'
-                        },
-                        {
-                            attribute: '未确认交易金额',
-                            key: '12898312'
                         }
+//                        , {
+//                            attribute: '未确认交易金额',
+//                            name: '',
+//                            key: '12898312'
+//                        }
                     ],
                     txsNames: [
                         {
@@ -103,7 +107,7 @@
                         },
                         {
                             attribute: '确认数',
-                            name: 'confirmation',
+                            name: 'confirmations',
                         },
                         {
                             attribute: '交易时间',
@@ -126,7 +130,14 @@
                     {
                         title: '值',
                         key: 'value',
-                        className: 'demo-table-info-value'
+                        className: 'demo-table-info-value',
+                        render (row, column, index) {
+                            if (row.attribute === '哈希值') {
+                                return `<a href="#/txs/info/${row.value}">${row.value}</a>`;
+                            } else {
+                                return row.value;
+                            }
+                        }
                     }
                 ],
 
@@ -142,8 +153,15 @@
                     {
                         title: '值',
                         key: 'value',
-                        className: 'demo-table-info-value'
-                    }
+                        className: 'demo-table-info-value',
+                        render (row, column, index) {
+                            if (row.attribute === '哈希值') {
+                                return `<a href="#/txs/info/${row.value}">${row.value}</a>`;
+                            } else {
+                                return row.value;
+                            }
+                        }
+                    },
                 ],
 
                 data3: []
@@ -158,6 +176,7 @@
             _self.$webApi.getAddressInfo(_self.addressId)
                 .then(res => {
                     let addressInfo = res.data.data;
+                    console.log(addressInfo);
                     _self.dataNames.addNames.forEach(data => {
                         let name = data.name;
                         let attribute = data.attribute;
@@ -176,6 +195,7 @@
                             value: value
                         });
                     });
+                    console.log(_self.data2);
                     _self.dataNames.txsNames.forEach(data => {
                         let name = data.name;
                         let attribute = data.attribute;
@@ -186,6 +206,7 @@
                         })
                     });
                     _self.$Loading.finish();
+                    _self.showTxs = true;
                 })
                 .catch(err => {
                     console.log(err);
