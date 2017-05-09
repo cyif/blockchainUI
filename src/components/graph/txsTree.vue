@@ -126,13 +126,13 @@
                         }
                     });
                 }
-                console.log(this.nodes);
+//                console.log(this.links);
             }
         }
     }
 </script>
 
-<style>
+<style scoped>
     #d3tree {
         font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Hiragino Sans GB","Hiragino Sans GB W3",serif;
         -webkit-font-smoothing: antialiased;

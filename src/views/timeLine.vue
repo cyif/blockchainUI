@@ -228,7 +228,7 @@
 
     }
     .timeLine {
-        margin-left: 20%;
+        margin-left: 25%;
         margin-top: 30px;
     }
     .time {

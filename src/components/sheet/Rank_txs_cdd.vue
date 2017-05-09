@@ -1,6 +1,6 @@
 // 完成
 <template>
-    <div class = 'sheet_canvas'>
+    <Card :bordered="false" class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
             <h1 style="font-family: istokbold; font-weight: bold">Transactions with most coin days destroyed</h1>
@@ -14,7 +14,7 @@
                        :show-header="showHeader"></Table>
             </div>
         </row>
-    </div>
+    </Card>
 </template>
 
 <script>

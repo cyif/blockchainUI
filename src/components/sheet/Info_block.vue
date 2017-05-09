@@ -21,7 +21,7 @@
         <br>
         <div class="transactions">
             <Collapse>
-                <Panel v-for="txInfo in txsData" :key="txInfo.tx">
+                <Panel v-for="txInfo in txsData" :key="txInfo.tx" style="margin-top: 5px; margin-bottom: 5px;">
                     <router-link :to="'/txs/info/'+ txInfo.tx">{{ txInfo.tx }}</router-link>
                     <div slot="content">
                         <div class="tradeInfo" style="box-shadow: #30c9e8">

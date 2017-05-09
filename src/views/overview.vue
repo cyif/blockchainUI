@@ -3,7 +3,7 @@
         <div style="background:#eee;padding: 20px">
             <Card :bordered="false">
                 <p slot="title">常用名词对照</p>
-                <Card :bordered="false" v-for="term in terms">
+                <Card :bordered="false" v-for="term in terms" :key="term[0]">
                     <p slot="title">{{ term[0] }}</p>
                     <p slot="extra">{{ term[1] }}</p>
                     <p>{{ term[2] }}</p>

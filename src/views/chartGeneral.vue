@@ -58,6 +58,7 @@
                         <txs-address></txs-address>
                         <confirmed-txs></confirmed-txs>
                         <txs-num></txs-num>
+                        <relation></relation>
                         <br>
                         <br>
                     </div>
@@ -97,6 +98,7 @@
     import uniqueAdd from '../components/graph/uniqueAddresses.vue'
     import cddTime from '../components/graph/cdd_AcgSum_time.vue'
     import txsAddress from '../components/graph/txs_address.vue'
+    import relation from '../components/graph/adddressRelationship.vue'
 
     export default {
         data () {
@@ -110,7 +112,7 @@
             bitcoins, cExchangeLine, exchangeVolume, marketCap,
             blockSize, orphanedBlocks, confirmation, costTxs, txsBlock, blockTimeGap,
             hashRate, blockDifficult, minersRevenue, feeTotal,
-            uniqueAdd, confirmedTxs, costTxsVolume, txsNum, txsTime, cddTime, txsAddress
+            uniqueAdd, confirmedTxs, costTxsVolume, txsNum, txsTime, cddTime, txsAddress, relation
         }
     }
 </script>

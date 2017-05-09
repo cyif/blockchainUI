@@ -8,7 +8,7 @@
         <Submenu name="1">
           <template slot="title">
             <Icon type="university"></Icon>
-
+            查阅
           </template>
           <router-link to="/timeLine">
             <Menu-item name="1-1" font-size="15px">发展简史</Menu-item>

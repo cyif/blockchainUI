@@ -1,7 +1,7 @@
 //Unspent ransactions with highest amounts
 // 完成
 <template>
-    <div class = 'sheet_canvas'>
+    <Card :bordered="false" class = 'sheet_canvas'>
         <div class = 'title'>
             <br>
             <h1 >Unspent transactions with highest amounts</h1>
@@ -15,7 +15,7 @@
                        :show-header="showHeader"></Table>
             </div>
         </row>
-    </div>
+    </Card>
 </template>
 
 <script>

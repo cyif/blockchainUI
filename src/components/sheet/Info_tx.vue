@@ -18,7 +18,7 @@
             </div>
             <hr/>
             <br>
-            <div class="subTable">
+            <Card class="subTable">
                 <Tabs type="card">
                     <Tab-pane label="交易流向">
                         <trade-info :trade="tradeFlow"></trade-info>
@@ -27,7 +27,7 @@
                         <txs-tree :trade="tradeFlow"></txs-tree>
                     </Tab-pane>
                 </Tabs>
-            </div>
+            </Card>
         </div>
     </Card>
 </template>
