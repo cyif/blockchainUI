@@ -13,7 +13,6 @@
 </template>
 
 <script>
-    import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import $ from 'jquery';
     export default {

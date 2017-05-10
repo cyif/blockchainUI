@@ -13,7 +13,6 @@
 </template>
 
 <script>
-    import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import cGraphInfo from './graphInfo.vue';
     import tradeInfo from '../../data/overview.json';
@@ -60,7 +59,7 @@
         },
 
         mounted() {
-            this.myChart = echarts.init(document.getElementById("relationship"));
+            this.myChart = this.$echarts.init(document.getElementById("relationship"));
             this.myChart.setOption({
                 legend: {
                     data: ['From address', 'To address'],

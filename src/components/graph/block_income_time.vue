@@ -17,7 +17,6 @@
 </template>
 
 <script>
-    import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
 
     export default{
@@ -33,7 +32,7 @@
         },
 
         mounted(){
-            this.myChart = echarts.init(document.getElementById("bitcoin"));
+            this.myChart = this.$echarts.init(document.getElementById("bitcoin"));
             this.myChart.setOption({
                 backgroundColor: 'transparent',
                 title: {
