@@ -22,6 +22,7 @@
             <Row>
                 <i-col span="12">
                     <div class="first">
+                        <span style="margin-left: 40%; font-size: 20px; font-weight: bold; margin-top: 8px; margin-bottom: 8px">第一笔交易</span>
                         <Table class="table2" style="box-shadow: #30c9e8"
                                :columns="columns2"
                                :data="data2"
@@ -32,6 +33,7 @@
                 </i-col>
                 <i-col span="12">
                     <div class="last">
+                        <span style="margin-left: 40%; font-size: 20px; font-weight: bold; margin-top: 8px; margin-bottom: 8px">最近一笔交易</span>
                         <Table class="table3" style="box-shadow: #30c9e8"
                                :columns="columns3"
                                :data="data3"
@@ -54,7 +56,7 @@
             return {
                 addressId: {},
                 showHeader: false,
-                showHeader2: true,
+                showHeader2: false,
                 showTxs: false,
                 columns1: [
                     {
