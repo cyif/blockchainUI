@@ -1,5 +1,5 @@
 <template>
-    <Card id="d3tree" class="container-fluid">
+    <Card id="d3tree" class="container-fluid" :bordered="false">
         <div class = "graph" id="graph">
             <div id = "txsTree" class = "chart"></div>
         </div>
@@ -84,7 +84,7 @@
                     this.nodes.push({
                         name: vin.address,
                         x: 0,
-                        y: 300 + i * 50 * k
+                        y: 300 + i * 100 * k
                     });
                     k *= -1;
                     this.links.push({
@@ -107,7 +107,7 @@
                     this.nodes.push({
                         name: vout.address,
                         x: 1600,
-                        y: 300 + i * 50 * k
+                        y: 300 + i * 100 * k
                     });
                     k *= -1;
 
@@ -139,7 +139,7 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 20px;
+        margin-top: 5px;
     }
     .chart {
         min-height: 500px;
