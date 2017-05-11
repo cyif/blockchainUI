@@ -33,6 +33,7 @@
           </router-link>
           <router-link to="/addChart">
             <Menu-item name="2-4" font-size="15px">钱包摘要</Menu-item>
+            <Menu-item name="2-5" font-size="15px">挖矿摘要</Menu-item>
           </router-link>
         </Submenu>
         <Submenu name="3">

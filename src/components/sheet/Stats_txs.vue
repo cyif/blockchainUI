@@ -43,7 +43,7 @@
                     {
                         attribute: '24小时内每笔交易平均成本（美元）',
                         name: '',
-                        value: data.values.miners_revenue_usd/data.valus.n_tx
+                        value: data.values.miners_revenue_usd/data.values.n_tx
                     },
                     {
                         attribute: '总交易量',
