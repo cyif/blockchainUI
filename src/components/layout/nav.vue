@@ -23,7 +23,10 @@
             图表
           </template>
           <router-link to="/charts">
-            <Menu-item name="2-1" font-size="15px">可视化</Menu-item>
+            <Menu-item name="2-1" font-size="15px">市场总览</Menu-item>
+            <Menu-item name="2-2" font-size="15px">区块总览</Menu-item>
+            <Menu-item name="2-3" font-size="15px">交易摘要</Menu-item>
+            <Menu-item name="2-4" font-size="15px">钱包摘要</Menu-item>
           </router-link>
         </Submenu>
         <Submenu name="3">
