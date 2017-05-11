@@ -54,7 +54,7 @@
             _init() {
                 this.myChart = this.$echarts.init(document.getElementById('exchangeLine'));
                 window.addEventListener('resize', function () {
-                    if (this.$route.name === 'charts') {
+                    if (this.$route.name === 'marketChart') {
                         this.drawChart()
                     }
                 }.bind(this));

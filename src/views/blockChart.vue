@@ -7,7 +7,6 @@
                     <block-stats></block-stats>
                 </Card>
                 <block-size></block-size>
-                <txs-block></txs-block>
                 <br>
                 <blocks-time></blocks-time>
                 <block-difficulty></block-difficulty>
@@ -27,7 +26,6 @@
     import blockStats from '../components/sheet/Stats_block.vue';
 
     import blockSize from '../components/graph/blockSize.vue';
-    import txsBlock from '../components/graph/txs_Block.vue'
 
     import blocksTime from '../components/graph/blocks_time.vue';
     import blockDifficulty from '../components/graph/block_difficulty_time.vue';
@@ -47,7 +45,7 @@
                 height: 400
             }
         },
-        components: {blockStats, blockSize, txsBlock, blocksTime, blockDifficulty, blockTimeGap, minersRevenue, feeTotal, orphanedBlocks, hashRate, poolsPie,
+        components: {blockStats, blockSize, blocksTime, blockDifficulty, blockTimeGap, minersRevenue, feeTotal, orphanedBlocks, hashRate, poolsPie,
         }
     }
 </script>

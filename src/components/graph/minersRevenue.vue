@@ -47,7 +47,7 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    if (this.$route.name === 'charts') {
+                    if (this.$route.name === 'blockChart') {
                         this.drawChart()
                     }
                 }.bind(this));

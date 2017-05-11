@@ -43,7 +43,7 @@
             _init() {
                 this.myChart = this.$echarts.init(document.getElementById('txsAddress'));
                 window.addEventListener('resize', function () {
-                    if (this.$route.name === 'charts') {
+                    if (this.$route.name === 'addChart') {
                         this.getChartData()
                     }
                 }.bind(this));

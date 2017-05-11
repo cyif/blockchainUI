@@ -16,9 +16,24 @@ export default new Router({
           component: resolve => require(['../views/timeLine.vue'], resolve)
       },
       {
-          path: '/charts',
-          name: 'charts',
-          component: resolve => require(['../views/chartGeneral.vue'], resolve)
+          path: '/addChart',
+          name: 'addChart',
+          component: resolve => require(['../views/addChart.vue'], resolve)
+      },
+      {
+          path: '/blockChart',
+          name: 'blockChart',
+          component: resolve => require(['../views/blockChart.vue'], resolve)
+      },
+      {
+          path: '/marketChart',
+          name: 'marketChart',
+          component: resolve => require(['../views/marketChart.vue'], resolve)
+      },
+      {
+          path: '/txsChart',
+          name: 'txsChart',
+          component: resolve => require(['../views/txsChart.vue'], resolve)
       },
       {
           path: '/overview',

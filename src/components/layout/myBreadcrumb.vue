@@ -22,7 +22,11 @@
                         blockchain: '区块链',
                         block: '区块',
                         txs: '交易',
-                        address: '地址'
+                        address: '地址',
+                        addChart: '钱包摘要',
+                        blockChart: '区块总览',
+                        txsChart: '交易摘要',
+                        marketChart: '市场总览'
                     }
                 }
             }

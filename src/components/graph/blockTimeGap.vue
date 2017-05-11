@@ -47,7 +47,7 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    if (this.$route.name === 'charts') {
+                    if (this.$route.name === 'blockChart') {
                         this.drawChart()
                     }
                 }.bind(this));
@@ -155,6 +155,7 @@
                             max = Math.max(max, _self.btimeGap[i][1]/60);
                         }
                         _self.$Loading.finish();
+                        console.log(_self.btimeGap);
                         _self.drawChart();
                     })
                     .catch(err => {

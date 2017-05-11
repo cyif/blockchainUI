@@ -22,10 +22,16 @@
             <Icon type="ios-analytics"></Icon>
             图表
           </template>
-          <router-link to="/charts">
+          <router-link to="/marketChart">
             <Menu-item name="2-1" font-size="15px">市场总览</Menu-item>
+          </router-link>
+          <router-link to="/blockChart">
             <Menu-item name="2-2" font-size="15px">区块总览</Menu-item>
+          </router-link>
+          <router-link to="/txsChart">
             <Menu-item name="2-3" font-size="15px">交易摘要</Menu-item>
+          </router-link>
+          <router-link to="/addChart">
             <Menu-item name="2-4" font-size="15px">钱包摘要</Menu-item>
           </router-link>
         </Submenu>

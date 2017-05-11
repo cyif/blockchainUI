@@ -74,7 +74,9 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    this.drawChart();
+                    if (this.$route.name === 'marketChart') {
+                        this.drawChart();
+                    }
                 }.bind(this));
             },
 

@@ -47,7 +47,7 @@
             _init() {
                 this.myChart = this.$echarts.init(document.getElementById('blocksTime'));
                 window.addEventListener('resize', function () {
-                    if (this.$route.name === 'charts') {
+                    if (this.$route.name === 'blockChart') {
                         this.drawChart()
                     }
                 }.bind(this));
