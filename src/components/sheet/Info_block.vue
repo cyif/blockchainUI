@@ -25,7 +25,7 @@
                     <router-link :to="'/txs/info/'+ txInfo.tx">{{ txInfo.tx }}</router-link>
                     <div slot="content">
                         <div class="tradeInfo" style="box-shadow: #30c9e8">
-                            <trade-info :trade="txInfo.trade"></trade-info>
+                            <trade-info :trade="txInfo.trade" v-if="showTrade"></trade-info>
                         </div>
                     </div>
                 </Panel>
@@ -45,6 +45,7 @@
                 blockId: '',
                 showInfoHeader: false,
                 showTxHeader: true,
+                showTrade: false,
                 blockColumns: [
                     {
                         title: '属性',
@@ -109,6 +110,7 @@
                 .then(res => {
                     _self.txsData = res.data.data.txs;
                     _self.$Loading.finish();
+                    _self.showTrade = true;
                 })
                 .catch(err => {
                     console.log(err);
