@@ -1,5 +1,5 @@
 <template>
-    <div class="sheet_canvas" style="padding-left: 30%; padding-right: 30%; padding-top:10px; padding-bottom: 5px;">
+    <div class="sheet_canvas" style="padding-left: 20%; padding-right: 20%; padding-top:10px; padding-bottom: 5px; text-align: center">
         <row class = "block">
             <div class = "rank">
                 <span style="font-size: 18px; font-weight: 500; color: #f1f2f0" v-for="stats in marketData" :key="stats.attribute">{{stats.attribute}} : {{stats.value}}<br></span>
@@ -31,17 +31,17 @@
                 marketData: [],
                 Names: [
                     {
-                        attribute: '市场价',
+                        attribute: '24小时内市场价',
                         name: 'tx',
                         value: data.values.market_price_usd
                     },
                     {
-                        attribute: '交易量',
+                        attribute: '24小时内交易量(美元）',
                         name: 'tradeUSD',
                         value: data.values.trade_volume_usd
                     },
                     {
-                        attribute: '交易量',
+                        attribute: '24小时内交易量（比特币）',
                         name: 'transBTC',
                         value: data.values.trade_volume_btc
                     }

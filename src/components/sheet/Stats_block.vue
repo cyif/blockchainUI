@@ -1,5 +1,5 @@
 <template>
-    <div class="sheet_canvas" style="padding-left: 30%; padding-right: 30%; padding-top:10px; padding-bottom: 5px;">
+    <div class="sheet_canvas" style="padding-left: 20%; padding-right: 20%; padding-top:10px; padding-bottom: 5px; text-align: center">
         <row class = "block">
             <div class = "rank">
                 <span style="font-size: 18px; font-weight: 500; color: #f1f2f0" v-for="stats in marketData" :key="stats.attribute">{{stats.attribute}} : {{stats.value}}<br></span>
@@ -49,32 +49,13 @@
                         attribute: '截止目前发行比特币累计',
                         name: '',
                         value: data.values.totalbc
-                    }
+                    },
                     {
-                        attribute: '块创建时间间隔',
+                        attribute: '24小时内块创建时间间隔',
                         name: '',
                         value: data.values.minutes_between_blocks
                     },
-                    {
-                        attribute: '矿工总收入（美元）',
-                        name: '',
-                        value: data.values.miners_revenue_usd
-                    },
-                    {
-                        attribute: '每笔交易成本（美元）',
-                        name: '',
-                        value: data.values.miners_revenue_usd/data.valus.n_tx
-                    },
-                    {
-                        attribute: '困难度',
-                        name: '',
-                        value: data.values.difficulty
-                    },
-                    {
-                        attribute: '哈希率',
-                        name: '',
-                        value: data.values.hash_rate
-                    }
+
                 ],
             }
         },

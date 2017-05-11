@@ -1,5 +1,5 @@
 <template>
-    <div class="sheet_canvas" style="padding-left: 30%; padding-right: 30%; padding-top:10px; padding-bottom: 5px;">
+    <div class="sheet_canvas" style="padding-left: 20%; padding-right: 20%; padding-top:10px; padding-bottom: 5px; text-align: center">
         <row class = "block">
             <div class = "rank">
                 <span style="font-size: 18px; font-weight: 500; color: #f1f2f0" v-for="stats in marketData" :key="stats.attribute">{{stats.attribute}} : {{stats.value}}<br></span>
@@ -31,19 +31,24 @@
                 marketData: [],
                 Names: [
                     {
-                        attribute: '总交易费用',
+                        attribute: '24小时内支出交易小费(美元)',
                         name: 'tx',
-                        value: data.values.
+                        value: data.values.total_fees_btc
                     },
                     {
-                        attribute: '交易次数',
+                        attribute: '24小时内交易次数',
                         name: 'tradeUSD',
-                        value: data.values.
+                        value: data.values.n_tx
+                    },
+                    {
+                        attribute: '24小时内每笔交易平均成本（美元）',
+                        name: '',
+                        value: data.values.miners_revenue_usd/data.valus.n_tx
                     },
                     {
                         attribute: '总交易量',
                         name: 'transBTC',
-                        value: data.values.
+                        value: data.values.total_btc_sent
                     }
                 ],
             }

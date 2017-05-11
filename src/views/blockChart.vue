@@ -7,17 +7,11 @@
                     <block-stats></block-stats>
                 </Card>
                 <block-size></block-size>
+                <orphaned-blocks></orphaned-blocks>
                 <br>
                 <blocks-time></blocks-time>
                 <block-difficulty></block-difficulty>
                 <block-time-gap></block-time-gap>
-                <br>
-                <miners-revenue></miners-revenue>
-                <fee-total></fee-total>
-                <br>
-                <orphaned-blocks></orphaned-blocks>
-                <hash-rate></hash-rate>
-                <pools-pie></pools-pie>
             </div>
         </div>
     </div>
@@ -26,18 +20,11 @@
     import blockStats from '../components/sheet/Stats_block.vue';
 
     import blockSize from '../components/graph/blockSize.vue';
-
-    import blocksTime from '../components/graph/blocks_time.vue';
-    import blockDifficulty from '../components/graph/block_difficulty_time.vue';
-    import blockTimeGap from '../components/graph/blockTimeGap.vue';
-
-    import minersRevenue from '../components/graph/minersRevenue.vue';
-    import feeTotal from '../components/graph/feeTotal.vue';
-
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue';
 
-    import hashRate from '../components/graph/HashRate.vue';
-    import poolsPie from '../components/graph/pools_pie.vue';
+    import blocksTime from '../components/graph/blocks_time.vue';
+    import blockTimeGap from '../components/graph/blockTimeGap.vue';
+
 
     export default {
         data () {
@@ -45,7 +32,7 @@
                 height: 400
             }
         },
-        components: {blockStats, blockSize, blocksTime, blockDifficulty, blockTimeGap, minersRevenue, feeTotal, orphanedBlocks, hashRate, poolsPie,
+        components: {blockStats, blockSize, orphanedBlocks, blocksTime, blockTimeGap,
         }
     }
 </script>
