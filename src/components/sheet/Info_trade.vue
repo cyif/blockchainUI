@@ -41,7 +41,7 @@
                         title: '金额',
                         key: 'amount',
                         className: 'demo-table-info-key',
-                        width: 150,
+                        width: 100,
                         formatter: '-{value}BTC'
                     }
                 ],
@@ -55,7 +55,7 @@
                         title: '金额',
                         key: 'amount',
                         className: 'demo-table-info-key',
-                        width: 150,
+                        width: 100,
                         formatter: '+{value}BTC'
                     }
                 ],

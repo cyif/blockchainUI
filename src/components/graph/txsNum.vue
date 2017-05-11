@@ -50,6 +50,44 @@
                     }
                 }.bind(this));
             },
+            makeXAxis(gridIndex, opt) {
+                return echarts.util.merge({
+                    type: 'time',
+                    gridIndex: gridIndex,
+                    axisLine: {onZero: false, lineStyle: {color: '#ddd'}},
+                    axisTick: {show: false},
+                    axisLabel: {show: false},
+                    splitLine: {show: false, lineStyle: {color: '#ddd'}},
+                    min: data.xMin,
+                    max: data.xMax,
+                    axisPointer: {
+                        lineStyle: {color: 'transparent'}
+                    }
+                }, opt || {}, true);
+            },
+
+            makeYAxis(gridIndex, opt) {
+                return echarts.util.merge({
+                    type: 'value',
+                    gridIndex: gridIndex,
+                    nameLocation: 'middle',
+                    nameTextStyle: {
+                        color: '#333'
+                    },
+                    boundaryGap: ['30%', '30%'],
+                    axisTick: {show: false},
+                    axisLine: {lineStyle: {color: '#ccc'}},
+                    axisLabel: {show: false},
+                    splitLine: {show: false}
+                }, opt || {}, true);
+            },
+
+            makeGrid(top, opt) {
+                return echarts.util.merge({
+                    top: top,
+                    height: gridHeight
+                }, opt || {}, true);
+            },
 
             drawChart() {
                 let myChart = this.$echarts.init(document.getElementById('txsNum'));

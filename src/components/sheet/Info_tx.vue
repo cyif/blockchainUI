@@ -124,8 +124,8 @@
                         let attribute = _self.txNames[i].attribute;
                         let value = txsInfo[name];
                         _self.txData.push({
-                            attribute: attribute,
-                            value: value
+                                attribute: attribute,
+                                value: value
                         })
                     }
                     _self.tradeFlow = txsInfo.trade;

@@ -13,6 +13,7 @@
                     <div class="block">
                         <Card class = "span">
                             <span class="text">货币信息</span>
+                            <market-stats></market-stats>
                         </Card>
                         <bitcoins class="v_jump"></bitcoins>
                         <c-exchange-line></c-exchange-line>
@@ -97,6 +98,7 @@
     import cddTime from '../components/graph/cdd_AcgSum_time.vue'
     import txsAddress from '../components/graph/txs_address.vue'
     import relation from '../components/graph/adddressRelationship.vue'
+    import marketStats from '../components/sheet/Stats_Market.vue'
 
     export default {
         data () {
@@ -110,7 +112,7 @@
             bitcoins, cExchangeLine, exchangeVolume, marketCap,
             blockSize, orphanedBlocks, confirmation, costTxs, txsBlock, blockTimeGap,
             hashRate, blockDifficult, minersRevenue, feeTotal,
-            uniqueAdd, confirmedTxs, costTxsVolume, txsNum, txsTime, cddTime, txsAddress, relation
+            uniqueAdd, confirmedTxs, costTxsVolume, txsNum, txsTime, cddTime, txsAddress, relation, marketStats
         }
     }
 </script>

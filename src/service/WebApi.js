@@ -51,4 +51,8 @@ export const webApi = {
         return axios.get('https://api.blockchain.info/charts/cost-per-transaction-percent?format=json&timespan=2years');
     },
 
+    getStatsData: function () {
+        return axios.get('https://api.blockchain.info/stats')
+    }
+
 }
