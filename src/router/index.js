@@ -1,20 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import dashboard from '@/views/dashboard'
-import timeLine from '@/views/timeLine'
-import chainTrivia from '@/views/chainTrivia'
-
-import chartGeneral from '@/views/chartGeneral'
-import overview from '@/views/overview'
-
-import blockTrivia from '@/views/blockTrivia'
-import blockInfo from '@/views/blockInfo'
-
-import txsTrivia from '@/views/txsTrivia'
-import txsInfo from '@/views/txsInfo'
-
-import addTrivia from '@/views/addTrivia'
-import addInfo from '@/views/addInfo'
 
 Vue.use(Router);
 
@@ -23,57 +8,57 @@ export default new Router({
       {
           path: '/',
           name: 'dashboard',
-          component: dashboard
+          component: resolve => require(['../views/dashboard.vue'], resolve)
       },
       {
           path: '/timeLine',
           name: 'timeLine',
-          component: timeLine
+          component: resolve => require(['../views/timeLine.vue'], resolve)
       },
       {
           path: '/charts',
           name: 'charts',
-          component: chartGeneral
+          component: resolve => require(['../views/chartGeneral.vue'], resolve)
       },
       {
           path: '/overview',
           name: 'overview',
-          component: overview
+          component: resolve => require(['../views/overview.vue'], resolve)
       },
       {
           path: '/blockchain',
           name: 'blockchain',
-          component: chainTrivia
+          component: resolve => require(['../views/chainTrivia.vue'], resolve)
       },
       {
           path: '/block',
           name: 'blockTrivia',
-          component: blockTrivia
+          component: resolve => require(['../views/blockTrivia.vue'], resolve)
       },
       {
           path: '/block/info/:blockId',
           name: 'blockInfo',
-          component: blockInfo
+          component: resolve => require(['../views/blockInfo.vue'], resolve)
       },
       {
           path: '/txs',
           name: 'txsTrivia',
-          component: txsTrivia
+          component: resolve => require(['../views/txsTrivia.vue'], resolve)
       },
       {
           path: '/txs/info/:txsId',
           name: 'txsInfo',
-          component: txsInfo
+          component: resolve => require(['../views/txsInfo.vue'], resolve)
       },
       {
           path: '/address',
           name: 'addressTrivia',
-          component: addTrivia
+          component: resolve => require(['../views/addTrivia.vue'], resolve)
       },
       {
           path: '/address/info/:addressId',
           name: 'addressInfo',
-          component: addInfo
+          component: resolve => require(['../views/addInfo.vue'], resolve)
       }
   ]
 })

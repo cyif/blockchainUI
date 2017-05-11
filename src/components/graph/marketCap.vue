@@ -21,7 +21,6 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import $ from 'jquery';
     import data from '../../data/marketCap.json'
 
     let values = [];
@@ -47,7 +46,9 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    this.drawChart()
+                    if (this.$route.name === 'charts') {
+                        this.drawChart()
+                    }
                 }.bind(this));
             },
 

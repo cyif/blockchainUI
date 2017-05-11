@@ -52,7 +52,9 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    this.drawChart()
+                    if (this.$route.name === 'charts') {
+                        this.drawChart()
+                    }
                 }.bind(this));
             },
 

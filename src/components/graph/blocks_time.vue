@@ -40,13 +40,16 @@
                 myChart: {},
                 value1: '1',
                 period: 0,
-                nbBlocks: []
+                nbBlocks: [],
             }
         },
         methods: {
             _init() {
+                this.myChart = this.$echarts.init(document.getElementById('blocksTime'));
                 window.addEventListener('resize', function () {
-                    this.drawChart()
+                    if (this.$route.name === 'charts') {
+                        this.drawChart()
+                    }
                 }.bind(this));
             },
 
@@ -56,8 +59,7 @@
             },
 
             drawChart() {
-                let myChart = this.$echarts.init(document.getElementById('blocksTime'));
-                myChart.setOption({
+                this.myChart.setOption({
                     backgroundColor: new this.$echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                         offset: 0,
                         color: 'transparent'
@@ -151,8 +153,8 @@
                         for (let i = 0; i < _self.nbBlocks.length; i++) {
                             max = Math.max(max, _self.nbBlocks[i][1]);
                         }
-                        _self.$Loading.finish();
                         _self.drawChart();
+                        _self.$Loading.finish();
                     })
                     .catch(err => {
                         console.log(err);

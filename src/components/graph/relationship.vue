@@ -14,7 +14,6 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import cGraphInfo from './graphInfo.vue';
     import tradeInfo from '../../data/overview.json';
 
     function randomData() {
@@ -43,7 +42,7 @@
         data2.push([new Date(date -= 1000 * 3600 * 24), 4 - j * 1.7, Math.abs(vout.amount)]);
     }
     export default {
-        components: {ICol,},
+        components: {ICol},
         data() {
             return {
                 myChart: {}

@@ -44,7 +44,6 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import $ from 'jquery';
     import data2 from '../../data/totalBitcoins.json'
     import data from '../../data/exchangeLine.json'
 
@@ -72,7 +71,9 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    this.drawChart();
+                    if (this.$route.name === 'dashboard') {
+                        this.drawChart()
+                    }
                 }.bind(this));
             },
 

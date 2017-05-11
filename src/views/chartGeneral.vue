@@ -23,7 +23,7 @@
                         <br>
                     </div>
                     <div class="block">
-                        
+
                         <Card class="span" >
                             <span class="text">区块信息</span>
                         </Card>
@@ -69,8 +69,6 @@
 </template>
 
 <script>
-    import $ from 'jquery'
-
     import cBlocksTime from '../components/graph/blocks_time.vue'
     import cExchangeLine from '../components/graph/exchangeLine.vue'
     import exchangeVolume from '../components/graph/exchangeVolume.vue'
@@ -130,7 +128,7 @@
     }
     .text{
         font-size: 20px;
-        margin-left: 45%; 
+        margin-left: 45%;
         font-weight: 500;
         color: #f1f2f0;
     }

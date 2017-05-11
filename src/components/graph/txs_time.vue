@@ -29,7 +29,6 @@
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import Collapse from "../../../node_modules/iview/src/components/collapse/collapse";
     import Panel from "../../../node_modules/iview/src/components/collapse/panel";
-    import $ from 'jquery';
 
     let max = 0;
     export default {
@@ -48,7 +47,9 @@
         methods: {
             _init() {
                 window.addEventListener('resize', function () {
-                    this.drawChart()
+                    if (this.$route.name === 'charts') {
+                        this.drawChart()
+                    }
                 }.bind(this));
             },
 

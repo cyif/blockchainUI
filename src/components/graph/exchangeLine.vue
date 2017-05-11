@@ -32,7 +32,6 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import $ from 'jquery';
     import data from '../../data/exchangeLine.json'
 
 
@@ -53,14 +52,16 @@
         },
         methods: {
             _init() {
+                this.myChart = this.$echarts.init(document.getElementById('exchangeLine'));
                 window.addEventListener('resize', function () {
-                    this.drawChart()
+                    if (this.$route.name === 'charts') {
+                        this.drawChart()
+                    }
                 }.bind(this));
             },
 
             drawChart() {
-                let myChart = this.$echarts.init(document.getElementById('exchangeLine'));
-                myChart.setOption({
+                this.myChart.setOption({
                     backgroundColor: new this.$echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                         offset: 0,
                         color: 'transparent'

@@ -7,15 +7,12 @@ import './theme/my-theme/dist/iview.css';
 import {webApi} from './service/WebApi'
 import nameMap from './service/NameMap'
 import echarts from 'echarts'
-// import $ from 'jquery'
-import axios from 'axios'
 import router from './router'
 
 Vue.use(iview);
 Vue.prototype.$webApi = webApi;
 Vue.prototype.$nameMap = nameMap;
 Vue.prototype.$echarts = echarts;
-Vue.prototype.$ajax = axios;
 // Vue.config.productionTip = false
 
 /* eslint-disable no-new */

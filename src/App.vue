@@ -24,10 +24,8 @@
 </template>
 
 <script>
-  import Submenu from "../node_modules/iview/src/components/menu/submenu";
   import ICol from '../node_modules/iview/src/components/grid/col';
   import cNav from './components/layout/nav';
-  import cSearchTop from './components/layout/searchTop.vue';
   import cBreadcrumb from './components/layout/myBreadcrumb.vue'
 
   export default {
@@ -37,7 +35,7 @@
           }
       },
       components: {
-          Submenu, ICol, cNav, cSearchTop, cBreadcrumb
+          ICol, cNav, cBreadcrumb
       }
   }
 </script>
@@ -94,67 +92,67 @@
   }
   @font-face {
     font-family: 'dancing';
-    src: url('font/dancing.woff2') format('woff2'),
-    url('font/dancing.woff') format('woff');
+    src: url('./font/dancing.woff2') format('woff2'),
+    url('./font/dancing.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'shadows';
-    src: url('font/shadows.woff2') format('woff2'),
-    url('font/shadows.woff') format('woff');
+    src: url('./font/shadows.woff2') format('woff2'),
+    url('./font/shadows.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'flamenco';
-    src: url('font/flamenco.woff2') format('woff2'),
-    url('font/flamenco.woff') format('woff');
+    src: url('./font/flamenco.woff2') format('woff2'),
+    url('./font/flamenco.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'istokweb';
-    src: url('font/istokweb.woff2') format('woff2'),
-    url('font/istokweb.woff') format('woff');
+    src: url('./font/istokweb.woff2') format('woff2'),
+    url('./font/istokweb.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'istokbold';
-    src: url('font/istokbold.woff2') format('woff2'),
-    url('font/istokbold.woff') format('woff');
+    src: url('./font/istokbold.woff2') format('woff2'),
+    url('./font/istokbold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
   }
   @font-face {
     font-family: 'kreon';
-    src: url('font/kreon.woff2') format('woff2'),
-    url('font/kreon.woff') format('woff');
+    src: url('./font/kreon.woff2') format('woff2'),
+    url('./font/kreon.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'sacra';
-    src: url('font/sacra.woff2') format('woff2'),
-    url('font/sacra.woff') format('woff');
+    src: url('./font/sacra.woff2') format('woff2'),
+    url('./font/sacra.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'walter';
-    src: url('font/walter.woff2') format('woff2'),
-    url('font/walter.woff') format('woff');
+    src: url('./font/walter.woff2') format('woff2'),
+    url('./font/walter.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
   @font-face {
     font-family: 'codrop';
-    src: url('font/codrop.woff') format('woff');
+    src: url('./font/codrop.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
