@@ -23,6 +23,7 @@
     import orphanedBlocks from '../components/graph/orphanedBlocks.vue';
 
     import blocksTime from '../components/graph/blocks_time.vue';
+    import blockDifficulty from '../components/graph/block_difficulty_time.vue';
     import blockTimeGap from '../components/graph/blockTimeGap.vue';
 
 
@@ -32,7 +33,7 @@
                 height: 400
             }
         },
-        components: {blockStats, blockSize, orphanedBlocks, blocksTime, blockTimeGap,
+        components: {blockStats, blockSize, orphanedBlocks, blocksTime, blockDifficulty, blockTimeGap,
         }
     }
 </script>

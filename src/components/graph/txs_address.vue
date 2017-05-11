@@ -9,7 +9,7 @@
         </row>
         <row class = "block">
             <collapse v-model="value1">
-                <Panel name="1" style="font-size: 14px">
+                <Panel name="1" style="font-size: 14px; background-color: #3a4a4d">
                     不同地址的交易数分布情况
                     <p slot="content" style="font-size: 16px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

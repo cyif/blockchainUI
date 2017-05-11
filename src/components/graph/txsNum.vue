@@ -9,7 +9,7 @@
         </row>
         <row class = "block">
             <Collapse v-model="value1">
-                <Panel name="1" style="font-size: 14px">
+                <Panel name="1" style="font-size: 14px; background-color: #3a4a4d">
                     随时间变化
                     <p slot="content" style="font-size: 16px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一次明显的高峰出现于2012.6.14,随着比特币数量的增多，比特币持有者的增多，比特币交易越来越频繁，每天所有处理的交易数暴增，这需要算力越来越强的矿工处理当前的事务，也就意味着更加困难的块需要被开采。值得一提的是，区块链本身的不可瓦解性，意味着从最一开始的林林总总都会被完整记录保存，只要被承认的就始终会被承认。所有的都有迹可循，不可磨灭，也许有一天你不记得自己曾经做过什么，但是它记得。</p>

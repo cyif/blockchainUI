@@ -1,5 +1,3 @@
-// 点亮图的坐标系
-
 <template>
     <div class = "graph_canvas">
         <row class = "block">
@@ -15,18 +13,6 @@
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import tradeInfo from '../../data/overview.json';
-
-    function randomData() {
-        now = new Date(+now + oneDay);
-        value = value + Math.random() * 21 - 10;
-        return {
-            name: now.toString(),
-            value: [
-                [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-                Math.round(value)
-            ]
-        }
-    }
 
     let data1 = [];
     let data2 = [];

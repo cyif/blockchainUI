@@ -9,7 +9,7 @@
         </row>
         <row class = "block">
             <Collapse v-model="value1">
-                <Panel name="1" style="font-size: 14px">
+                <Panel name="1" style="font-size: 14px; background-color: #3a4a4d">
                     每个区块平均处理交易数随时间变化
                     <p slot="content" style="font-size: 16px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;波动性极大，但整理趋势又呈现上涨。这符合一般逻辑，整体上涨是比特币市场发展壮大的有力证明，而阶段性波动又是由当时具体情况，诸如市值、市价等交易行情。这里需要说明的是，在10分钟左右的时间里，会有一个区块正在处理上一个10分钟所缓存的交易数据，并有另外的矿工继续开采下一个区块。也就是说，交易并不是实时就会被处理的，都要等到一个新的区块建立才得以确认。从某种意义上而言，就是每天的每个10分钟所处理交易数的一个加权统计。</p>

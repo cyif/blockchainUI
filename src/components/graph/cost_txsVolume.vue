@@ -9,7 +9,7 @@
         </row>
         <row class = "block">
             <collapse v-model="value1">
-                <Panel name="1" style="font-size: 14px">
+                <Panel name="1" style="font-size: 14px; background-color: #3a4a4d">
                     矿工小费收益占总交易量的比随时间变化
                     <p slot="content" style="font-size: 16px;">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

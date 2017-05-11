@@ -53,16 +53,21 @@
                 ],
             }
         },
-        mounted () {
-            for (let i = 0; i < this.Names.length; i++) {
-                let name = this.Names[i].name;
-                let attribute = this.Names[i].attribute;
-                let value = this.Names[i].value;
-                this.marketData.push({
-                    attribute: attribute,
-                    value: value
-                })
+        methods:{
+            getData(){
+                for (let i = 0; i < this.Names.length; i++) {
+                    let name = this.Names[i].name;
+                    let attribute = this.Names[i].attribute;
+                    let value = this.Names[i].value;
+                    this.marketData.push({
+                        attribute: attribute,
+                        value: value
+                    })
+                }
             }
+        },
+        mounted () {
+            this.getData()
         },
         components: {
         }
