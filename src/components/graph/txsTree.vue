@@ -13,7 +13,7 @@
         props: ['trade'],
         data () {
             return {
-                myChart: this.$echarts.init(document.getElementById('txsTree')),
+                myChart: {},
                 nodes: [],
                 links: []
             }
@@ -32,6 +32,7 @@
                 }.bind(this));
             },
             drawChart() {
+                this.myChart = this.$echarts.init(document.getElementById('txsTree'));
                 this.myChart.setOption({
                     title: {
                         text: '交易流向图'

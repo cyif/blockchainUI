@@ -119,6 +119,17 @@
             _self.$webApi.getTxInfo(_self.txsId)
                 .then(res => {
                     let txsInfo = res.data.data;
+                    let outgoing = 0, trans_sum = 0;
+                    for (let i = 0; i < txsInfo.trade.vins.length; i++) {
+                        let vin = txsInfo.trade.vins[i];
+                        trans_sum += vin.amount;
+                    }
+                    for (let i = 0; i < txsInfo.trade.vouts.length; i++) {
+                        let vout = txsInfo.trade.vouts[i];
+                        outgoing += vout.amount;
+                    }
+                    txsInfo['outgoing'] = outgoing;
+                    txsInfo['trans_sum'] = trans_sum;
                     for (let i = 0; i < _self.txNames.length; i++) {
                         let name = _self.txNames[i].name;
                         let attribute = _self.txNames[i].attribute;

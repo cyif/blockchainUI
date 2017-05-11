@@ -17,7 +17,7 @@
         <Row>
             <div align="right" style="position: relative">
                 <div class="total" style="position: absolute; right: 5%;">
-                    <p>总计</p>
+                    <p>总计: {{total}}</p>
                 </div>
             </div>
         </Row>
@@ -35,13 +35,14 @@
                     {
                         title: '地址(from)',
                         key: 'address',
+                        width: 400,
                         className: 'demo-table-info-attribute'
                     },
                     {
                         title: '金额',
                         key: 'amount',
                         className: 'demo-table-info-key',
-                        width: 100,
+                        width: 150,
                         formatter: '-{value}BTC'
                     }
                 ],
@@ -49,13 +50,14 @@
                     {
                         title: '地址(to)',
                         key: 'address',
+                        width: 400,
                         className: 'demo-table-info-attribute'
                     },
                     {
                         title: '金额',
                         key: 'amount',
                         className: 'demo-table-info-key',
-                        width: 100,
+                        width: 150,
                         formatter: '+{value}BTC'
                     }
                 ],
@@ -99,6 +101,13 @@
                     })
                 }
                 return data;
+            },
+            total: function () {
+                let total = 0;
+                for (let i = 0; i < this.trade.vouts.length; i++) {
+                    total += this.trade.vouts[i].amount;
+                }
+                return total;
             }
         }
     }
