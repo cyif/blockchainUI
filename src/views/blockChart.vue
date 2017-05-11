@@ -3,7 +3,7 @@
         <div class="layout">
             <div class="block">
                 <Card class = "span">
-                    <span class="text">区块总结</span>
+                    <span class="text">区块总览</span>
                     <block-stats></block-stats>
                 </Card>
                 <block-size></block-size>

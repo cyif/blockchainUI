@@ -31,19 +31,49 @@
                 marketData: [],
                 Names: [
                     {
-                        attribute: '市场价',
-                        name: 'tx',
-                        value: data.values.market_price_usd
+                        attribute: '24小时内链上块数',
+                        name: '',
+                        value: data.values.n_blocks_mined
                     },
                     {
-                        attribute: '交易量',
-                        name: 'tradeUSD',
-                        value: data.values.trade_volume_usd
+                        attribute: '截止目前累计链长',
+                        name: '',
+                        value: data.values.n_blocks_total
                     },
                     {
-                        attribute: '交易量',
-                        name: 'transBTC',
-                        value: data.values.trade_volume_btc
+                        attribute: '24小时内比特币开采',
+                        name: '',
+                        value: data.values.n_btc_mined
+                    },
+                    {
+                        attribute: '截止目前发行比特币累计',
+                        name: '',
+                        value: data.values.totalbc
+                    }
+                    {
+                        attribute: '块创建时间间隔',
+                        name: '',
+                        value: data.values.minutes_between_blocks
+                    },
+                    {
+                        attribute: '矿工总收入（美元）',
+                        name: '',
+                        value: data.values.miners_revenue_usd
+                    },
+                    {
+                        attribute: '每笔交易成本（美元）',
+                        name: '',
+                        value: data.values.miners_revenue_usd/data.valus.n_tx
+                    },
+                    {
+                        attribute: '困难度',
+                        name: '',
+                        value: data.values.difficulty
+                    },
+                    {
+                        attribute: '哈希率',
+                        name: '',
+                        value: data.values.hash_rate
                     }
                 ],
             }
@@ -60,7 +90,7 @@
             }
         },
         components: {
-        }
+        },
     }
 </script>
 

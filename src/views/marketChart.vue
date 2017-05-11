@@ -3,7 +3,7 @@
         <div class="layout">
             <div class="block">
                 <Card class = "span">
-                    <span class="text">货币信息</span>
+                    <span class="text">市场总览</span>
                     <market-stats></market-stats>
                 </Card>
                 <bitcoins></bitcoins>
