@@ -17,7 +17,6 @@
 </template>
 
 <script>
-    import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import data from '../../data/relationship.json';
     import data2 from '../../data/relationship2.json'

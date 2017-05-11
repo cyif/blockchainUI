@@ -21,7 +21,6 @@
 </template>
 
 <script>
-    import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import Collapse from "../../../node_modules/iview/src/components/collapse/collapse";
     import Panel from "../../../node_modules/iview/src/components/collapse/panel";
@@ -57,7 +56,7 @@
                 let myChart = this.$echarts.init(document.getElementById('txsAddress'));
                 myChart.setOption({
                     color: ['#3398DB'],
-                    backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                    backgroundColor: new this.$echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                         offset: 0,
                         color: 'transparent'
                     }, {

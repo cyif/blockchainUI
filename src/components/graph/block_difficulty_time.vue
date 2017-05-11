@@ -25,7 +25,6 @@
 </template>
 
 <script>
-    import echarts from 'echarts';
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import $ from 'jquery';
     import data from '../../data/blockDiff.json'
@@ -55,7 +54,7 @@
             drawChart() {
                 let myChart = this.$echarts.init(document.getElementById('blockDiff'));
                 myChart.setOption({
-                    backgroundColor: new echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
+                    backgroundColor: new this.$echarts.graphic.RadialGradient(0.3, 0.3, 0.8, [{
                         offset: 0,
                         color: 'transparent'
                     }, {
