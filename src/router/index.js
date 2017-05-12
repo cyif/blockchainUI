@@ -16,6 +16,11 @@ export default new Router({
           component: resolve => require(['../views/timeLine.vue'], resolve)
       },
       {
+          path: '/miningChart',
+          name: 'miningChart',
+          component: resolve => require(['../views/miningChart.vue'], resolve)
+      },
+      {
           path: '/addChart',
           name: 'addChart',
           component: resolve => require(['../views/addChart.vue'], resolve)

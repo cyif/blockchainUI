@@ -23,6 +23,20 @@ var proxyTable = config.dev.proxyTable
 var app = express()
 var compiler = webpack(webpackConfig)
 
+//api
+var appData = require('../src/data/geo.json');
+var apiRoute = express.Router();
+apiRoute.get('/geo',function(req, res){
+    res.json({
+        errno:0,//错误码
+        data: appData//具体数据
+    })
+});
+
+app.use('/api',apiRoute);
+
+
+
 var devMiddleware = require('webpack-dev-middleware')(compiler, {
   publicPath: webpackConfig.output.publicPath,
   quiet: true

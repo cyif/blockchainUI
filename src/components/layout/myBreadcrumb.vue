@@ -23,10 +23,11 @@
                         block: '区块',
                         txs: '交易',
                         address: '地址',
-                        addChart: '钱包摘要',
+                        addChart: '钱包总览',
                         blockChart: '区块总览',
-                        txsChart: '交易摘要',
-                        marketChart: '市场总览'
+                        txsChart: '交易总览',
+                        marketChart: '市场总览',
+                        miningChart: '挖矿总览'
                     }
                 }
             }

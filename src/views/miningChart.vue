@@ -6,6 +6,8 @@
                     <span class="text">挖矿总览</span>
                     <mining-stats></mining-stats>
                 </Card>
+                <online-map></online-map>
+                <br>
                 <miners-revenue></miners-revenue>
                 <fee-total></fee-total>
                 <br>
@@ -26,13 +28,17 @@
     import hashRate from '../components/graph/HashRate.vue';
     import poolsPie from '../components/graph/pools_pie.vue';
 
+    import onlineMap from '../components/graph/onlineMap.vue';
+
     export default {
         data () {
             return {
                 height: 400
             }
         },
-        components: { minersRevenue, feeTotal, difficulty, hashRate, poolsPie, miningStats
+        components: { minersRevenue, feeTotal, difficulty,
+            hashRate, poolsPie, miningStats,
+            onlineMap
         }
     }
 </script>
