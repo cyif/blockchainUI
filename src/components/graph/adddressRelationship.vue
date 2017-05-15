@@ -18,8 +18,10 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/relationship.json';
-    import data2 from '../../data/relationship2.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('relationship.json');
+    let data2 = webApi.getJsonData('relationship2.json');
 
     const e = 2.718281828459;
     function mapValue(x) {

@@ -21,7 +21,9 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/minersRevenue.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('minersRevenue.json');
 
     var values = data.values;
     var max = 0;

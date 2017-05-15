@@ -9,7 +9,9 @@
 </template>
 
 <script>
-    import data from '../../data/stats.json';
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('stats.json');
 
     export default {
         data () {

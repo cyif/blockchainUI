@@ -21,7 +21,9 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/hashRate.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('hashRate.json');
 
     var values = data.values;
     var max = values[0][1];

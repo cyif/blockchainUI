@@ -21,8 +21,9 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/blockSize.json'
+    import {webApi} from '../../service/WebApi';
 
+    let data = webApi.getJsonData('blockSize.json');
     var values = data.values;
     var max = values[0][1];
     for (let i = 0; i < values.length; i++) {

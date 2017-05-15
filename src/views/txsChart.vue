@@ -6,7 +6,7 @@
                     <span class="text">交易摘要</span>
                     <txs-stats></txs-stats>
                 </Card>
-                <txs-time></txs-time>
+                <!--<txs-time></txs-time>-->
                 <txs-num></txs-num>
                 <txs-block></txs-block>
                 <br>
@@ -21,7 +21,7 @@
 </template>
 <script>
     import txsStats from '../components/sheet/Stats_txs.vue'
-    import txsTime from '../components/graph/txs_time.vue'
+    import txsTime from '../components/graph/contract.vue'
     import txsNum from '../components/graph/txsNum.vue'
     import txsBlock from '../components/graph/txs_Block.vue'
     import confirmation from '../components/graph/confirmationTime.vue'

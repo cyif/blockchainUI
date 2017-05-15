@@ -3,19 +3,10 @@
         <row class = "block">
             <i-col span = "24">
                 <div class = "graph" id="graph">
+                    <span style="font-weight: bold; font-size: 20px; align-items: center"> 在线矿工分布 </span>
                     <div id = "onlineMap" class = "chart"></div>
                 </div>
             </i-col>
-        </row>
-        <row class = "block">
-            <Collapse v-model="value1">
-                <Panel name="1" style="font-size: 14px">
-                    标题
-                    <p slot="content" style="font-size: 16px;">
-                        描述
-                    </p>
-                </Panel>
-            </Collapse>
         </row>
     </Card>
 </template>
@@ -49,16 +40,19 @@
             drawChart() {
                 let myChart = this.$echarts.init(document.getElementById('onlineMap'));
                 myChart.setOption({
-                    backgroundColor: '#003',
+                    backgroundColor: '#f1f2f0',
                     geo: {
                         map: 'world',
                         left: 0,
                         right: 0,
-                        silent: true,
+                        roam: true,
                         itemStyle: {
                             normal: {
-                                borderColor: '#003',
-                                color: '#005'
+                                borderColor: '#f1f2f0',
+                                color: '#1784cd'
+                            },
+                            emphasis: {
+                                areaColor: '#0d47a1'
                             }
                         }
                     },
@@ -66,16 +60,16 @@
                         type: 'scatter',
                         coordinateSystem: 'geo',
                         data: points,
-                        symbolSize: 3,
+                        symbolSize: 6,
                         // large: true,
                         largeThreshold: 100,
+                        // 设置混合模式为叠加
+                        blendMode: 'screen',
                         itemStyle: {
                             normal: {
-                                opacity: 0.4
+                                color: '#ec407a',
                             }
-                        },
-                        // 设置混合模式为叠加
-                        blendMode: 'lighter'
+                        }
                     }]
                 });
             }

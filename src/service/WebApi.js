@@ -3,23 +3,17 @@
  */
 
 import axios from 'axios'
-import $ from 'jquery'
 
 const host =  'http://39.108.50.198/';
 
 export const webApi = {
     getJsonData: function(fileName) {
         let url = host + 'data' + '/' + fileName;
-        let data = null;
-        $.ajax({
-            method: "GET",
-            url: url,
-            async: false,
-            success: function (res) {
-                data = res;
-            }
-        });
-        return data;
+        let xhr = new XMLHttpRequest();
+        xhr.open('get', url, false);
+        xhr.send(null);
+        let json = JSON.parse(xhr.responseText);
+        return json;
     },
 
     getChartData: function(period) {

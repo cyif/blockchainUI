@@ -44,9 +44,10 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data2 from '../../data/totalBitcoins.json'
-    import data from '../../data/exchangeLine.json'
+    import {webApi} from '../../service/WebApi';
 
+    let data = webApi.getJsonData('exchangeLine.json');
+    let data2 = webApi.getJsonData('totalBitcoins.json');
 
     var values1 = data.values;
     var max1 = values1[0][1];

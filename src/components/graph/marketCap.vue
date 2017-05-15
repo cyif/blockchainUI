@@ -21,7 +21,9 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/marketCap.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('marketCap.json');
 
     let values = [];
     for (let i = 0; i < data.values.length; i++) {

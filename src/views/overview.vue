@@ -14,8 +14,9 @@
 </template>
 
 <script>
+    import {webApi} from '../service/WebApi';
 
-    import data from '../data/table.json';
+    let data = webApi.getJsonData('table.json');
 
     export default {
         data () {

@@ -25,7 +25,9 @@
     import ICol from "../../../node_modules/iview/src/components/grid/col";
     import Collapse from "../../../node_modules/iview/src/components/collapse/collapse";
     import Panel from "../../../node_modules/iview/src/components/collapse/panel";
-    import data from '../../data/costTxsVolume.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('costTxsVolume.json');
 
     let max = 0;
 

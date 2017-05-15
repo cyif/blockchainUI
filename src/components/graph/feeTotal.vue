@@ -22,7 +22,9 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/feeTotal.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('feeTotal.json');
 
     let values1 = data.values1;
     let values2 = data.values2;

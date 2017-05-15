@@ -21,7 +21,9 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/txsNum.json'
+    import {webApi} from '../../service/WebApi';
+
+    let data = webApi.getJsonData('txsNum.json');
 
     var values1 = data.values1;
     var values2 = data.values2;
