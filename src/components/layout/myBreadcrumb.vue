@@ -16,6 +16,7 @@
                         home: '首页'
                     },
                     second: {
+                        introduce: '原理简介',
                         timeLine: '时间轴',
                         charts: '可视化',
                         overview: '总览',

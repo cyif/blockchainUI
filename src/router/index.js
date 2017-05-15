@@ -16,6 +16,11 @@ export default new Router({
           component: resolve => require(['../views/timeLine.vue'], resolve)
       },
       {
+          path: '/introduce',
+          name: 'introduce',
+          component: resolve => require(['../views/intro.vue'], resolve)
+      },
+      {
           path: '/miningChart',
           name: 'miningChart',
           component: resolve => require(['../views/miningChart.vue'], resolve)
