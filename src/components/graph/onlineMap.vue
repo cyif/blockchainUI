@@ -22,17 +22,16 @@
 
 <script>
     import ICol from "../../../node_modules/iview/src/components/grid/col";
-    import data from '../../data/geo.json';
     import world from './world'
 
     let points = [];
-    for (let i = 0; i < data.onlineNow.length; i += 3) {
-        points.push([data.onlineNow[i+1], data.onlineNow[i]]);
-    }
-    console.log(points);
     export default {
         components: {ICol},
         data() {
+            let data = this.$webApi.getJsonData('geo.json');
+            for (let i = 0; i < data.onlineNow.length; i += 3) {
+                points.push([data.onlineNow[i+1], data.onlineNow[i]]);
+            }
             return {
                 myChart: {},
                 value1: '1'

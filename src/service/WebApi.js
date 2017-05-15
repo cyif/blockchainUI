@@ -3,8 +3,24 @@
  */
 
 import axios from 'axios'
+import $ from 'jquery'
+
+const host =  'http://39.108.50.198/';
 
 export const webApi = {
+    getJsonData: function(fileName) {
+        let url = host + 'data' + '/' + fileName;
+        let data = null;
+        $.ajax({
+            method: "GET",
+            url: url,
+            async: false,
+            success: function (res) {
+                data = res;
+            }
+        });
+        return data;
+    },
 
     getChartData: function(period) {
         return axios.get('http://blockr.io/api/v1/graph/main?period=' + period);

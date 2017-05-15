@@ -9,10 +9,11 @@
 </template>
 
 <script>
-    import data from '../../data/stats.json';
 
+    let data;
     export default {
         data () {
+            data = this.$webApi.getJsonData('stats.json');
             return {
                 showHeader: false,
                 columns: [
